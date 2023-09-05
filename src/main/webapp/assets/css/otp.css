@@ -1,0 +1,53 @@
+body {
+  background-color: #f7faff;
+  font-family: "Kanit", sans-serif;
+}
+
+* body a {
+  text-decoration: none;
+  color: black;
+}
+
+.div-container {
+  display: flex;
+  justify-content: center;
+  padding-top: 80px;
+}
+
+.main-div {
+  border: 3px solid black;
+  border-radius: 10px;
+  height: 600px;
+  width: 450px;
+}
+
+.content-container {
+  margin: 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  height: 540px;
+  justify-content: space-between;
+}
+
+.content-container-logo {
+  width: 46%;
+  padding-top: 25px;
+  padding-bottom: 20px;
+}
+
+#otp {
+  padding: 5px 10px;
+  margin-left: 18px;
+}
+
+.confirm-button {
+  display: flex;
+  justify-content: end;
+  margin-top: 27px;
+  margin-right: 40px;
+}
+
+.confirm {
+  padding: 7px 20px;
+}

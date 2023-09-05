@@ -1,0 +1,236 @@
+.reel-whole-div-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 3.5em;
+}
+
+.reel-and-arrow-div-container {
+  display: flex;
+  align-items: center;
+  width: 90%;
+  justify-content: space-between;
+}
+
+/* left side arrow container */
+
+.left-arrow-div-container,
+.right-side-arrow-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 5em;
+}
+
+.bi-chevron-double-left,
+.bi-chevron-double-right {
+  font-size: 2em;
+  color: #827d7d;
+}
+
+/* reel container css */
+
+.reel-div-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+  border-radius: 10px;
+  box-shadow: rgba(165, 192, 215, 0.48) 6px 2px 16px 0px,
+    rgba(156, 185, 210, 0.48) -6px -2px 16px 0px;
+}
+
+.reel-inside-div-container {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 13px;
+}
+
+.profile-showing-whole-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 4.6em;
+  gap: 2em;
+}
+
+.reel-name-div-container {
+  display: flex;
+  align-items: center;
+  gap: 2em;
+  width: 80%;
+}
+
+.profile-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 5em;
+  height: 4em;
+  border-radius: 50%;
+  border: 1px solid #ccc;
+}
+
+.profile-image {
+  width: 4.6em;
+  height: 3.5em;
+  border-radius: 50%;
+}
+
+/* user name div */
+
+.user-name-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.reel-delete-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20%;
+}
+
+.bi-x-octagon-fill {
+  font-size: 1.4em;
+  color: #ccc;
+}
+
+.bi-x-octagon-fill:hover {
+  color: #808080;
+}
+
+/* reel area */
+
+.reel-showing-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 35em;
+  height: 39em;
+}
+
+/* reel input range css */
+
+.range-input-div {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  height: 2em;
+}
+
+/* The range input track */
+input[type="range"] {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 5px;
+  background-color: #ffffff;
+  border-radius: 5px;
+  outline: none;
+}
+
+/* The range input thumb */
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 12px;
+  height: 6px;
+  background-color: #ffffff;
+  border: 2px solid #ccc;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* Styling the thumb when it's being dragged */
+input[type="range"]::-webkit-slider-thumb:active {
+  transform: scale(1.2);
+}
+
+/* Styling the thumb when it's hovered */
+input[type="range"]::-webkit-slider-thumb:hover {
+  background-color: #ffffff;
+}
+
+/* Styling the range track when the thumb is dragged */
+input[type="range"]::-webkit-slider-runnable-track {
+  background-color: #edecec;
+  border-radius: 5px;
+}
+
+/* Styling the range track when it's hovered */
+input[type="range"]::-webkit-slider-runnable-track:hover {
+  background-color: #ccc;
+}
+
+.reel-inside-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* reel video-div */
+
+.reel-video {
+  width: 35em;
+  height: 36em;
+}
+
+/* reel option div container */
+
+.reel-option-div-container {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  width: 100%;
+  height: 3.5em;
+}
+
+.reel-inside-option-div {
+  display: flex;
+  gap: 1em;
+}
+
+.input-emoji-div {
+  display: flex;
+  align-items: center;
+  gap: 1.2em;
+}
+
+.bi-emoji-smile,
+.bi-heart,
+.bi-send {
+  font-size: 1.5em;
+  color: #ccc;
+}
+
+.bi-send:hover {
+  color: #808080;
+}
+
+.bi-heart:hover {
+  color: #808080;
+}
+
+.bi-emoji-smile:hover {
+  color: #808080;
+}
+
+#input-for-reel-reaction {
+  width: 31em;
+  height: 2.4em;
+  padding: 3px;
+  border: 1px solid #ccc;
+  border-radius: 7px;
+  outline: none;
+}
+
+input[type="text"] {
+  flex: 1;
+}
+
+.heart-send-div {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}

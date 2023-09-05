@@ -1,0 +1,111 @@
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  /* background: #f093fb; */
+  height: auto;
+  /* 
+  background: -webkit-linear-gradient(
+    to bottom right,
+    #2EAFFA
+,
+#1F2F98
+  ); 
+
+  /* background: linear-gradient(
+    to bottom right,
+    rgba(240, 147, 251, 1),
+    rgba(245, 87, 108, 1)
+  ); */
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-color: hsl(0, 0%, 96%);
+  height: 892px;
+}
+
+.register-section {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+}
+
+.register-container {
+  background-color: #fff;
+  border-radius: 0.8rem;
+  box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px,
+    rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
+  width: 480px;
+}
+
+.register-div {
+  display: flex;
+  flex-direction: column;
+  margin: 3em;
+}
+
+/* from css */
+
+#form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.input-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 2em;
+}
+
+.input-label-div {
+  display: flex;
+  align-items: center;
+  gap: 2em;
+}
+
+#firstname,
+#lastname,
+#email,
+#password,
+#age,
+#username,
+#mobilenumber {
+  width: 200px;
+  height: 30px;
+  outline: none;
+}
+
+#label {
+  width: 110px;
+  font-size: 17px;
+  font-weight: 500;
+}
+
+.button-div {
+  display: flex;
+  margin-top: 2.3em;
+  margin-bottom: 1em;
+}
+
+#button {
+  width: 100px;
+  height: 40px;
+  border-radius: 5px;
+  cursor: pointer;
+  border: none;
+  color: #fff;
+  font-weight: bold;
+  font-size: 17px;
+  background-image: linear-gradient(to right, #25aae1, #4481eb);
+  box-shadow: 0 4px 15px 0 rgba(65, 132, 234, 0.75);
+}
+.logIn-container,
+.logIn-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: hsl(217, 10%, 50.8%);
+  font-size: 17px;
+}

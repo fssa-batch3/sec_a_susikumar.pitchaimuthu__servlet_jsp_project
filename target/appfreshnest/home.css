@@ -1,0 +1,340 @@
+@charset "ISO-8859-1";
+#home {
+  background-color: #00baff;
+  border-radius: 10px;
+  color: #fff;
+}
+
+.nav-link:hover {
+  background-color: #cbe7ea;
+  border-radius: 10px;
+}
+
+.navbar-home-page-container {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+.search-bar-div-whole-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  width: 100%;
+}
+
+/* search bar container */
+
+.search-bar-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.search-bar-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 90%;
+  height: 3em;
+  position: relative;
+}
+
+.search-input {
+  width: 60%;
+  height: 2.8em;
+  border-radius: 20px;
+  border: 1px solid #808080;
+  text-align: left;
+  padding-left: 20px;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: rgb(0, 153, 255);
+  box-shadow: 0 0 10px rgb(65, 162, 215);
+}
+
+.search-button {
+  background-color: #00baff;
+  color: #ffffff;
+  border: none;
+  padding: 6.2px 18px;
+  border-radius: 0px 20px 20px 0px;
+  font-size: 16px;
+  cursor: pointer;
+  position: absolute;
+  right: 20%;
+}
+/* whole container */
+
+.whole-section-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+}
+
+.section-inside-container-div {
+  display: flex;
+  width: 90%;
+  justify-content: center;
+}
+
+.section-inside-container {
+  display: flex;
+  width: 90%;
+  justify-content: flex-end;
+}
+
+/* user showing container */
+
+.all-user-showing-div-container {
+  display: flex;
+  justify-content: center;
+  width: 75%;
+}
+
+.all-user-showing-inside-div {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  align-items: center;
+  width: 100%;
+  height: 48em;
+  overflow-y: scroll;
+  padding: 5px;
+}
+
+.all-user-showing-inside-div::-webkit-scrollbar {
+  display: none;
+}
+
+.user-card-container {
+  width: 89%;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+
+.user-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 99%;
+  padding: 5px;
+}
+
+.user-card-inside-div {
+  display: flex;
+  align-items: center;
+  width: 99%;
+  height: 4em;
+  justify-content: space-between;
+}
+
+.tiny-image-content-container {
+  display: flex;
+  width: 92%;
+  gap: 1em;
+}
+
+.tiny-profile-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #808080;
+  border-radius: 50%;
+  width: 3.5em;
+  height: 3em;
+}
+
+.tiny-image {
+  width: 3em;
+  height: 2.5em;
+  border-radius: 50%;
+}
+
+.view-button-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30%;
+}
+
+.view {
+  padding: 2px 10px;
+  border: none;
+  background-color: rgb(56, 149, 210);
+  border-radius: 5px;
+  color: #fff;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+/* details shosing container */
+.details-showing-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40%;
+}
+
+.details-inside-div-container {
+  display: flex;
+  flex-direction: column;
+  width: 99%;
+  gap: 2em;
+  height: 100%;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+}
+
+/* remove div */
+
+.remove-div-container {
+  display: flex;
+  width: 98%;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.remove-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bi-x-circle-fill {
+  font-size: 1.5em;
+  color: rgb(255, 98, 0);
+}
+
+.image-content-div-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1em;
+}
+
+.image-div-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 9.5em;
+  height: 9em;
+  border-radius: 50%;
+  border: 1px solid #808080;
+}
+
+.showing-image {
+  width: 9em;
+  height: 8.5em;
+  border-radius: 50%;
+}
+.content-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content-inside-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6em;
+}
+
+.follow-button {
+  padding: 5px 7px;
+  color: #fff;
+  background-color: blueviolet;
+  border: none;
+  font-weight: 600;
+  border-radius: 5px;
+}
+
+.following-button {
+  padding: 5px 7px;
+  color: #fff;
+  background-color: rgb(87, 186, 239);
+  border: none;
+  font-weight: 600;
+  border-radius: 5px;
+}
+/* suggestion div container */
+
+.person-suggested-friends-div-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.person-suggested-inside-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 99%;
+}
+
+/* last person div */
+
+.person-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 85%;
+}
+
+.person-inside-div {
+  display: flex;
+  width: 99%;
+  align-items: center;
+  gap: 1em;
+}
+
+.last-image-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 3em;
+  height: 2.5em;
+  border-radius: 50%;
+  border: 1px solid #808080;
+}
+.last-image {
+  width: 2.5em;
+  height: 2em;
+  border-radius: 50%;
+}
+
+.user-name-theme-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.tiny-button-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tiny-follow-button {
+  padding: 2px 5px;
+  color: #fff;
+  background-color: blueviolet;
+  border: none;
+  font-weight: 600;
+  font-size: 90%;
+  border-radius: 5px;
+}
+
+button {
+  cursor: pointer;
+}
+
+.last-para {
+  font-size: 90%;
+}

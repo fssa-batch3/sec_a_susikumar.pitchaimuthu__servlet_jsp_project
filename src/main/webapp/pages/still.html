@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Still</title>
+    <link rel="stylesheet" href="../assets/css/nav.css" />
+    <link rel="stylesheet" href="../assets/css/footer.css" />
+    <link rel="stylesheet" href="../assets/css/still.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kanit:wght@200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700;800&display=swap");
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <!-- monile-menu-icon -->
+        <div class="mobile-menu-div">
+          <img
+            class="mobile-menu-icon"
+            src="../assets/images/nav-bar/Menu-dot.png"
+            alt="menuList-icon"
+            onclick="togglemenu()"
+          />
+        </div>
+
+        <!-- nav-logo -->
+        <div class="nav-logo-div">
+          <a href="http://127.0.0.1:5500/pages/home.html">
+            <img
+              class="nav-logo-div-image"
+              src="../assets/images/common/Fresh-nest-logo-black.png"
+              alt="fresh-nest-logo"
+            />
+          </a>
+        </div>
+
+        <!-- nav-links -->
+        <div class="nav-link-div">
+          <ul id="menuList">
+            <li><a href="#">About Us</a></li>
+            <li class="feature-li">
+              <a href="#">Features</a>
+              <div class="dropdown">
+                <img
+                  class="down-arrow"
+                  src="../assets/images/nav-bar/Down arrow blue.png"
+                  alt="down-arrow"
+                />
+                <div class="dropdown-content">
+                  <ol id="feature-dropdown-ol">
+                    <li class="still-li">
+                      <a
+                        class="still-a"
+                        href="http://127.0.0.1:5500/pages/still.html"
+                        >Still</a
+                      >
+                    </li>
+                    <li class="Nest-li">
+                      <a
+                        class="nest-a"
+                        href="http://127.0.0.1:5500/pages/nest.html"
+                        >Nest</a
+                      >
+                    </li>
+                  </ol>
+                </div>
+              </div>
+            </li>
+            <li><a href="#">App</a></li>
+            <li>
+              <a href="http://127.0.0.1:5500/pages/support.html">Support</a>
+            </li>
+          </ul>
+        </div>
+
+        <!--Nav-signin and login button  -->
+        <div class="nav-button-div-container" id="sign-log">
+          <div class="sign-up-button-div">
+            <a href="http://127.0.0.1:5500/pages/signup.html">
+              <p class="sign-up-button-div-text">SIGN</p>
+            </a>
+            <div class="swip-up-button-div">
+              <a href="http://127.0.0.1:5500/pages/signup.html">
+                <p class="swip-up-button-div-up">UP</p></a
+              >
+            </div>
+          </div>
+
+          <div class="sign-up-button-div">
+            <a href="http://127.0.0.1:5500/pages/login.html">
+              <p class="sign-up-button-div-text">LOG</p>
+            </a>
+            <div class="swip-up-button-div">
+              <a href="http://127.0.0.1:5500/pages/login.html">
+                <p class="swip-up-button-div-up">IN</p>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- mobile profile image -->
+
+        <div class="user-div">
+          <img
+            class="user-icon"
+            src="../assets/images/nav-bar/user.png"
+            alt="mobile-profile-icon"
+            onclick="togglemenu()"
+          />
+        </div>
+      </nav>
+
+      <script>
+        var menuList = document.getElementById("menuList");
+
+        menuList.style.maxHeight = "0px";
+
+        function togglemenu() {
+          if (menuList.style.maxHeight == "0px") {
+            menuList.style.maxHeight = "130px";
+          } else {
+            menuList.style.maxHeight = "0px";
+          }
+        }
+
+        // signin login togglemenu
+      </script>
+    </header>
+
+    <!--section -start-->
+
+    <section>
+      <section class="hero-section-container">
+        <div class="hero-section-content-container">
+          <div class="hero-section-welcome-div">
+            <h1 class="welcome-head">Welcome to the Still</h1>
+
+            <p class="welcome-para">
+              If you have taking photo moto , our browser was very helpful to
+              you. We have a some interesting photo filters, You can take
+              picture like as your Pleasure.
+            </p>
+          </div>
+          <div class="rhymig-para-div">
+            <p class="rhyming-para">Do you have photo taking moto.</p>
+            <p class="rhyming-para">Come to the nest fast..o</p>
+            <p class="rhyming-para">Take a picture.</p>
+            <p class="rhyming-para">as much as like your Pleasure.</p>
+          </div>
+        </div>
+        <div class="hero-section-video-container">
+          <div class="hero-section-video-div">
+            <video
+              class="hero-section-video-div-video"
+              autoplay
+              muted
+              loop
+              playsinline
+            >
+              <source
+                src="../assets/videos/Sill/still-head-video.mp4"
+                type="video/mp4"
+              />
+            </video>
+          </div>
+        </div>
+      </section>
+
+      <!-- section-second -->
+
+      <section>
+        <div class="section-second-container">
+          <div class="section-second-video-container">
+            <div class="section-second-video-div">
+              <video
+                class="section-second-video-div-video"
+                autoplay
+                loop
+                muted
+                playsinline
+              >
+                <source
+                  src="../assets/videos/Sill/still-section-video.mp4"
+                  type="video/mp4"
+                />
+              </video>
+            </div>
+          </div>
+          <div class="section-second-para-container">
+            <div>
+              <h2 class="still-heading">What is Still</h2>
+            </div>
+            <div class="about-still-div">
+              <p class="about-still-para">
+                Inside the Stilll we have some filters features and we are try
+                made this browser for users likes.
+              </p>
+              <p class="about-still-para">
+                You can take picture as much as you like. you can post your
+                image in our Nest Rolls and also share your friends.
+              </p>
+
+              <p class="about-still-para">
+                This was about our Fresh Nest Still. If you want to try, Click
+                this button and try.
+              </p>
+            </div>
+            <div>
+              <a href="http://127.0.0.1:5500/pages/webcam.html">
+                <button class="hero-section-button">
+                  <p>Try Nest for free</p>
+                  <span>&#8594;</span>
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <!-- footer -->
+    <footer>
+      <div class="footer-container">
+        <div class="footer-logo-div">
+          <div class="logo-div-footer">
+            <div class="logo-image-div">
+              <img
+                class="footer-logo-div-image-white"
+                src="../assets/images/footer/fresh-nest-logo-white.png"
+                alt="footer-website-logo"
+              />
+            </div>
+            <div>
+              <p>The browser for entertainment</p>
+            </div>
+          </div>
+
+          <div class="footer-copyright-div">
+            <img
+              class="footer-copyright-div-image"
+              src="../assets/images/footer/copyright-logo.png"
+              alt="copyright-image"
+            />
+            <p>2022 Fresh Nest</p>
+          </div>
+          <div class="footer-term-policy-div">
+            <a class="footer-policy-a" href="#">Privacy</a>
+            <a class="footer-term-condition-a" href="#">Terms and Conditions</a>
+          </div>
+        </div>
+        <div class="footer-home-div">
+          <p class="footer-home-head">Page</p>
+          <a class="footer-home-about" href="#">About us</a>
+          <a class="footer-home-download" href="#">Download</a>
+          <a class="footer-home-support" href="#">Support</a>
+        </div>
+        <div class="footer-features-div">
+          <p>Features</p>
+          <a class="footer-still-a" href="#">Still</a>
+          <a class="footer-nest-a" href="#">Nest</a>
+          <a class="footer-rolling-a" href="#">Rolling</a>
+        </div>
+        <div class="footer-download-div">
+          <p>Download</p>
+          <a class="footer-mac-a" href="#">Mac/Pc</a>
+          <a class="footer-iphone-a" href="#">Iphone</a>
+          <a class="footer-android-a" href="#">Android</a>
+        </div>
+        <div class="footer-social-media-div">
+          <p>Social Media contacts</p>
+          <div class="footer-social-media-div-twitter-div">
+            <img
+              class="footer-social-media-div-twitter-div-image"
+              src="../assets/images/footer/Twitter-logo.png"
+              alt="twitter-logo"
+            />
+            <a href="#">@freshnest</a>
+          </div>
+          <div class="footer-social-media-div-facebook-div">
+            <img
+              class="footer-social-media-div-facebook-div-image"
+              src="../assets/images/footer/facebook-logo.png"
+              alt="facebook-logo"
+            />
+            <a href="#">freshnest</a>
+          </div>
+          <div class="footer-social-media-div-github-div">
+            <img
+              class="footer-social-media-div-github-div-image"
+              src="../assets/images/footer/github-logo.png"
+              alt="github-logo"
+            />
+            <a href="#">freshnest.io</a>
+          </div>
+          <div class="footer-social-media-div-whatsapp-div">
+            <img
+              class="footer-social-media-div-whatsapp-div-image"
+              src="../assets/images/footer/whatsapp-logo.png"
+              alt="whatsapp-logo"
+            />
+            <a href="#">freshnest</a>
+          </div>
+          <div class="footer-social-media-div-instagram-div">
+            <img
+              class="footer-social-media-div-instagram-div-image"
+              src="../assets/images/footer/Instagram-logo.png"
+              alt="instagram-logo"
+            />
+            <a href="#">fresh_nest_&_co </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

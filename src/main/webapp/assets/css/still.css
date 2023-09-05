@@ -1,0 +1,186 @@
+body {
+  background-color: #f7faff;
+  font-family: "Kanit", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+* a {
+  text-decoration: none;
+}
+
+.hero-section-container {
+  display: flex;
+  gap: 2em;
+  padding-top: 10em;
+  margin: 1em 1em 3em 4em;
+}
+
+.hero-section-content-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  flex: 0.8;
+}
+
+/* header heading */
+
+.hero-section-welcome-div {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+}
+
+.welcome-head {
+  text-align: center;
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.welcome-para {
+  font-size: 20px;
+  font-weight: 450;
+}
+
+.rhyming-para {
+  font-weight: 450;
+  font-size: 19px;
+}
+
+.hero-section-video-container {
+  display: flex;
+  flex: 1;
+}
+
+.hero-section-video-div {
+  display: flex;
+  flex: 1;
+}
+
+.hero-section-video-div-video {
+  width: 98%;
+}
+
+/* section-second start */
+.section-second-container {
+  display: flex;
+  flex: 1;
+  padding: 6em 3em 4em 3em;
+}
+
+.section-second-para-container {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 2em;
+}
+
+/* about still */
+
+.about-still-div {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4em;
+}
+
+.still-heading {
+  font-size: 32px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.about-still-para {
+  font-size: 22px;
+  font-weight: 420;
+}
+/* try yourself button */
+
+.hero-section-button a {
+  text-decoration: none;
+  color: white;
+}
+.hero-section-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2em;
+
+  background-image: linear-gradient(
+    to right,
+    #25aae1,
+    #4481eb,
+    #04befe,
+    #3f86ed
+  );
+  box-shadow: 0 4px 15px 0 rgba(65, 132, 234, 0.75);
+  width: 210px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+  margin: 20px;
+  height: 55px;
+  text-align: center;
+  border: none;
+  background-size: 300% 100%;
+
+  border-radius: 50px;
+
+  transition: all 0.4s ease-in-out;
+}
+
+/* free use button hover */
+
+.hero-section-button:hover {
+  background-position: 100% 0;
+
+  transition: all 0.4s ease-in-out;
+}
+
+/* free use button focus */
+
+.hero-section-button:focus {
+  outline: none;
+}
+
+.section-second-video-container {
+  display: flex;
+  flex: 1;
+}
+
+.section-second-video-div {
+  display: flex;
+  flex: 1;
+}
+
+.section-second-video-div-video {
+  width: 90%;
+}
+
+/* media Quary */
+
+@media only screen and (max-width: 600px) {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+  }
+
+  .hero-section-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .section-second-container {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+}

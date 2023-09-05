@@ -1,0 +1,139 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #b9d1f7;
+}
+
+.whole-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 800px;
+}
+
+.email-box-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  width: 70%;
+  height: 90%;
+  border-radius: 10px;
+  margin-top: 3.5em;
+}
+
+.email-box-inside-div-container {
+  display: flex;
+  flex-direction: column;
+  width: 95%;
+  height: 95%;
+  gap: 2em;
+}
+
+.freshnest-profile-image-div-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-content-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+}
+
+.logo-image {
+  width: 12em;
+}
+
+.freshnest-content {
+  margin: 0;
+  padding: 0;
+}
+
+/* email textarea container */
+
+.email-content-container {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.email-content-inside-container {
+  display: flex;
+  flex-direction: column;
+  width: 99%;
+  justify-content: center;
+  gap: 2.2em;
+}
+
+.subject-div {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.subject-label {
+  color: #757474;
+  font-weight: bold;
+  font-size: 19px;
+}
+
+.underline-input {
+  border: none;
+  border-bottom: 1px solid black;
+  outline: none;
+  width: 100%;
+  background-color: transparent;
+}
+
+.textarea-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+textarea {
+  padding: 10px;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  min-height: 150px;
+  width: 100%;
+  box-sizing: border-box;
+  resize: none;
+  height: 31em;
+}
+
+textarea:focus {
+  outline: none;
+  border-color: #4285f4;
+  box-shadow: 0 0 0 2px rgba(66, 133, 244, 0.2);
+}
+
+.send-div {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.send-button {
+  padding: 8px 11px;
+  border: none;
+  background-image: linear-gradient(to right, #25aae1, #04befe);
+  color: #fff;
+  border-radius: 6px;
+}
+
+.cancel-button {
+  padding: 8px 11px;
+  border: none;
+  background-color: rgb(246, 208, 103);
+  color: #fff;
+  border-radius: 6px;
+}

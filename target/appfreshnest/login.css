@@ -1,0 +1,287 @@
+@charset "ISO-8859-1";
+
+body {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  background-color: hsl(0, 0%, 96%);
+}
+
+.login-section {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+}
+
+.welcome-head {
+  font-size: 36px;
+}
+
+.login-paragraph {
+  font-size: 24px;
+}
+
+.whole-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 8em;
+  width: auto;
+  gap: 5em;
+}
+
+.welcome-container {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+}
+
+.sign-in-head {
+  text-align: center;
+  margin-bottom: 2em;
+}
+.login-container {
+  background-color: #fff;
+  border-radius: 0.8rem;
+  box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px,
+    rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-inside-container {
+  display: flex;
+  flex-direction: column;
+  width: 412px;
+  padding: 5px;
+}
+
+.label {
+  position: relative;
+  font-size: 14px;
+  padding-top: 20px;
+  margin-bottom: 5px;
+}
+
+.input {
+  border: none;
+  height: 35px;
+  border-radius: 5px;
+  width: 280px;
+  outline: none;
+  appearance: none;
+  -webkit-appearance: none;
+  border: 2px solid #ddd;
+  transition: border-color 0.1s ease;
+}
+
+.label input:focus + .placeholder,
+.label input:valid + .placeholder {
+  top: 9px;
+  background: #fff;
+  padding: 5px;
+  color: #4481eb;
+}
+
+.label .placeholder {
+  position: absolute;
+  width: fit-content;
+  font-size: 14px;
+  background-color: transparent;
+  left: 12px;
+  color: #aaa;
+  top: calc(50% + 10px);
+  transform: translateY(-50%);
+  transition: top 0.3s ease, color 0.3s ease;
+}
+
+.label input {
+  background: none;
+  transition: border-color 0.3s ease;
+  border: grey 2px solid;
+}
+
+.label input:valid,
+.label input:focus {
+  top: 9px;
+  border-color: #4481eb;
+  transition-delay: 0.1s;
+}
+
+input:invalid:not(:placeholder-shown) + .placeholder {
+  top: 9px;
+  transition-delay: 0.1s;
+  background: #fff;
+  padding: 5px;
+  color: #eb44bc;
+}
+
+input:invalid:not(:placeholder-shown) {
+  top: 9px;
+  border-color: #eb44bc;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.3em;
+  flex: 1;
+  align-items: center;
+}
+
+.button-error-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.button-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+.login-button {
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  height: 37px;
+  color: #fff;
+  font-size: 17px;
+  background-image: linear-gradient(to right, #25aae1, #4481eb);
+  box-shadow: 0 4px 15px 0 rgba(65, 132, 234, 0.75);
+  width: 68%;
+}
+
+.or-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.button-content-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3em;
+}
+
+.button-container {
+  display: flex;
+  gap: 0.8em;
+}
+
+.fa {
+  height: 25px;
+  width: 20px;
+  color: white;
+}
+
+.sign-button {
+  box-shadow: 0 4px 15px 0 rgba(65, 132, 234, 0.75);
+  border: none;
+  background-color: #4481eb;
+  cursor: pointer;
+  height: 40px;
+  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1.5em;
+}
+
+.sign-up-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sign-up-link {
+  color: hsl(217, 10%, 50.8%);
+  font-size: 17px;
+}
+
+/* eye icon */
+.password-input {
+  position: relative;
+}
+
+.eye-slash-div,
+.confirm-eye-slash-div {
+  position: absolute;
+  font-size: 1.2em;
+  color: #808080;
+  right: 3%;
+  top: 23%;
+}
+
+/* password strength div */
+.password-strength-div {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 70%;
+}
+
+.hr-div {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+hr {
+  height: 5px;
+  border-radius: 5px;
+  margin: 0;
+  border: none;
+}
+
+.strength-content-div {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+/* remember and forget password function */
+
+.remember-and-forget-password-div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 69%;
+  height: 0.9em;
+}
+
+.remember-me-div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 50%;
+}
+
+.remember {
+  font-size: 97%;
+  font-weight: 550;
+  color: #808080;
+}
+
+.remember-div {
+  display: flex;
+  align-items: center;
+  width: 50%;
+}
+
+.check-box {
+  width: 15px;
+  height: 15px;
+  color: #808080;
+}
+
+.forget {
+  font-size: 96%;
+}
+
+.mandatory {
+  color: #eb44bc;
+}

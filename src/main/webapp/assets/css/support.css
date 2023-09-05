@@ -1,0 +1,225 @@
+/* adding css to the setting button */
+
+#setting {
+  background-color: #00baff;
+  border-radius: 10px;
+}
+
+.nav-link:hover {
+  background-color: #cbe7ea;
+  border-radius: 10px;
+}
+
+.whole-section-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+/* section details container */
+
+.section-details-section {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-left: 5.65em;
+  flex-direction: column;
+  height: 100%;
+}
+
+.inside-nav-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  box-shadow: 0 0 27px 0 rgba(214, 231, 233, 0.52);
+  position: fixed;
+  right: 0;
+  left: 0;
+  height: 3.5em;
+}
+.nav-div-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 94%;
+}
+
+.logo-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20%;
+}
+
+.logo-image {
+  width: 8.5em;
+  height: 2.8em;
+}
+
+.profile-name-image-div-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile-name-inside-container {
+  display: flex;
+  align-items: center;
+  gap: 2em;
+}
+
+.profile-name-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profilediv {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3em;
+  height: 2.5em;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+}
+
+.profile-image {
+  width: 2.5em;
+  height: 2em;
+  border-radius: 50%;
+}
+
+/* inside side bar */
+
+.all-div-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-top: 3.6em;
+  height: 51.6em;
+}
+
+.side-bar-div-container {
+  display: flex;
+  align-items: center;
+  box-shadow: 0 0 27px 0 rgba(214, 231, 233, 0.52);
+  justify-content: center;
+  width: 18%;
+  height: 100%;
+}
+
+.side-bar-inside-div-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 93%;
+}
+
+.side-bar-ul {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1em;
+}
+
+/* communication div container */
+.communication-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.communication-inside-div-container {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  height: 85%;
+}
+
+.communication-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  width: 22em;
+  height: 30em;
+}
+
+.communication-inside-div {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 20px;
+  gap: 1.4em;
+}
+
+.three-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 90%;
+}
+
+.first-image {
+  width: 20em;
+  height: 17em;
+}
+
+.call,
+.video,
+.email {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 99%;
+}
+.content-inside-div {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.voice-call {
+  font-weight: 600;
+}
+
+.video-content-div,
+.email-content-div,
+.call-content-div {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 13px;
+}
+
+.voice-call-button {
+  border: none;
+  background-color: rgb(135, 239, 239);
+  border-radius: 6px;
+  color: #fff;
+  padding: 5px 8px;
+  font-weight: 600;
+}
+
+.video-call-button {
+  border: none;
+  background-color: rgb(148, 148, 241);
+  border-radius: 6px;
+  color: #fff;
+  padding: 5px 8px;
+  font-weight: 600;
+}
+
+.email-button {
+  border: none;
+  border-radius: 6px;
+  background-color: rgb(196, 143, 246);
+  color: #fff;
+  padding: 5px 8px;
+  font-weight: 600;
+}

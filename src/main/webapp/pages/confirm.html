@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../assets/css/confirm.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kanit:wght@200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700;800&display=swap");
+    </style>
+  </head>
+  <body>
+    <div class="div-container">
+      <div class="main-div">
+        <div class="content-container">
+          <div>
+            <img
+              class="content-container-logo"
+              src="../assets/images/common/Fresh-nest-logo-black.png"
+              alt="freshnest-logo"
+            />
+          </div>
+
+          <div class="label-div">
+            <form>
+              <div>
+                <label for="inputtel">Enter OTP</label>
+                <input
+                  type="tel"
+                  id="inputtel"
+                  placeholder="OTP"
+                  placeholder="otp"
+                />
+              </div>
+
+              <div class="label-div">
+                <label for="inputpassword"> Create New Password</label>
+                <input
+                  type="password"
+                  id="inputpassword"
+                  placeholder="Password"
+                  placeholder="password"
+                />
+              </div>
+              <div>
+                <label for="inputpassword2">Confirm your Password</label>
+                <input
+                  type="password"
+                  id="inputpassword2"
+                  placeholder="Password"
+                  placeholder="Re enter password"
+                />
+              </div>
+            </form>
+            <button type="submit" id="submit" onclick="submit()">Submit</button>
+          </div>
+
+          <div>
+            <img
+              src="../assets/images/common/Back-arrow.png"
+              alt="arrow-back"
+            /><span>Back</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function submit() {
+        const otp = document.getElementById("inputtel").value;
+        const newPassword = document.getElementById("inputpassword").value;
+        const confirmPassword = document.getElementById("inputpassword2").value;
+
+        console.log(otp);
+        console.log(newPassword);
+        console.log(confirmPassword);
+
+        // dataStorage
+
+        localStorage.setItem("otp_number", otp);
+        localStorage.setItem("User_NewPassword", newPassword);
+        localStorage.setItem("confimationation_password", confirmPassword);
+
+        window.location.href = "";
+      }
+    </script>
+  </body>
+</html>

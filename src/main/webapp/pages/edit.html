@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css"
+    />
+
+    <style>
+      .edit-option-div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: rgb(168, 190, 249);
+        gap: 1em;
+        width: 6.7em;
+        height: 2em;
+        border-radius: 7px;
+      }
+
+      .bi-pen-fill,
+      .bi-emoji-heart-eyes-fill,
+      .bi-trash {
+        font-size: 13px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="edit-option-div">
+      <i class="bi bi-emoji-heart-eyes-fill" onclick="emoji()"></i>
+      <i class="bi bi-pen-fill" onclick="chatEdit()"></i>
+      <i class="bi bi-trash" onclick="chatDelete()"></i>
+    </div>
+  </body>
+</html>
