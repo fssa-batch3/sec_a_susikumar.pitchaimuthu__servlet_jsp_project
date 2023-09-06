@@ -1,7 +1,3 @@
-// Here creating a function to find the user count
-
-let totalUser = JSON.parse(localStorage.getItem("userFriends"));
-
 
 // Her user invite showing function creating
 let GetInviteDetails;
@@ -78,7 +74,7 @@ function profileUserInvite(userInvite) {
   anger.setAttribute("class", "card-anger");
   anger.setAttribute(
     "href",
-    "./inviteDetails.jsp?inviteId=" +
+    "./invite_card.html?inviteId=" +
       userInvite["inviteId"]
   );
 
@@ -206,3 +202,10 @@ function addPercentagetGraph(){
 		}
 }
 
+// Gets the add invite page redirection button element
+
+let addInviteButton = document.querySelector(".invite-adding-div-container");
+
+addInviteButton.addEventListener("click", () => {
+  window.location.href = "./add_invite_form.html";
+});

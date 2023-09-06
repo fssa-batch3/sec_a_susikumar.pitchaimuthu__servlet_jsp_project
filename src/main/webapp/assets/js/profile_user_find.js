@@ -27,7 +27,10 @@ try {
 
   profile_image.setAttribute("src", profileUser["profileImage"]);
   profile_name.innerHTML = profileUser["username"];
+  
+  if(profile_profession != null){
   profile_profession.innerHTML = profileUser["userTheme"];
+  }
   
 } catch (error) {
   console.log("An error occurred while find the profile user :", error);

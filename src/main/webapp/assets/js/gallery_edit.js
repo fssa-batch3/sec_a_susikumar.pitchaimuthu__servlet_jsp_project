@@ -113,7 +113,7 @@ deleteImage.addEventListener("click", () => {
             console.log(response.data);
           const serverMsg = response.data;
             if(serverMsg.trim() === 'success') {
-		    	window.location.href="./stillGallery.html";
+		    	window.location.href="./snap-gallery.html";
 		    }  
 		    
             

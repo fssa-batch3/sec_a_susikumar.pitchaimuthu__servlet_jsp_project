@@ -6,7 +6,7 @@ emailsButton.addEventListener("click", (e) => {
   try {
     e.preventDefault();
 
-    window.location.href = "../pages/email.html?user=" + findUser["userId"];
+    window.location.href = "../pages/email.html";
   } catch (error) {
     console.log("An error occurred while email redirection :", error);
   }
@@ -35,7 +35,7 @@ deleteAccount.addEventListener("click", (event) => {
             // handle success
             console.log(response.data);
           
-	  	 window.location.href = "./index.html";
+	  	 window.location.href = "/appfreshnest/index.html";
 			
           })
           .catch(function (error) {

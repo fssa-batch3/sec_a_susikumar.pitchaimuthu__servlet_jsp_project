@@ -99,7 +99,7 @@ public class CreateInviteServlet extends HttpServlet {
 		InviteService inviteService = new InviteService();
 		try {
 			if (inviteService.createInvite(invite)) {
-				out.println("success");
+				out.print("success");
 
 			} else {
 				out.println("Invitaion creation failed");

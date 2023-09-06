@@ -53,10 +53,6 @@ snap.addEventListener("click", () => {
   try {
    
 
-    if (localStorage.getItem("image_url") !== null) {
-      imageData = JSON.parse(localStorage.getItem("image_url"));
-    }
-
     let filterValue = video.style.filter;
     console.log(filterValue);
 
@@ -86,7 +82,6 @@ snap.addEventListener("click", () => {
             .then(function (response) {
                 // handle success
                 console.log(response.data);
-              //  const serverMsg = response.data;
                 
             })
             .catch(function (error) {
@@ -116,3 +111,17 @@ function bright() {
 }
 
 
+
+
+// gallery page urlparameter sending definition code
+
+let gallery = document.querySelector(".gallery");
+
+gallery.addEventListener("click", () => {
+  try {
+    window.location.href =
+      "../pages/snap-gallery.html";
+  } catch (error) {
+    console.log("An error occurred while the gallery redirection :", error);
+  }
+});

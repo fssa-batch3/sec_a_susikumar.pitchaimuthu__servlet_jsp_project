@@ -50,21 +50,34 @@ birthdayForm.addEventListener("submit", (event) => {
 
     let birthDayObject = {
       dateOfBirth: birthday,
-      userGender: userGen,
-      age: age,
-      city: "India",
+      gender: userGen,
+      age: age
     };
 
     console.log(birthDayObject);
+    
+    
+     const url = "http://localhost:8080/appfreshnest/updateBirthday";
 
-    let birthdayObjectAssaign = Object.assign(findUserData, birthDayObject);
-    console.log(birthdayObjectAssaign);
-
-    allRegister[findIndexUser] = birthdayObjectAssaign;
-
-    localStorage.setItem("register", JSON.stringify(allRegister));
-
-    window.location.href = "../pages/logIn.html?user=" + findUserData["userId"];
+            axios.post(url, birthDayObject, {
+                headers: {
+                    "Content-Type": "application/json"
+                }
+            })
+            .then(function (response) {
+                // handle success
+                let serverMessage = response.data;
+                console.log(serverMessage);
+              if(serverMessage == "success"){
+                 alert("Birthday updated successfully");
+                 window.location.href = "./login.html";
+              }
+            })
+            .catch(function (error) {
+                // handle error
+                console.log(error);
+            });
+               
   } catch (error) {
     console.log("Error: " + error.message);
   }

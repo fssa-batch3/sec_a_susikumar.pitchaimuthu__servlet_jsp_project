@@ -1,11 +1,16 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="ISO-8859-1">
-<title>login</title>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Log In</title>
 <link rel="stylesheet" href="../assets/css/login.css" />
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
 </head>
 <body>
 	<section class="login-section">
@@ -22,21 +27,22 @@
 				<div class="login-inside-container">
 					<h2 class="sign-in-head">Sign In</h2>
 
-					<form id="form" action="../userLogin" method="post">
+					<form id="form">
 						<div class="input-container">
 							<div>
 								<label class="label"> <input type="email" class="input"
 									id="inputemail" name="email" autocomplete="off"
-									placeholder="&nbsp;" required /> <span class="placeholder">Email
-										ID <span class="mandatory">*</span>
-								</span></label>
+									placeholder="&nbsp;" required /> <span
+									class="placeholder">Email ID <span
+										class="mandatory">*</span></span></label>
 							</div>
 
 							<div class="password-input">
 								<label class="label"> <input type="password"
 									class="input" id="password" name="password"
-									placeholder="&nbsp;" autocomplete="off" required /> <span
-									class="placeholder">Password <span class="mandatory">*</span>
+									placeholder="&nbsp;" autocomplete="off" required />
+									<span class="placeholder">Password
+										<span class="mandatory">*</span>
 								</span></label>
 								<div class="eye-slash-div">
 									<i class="bi bi-eye-slash"></i>
@@ -90,7 +96,7 @@
 
 					<div class="sign-up-div">
 						<h4 class="sign-up-link">
-							Don't have an account? <a href="./pages/register.jsp"><span>Register
+							Don't have an account? <a href="../pages/Register.html"><span>Register
 									here</span></a>
 						</h4>
 					</div>
@@ -98,5 +104,8 @@
 			</div>
 		</div>
 	</section>
+	
+	<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+	<script src="../assets/js/logIn.js"></script>
 </body>
 </html>

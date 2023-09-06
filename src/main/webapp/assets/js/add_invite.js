@@ -95,9 +95,10 @@ inviteForm.addEventListener("submit", (sub) => {
                 // handle success
                 console.log(response.data);
               const serverMsg = response.data;
-				  window.location.href= "./invite.jsp";
-			  
-                
+              if(serverMsg == "success"){
+				  window.location.href= "./invite.html";
+			  }
+			                 
             })
             .catch(function (error) {
                 // handle error

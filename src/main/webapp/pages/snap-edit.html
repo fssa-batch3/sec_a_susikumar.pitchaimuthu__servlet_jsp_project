@@ -16,8 +16,10 @@
 	src="https://cdn.jsdelivr.net/npm/cropperjs@1.5.12/dist/cropper.min.js"></script>
 </head>
 <body>
+	<!-- Nav bar -->
 
 	<nav>
+		<!-- nav inside div container -->
 
 		<div class="nav-div-container">
 			<div class="nav-inside-div-container">
@@ -254,11 +256,11 @@
 	<!-- sectin start -->
 
 	<!-- script -->
+	<script src="../assets/js/profile_user_find.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 	<script src="https://momentjs.com/downloads/moment.js"
 		integrity="sha384-mFSRsfjTuXtihSLc/J0LxrFE1H9WRRllwGM6pxxyiYACkVdxRG82d3DQVlq8yXZM"
 		crossorigin="anonymous"></script>
-	<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-
 	<script src="../assets/js/gallery_edit.js"></script>
 
 	<script>
@@ -316,7 +318,7 @@
             console.log(response.data);
           const serverMsg = response.data;
             if(serverMsg.trim() === 'success') {
-		    	window.location.href="./stillGallery.html";
+		    	window.location.href="./snap-gallery.html";
 		    }  
 		    
             

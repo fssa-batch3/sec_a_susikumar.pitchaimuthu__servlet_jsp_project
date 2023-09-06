@@ -12,6 +12,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.json.JSONObject;
+
 import com.fssa.freshnest.model.User;
 import com.fssa.freshnest.services.UserService;
 import com.fssa.freshnest.services.exceptions.ServiceException;
@@ -32,22 +34,31 @@ public class UpdateBirthdayServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		String gender = request.getParameter("gender");
-		String date = request.getParameter("dob");
+		response.setContentType("application/json");
+		PrintWriter out = response.getWriter();
+
+		// Retrieve data from the request body
+		StringBuilder requestBody = new StringBuilder();
+		String line;
+		while ((line = request.getReader().readLine()) != null) {
+			requestBody.append(line);
+		}
+		JSONObject jsonData = new JSONObject(requestBody.toString());
+
+		String date = jsonData.getString("dateOfBirth");
+		String gender = jsonData.getString("gender");
+		
 		LocalDate dob = LocalDate.parse(date);
 		HttpSession session = request.getSession();
 		String registeredEmail = (String) session.getAttribute("registeredEmail");
-
-		PrintWriter out = response.getWriter();
 
 		User user1 = new User(dob, gender, registeredEmail);
 		UserService userService = new UserService();
 
 		try {
 			if (userService.secondPageRegisterUser(user1)) {
-				out.println("User date of birth details updated successfully");
-				RequestDispatcher dispatcher = request.getRequestDispatcher("./pages/userLogin.jsp");
-				dispatcher.forward(request, response);
+				out.print("success");
+				
 			} else {
 				out.println("User date of birth details update failed");
 			}

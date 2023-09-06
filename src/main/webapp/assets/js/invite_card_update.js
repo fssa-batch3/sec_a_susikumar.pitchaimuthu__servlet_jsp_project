@@ -114,7 +114,7 @@ editButton.addEventListener("click", (inv) => {
             .then(function (response) {
                 // handle success
                 console.log(response.data);
-                window.location.href="./invite.jsp";
+                window.location.href="./invite.html";
                 
 				
             })
@@ -159,7 +159,7 @@ deleteInviteButton.addEventListener("click", (deIn) => {
 			  .then(function (response) {
 			    // handle success
 			    console.log(response.data);
-		        window.location.href="./invite.jsp";
+		        window.location.href="./invite.html";
 
 			  })
 			  .catch(function (error) {

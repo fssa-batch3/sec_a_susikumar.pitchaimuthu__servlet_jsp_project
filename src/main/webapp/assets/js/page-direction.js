@@ -1,5 +1,7 @@
 // Page redirection elements
 
+console.log("page redireciton");
+
 let home = document.querySelector("#home");
 let camera = document.querySelector("#camera");
 let chat = document.querySelector("#chat");
@@ -11,7 +13,7 @@ let logOut = document.querySelector(".logOut");
 
 home.addEventListener("click", () => {
   try {
-    window.location.href = "../pages/home.html?user=" + findUser["userId"];
+    window.location.href = "../pages/home.html";
   } catch (error) {
     console.log("An error occurred while home page redirection :", error);
   }
@@ -21,7 +23,7 @@ home.addEventListener("click", () => {
 
 camera.addEventListener("click", () => {
   try {
-    window.location.href = "../pages/webcam.html?user=" + findUser["userId"];
+    window.location.href = "../pages/webcam.html";
   } catch (error) {
     console.log("An error occurred while camera pge redirection :", error);
   }
@@ -31,7 +33,7 @@ camera.addEventListener("click", () => {
 
 invite.addEventListener("click", () => {
   try {
-    window.location.href = "../pages/invite.html?user=" + findUser["userId"];
+    window.location.href = "../pages/invite.html";
   } catch (error) {
     console.log("An error occurred while invte page redirection :", error);
   }
@@ -41,7 +43,7 @@ invite.addEventListener("click", () => {
 
 setting.addEventListener("click", () => {
   try {
-    window.location.href = "../pages/support.html?user=" + findUser["userId"];
+    window.location.href = "../pages/support.html";
   } catch (error) {
     console.log("An error occurred while setting page redirection :", error);
   }
@@ -51,7 +53,7 @@ setting.addEventListener("click", () => {
 
 chat.addEventListener("click", () => {
   try {
-    window.location.href = "../pages/chat.html?user=" + findUser["userId"];
+    window.location.href = "../pages/chat.html";
   } catch (error) {
     console.log("An error occurred while chat page redirection :", error);
   }
@@ -61,10 +63,8 @@ chat.addEventListener("click", () => {
 
 logOut.addEventListener("click", () => {
   try {
-    let logOutValue = JSON.parse(localStorage.getItem("user_data"));
 
-    if (logOutValue !== null) {
-      let message = confirm("Are sure to log out your account in Fresh Nest?");
+     let message = confirm("Are sure to log out your account in Fresh Nest?");
 
       if (message !== true) {
         return;
@@ -73,7 +73,7 @@ logOut.addEventListener("click", () => {
         localStorage.setItem("user_data", JSON.stringify(logOutValue));
         window.location.href = "../index.html";
       }
-    }
+    
   } catch (error) {
     console.log("An error occurred while logout the account :", error);
   }

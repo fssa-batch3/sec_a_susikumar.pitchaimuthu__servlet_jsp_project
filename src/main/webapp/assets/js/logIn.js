@@ -2,52 +2,42 @@
 
 let logIn = document.getElementById("form");
 
-let doSomething = [];
 logIn.addEventListener("submit", (event) => {
   event.preventDefault();
 
   try {
-    let defaultData = JSON.parse(localStorage.getItem("register"));
-    console.log(defaultData);
-
     let userEmail = document.getElementById("inputemail").value.trim();
     let password = document.getElementById("password").value.trim();
+    
+    let logInObject = {
+		email : userEmail,
+		password
+	}
 
-    // Here checking the user is a admit or not
+    
+    const url = "http://localhost:8080/appfreshnest/login";
 
-    let adminEmail = "admin143.freshnest@gmail.com";
-    let adminPassword = "1234@SMsm";
-
-    if (userEmail == adminEmail && password == adminPassword) {
-      window.location.href = "../pages/dashboard.html";
-      return;
-    }
-
-    let match = false;
-
-    let usercheck = defaultData.find((e) => e["email"] == userEmail);
-    console.log(usercheck);
-
-    if (usercheck == undefined) {
-      alert("Email id not found");
-      return;
-    } else if (usercheck["password"] !== password) {
-      alert("Password is not correct");
-      return;
-    } else {
-      match = true;
-
-      let which = doSomething.push(usercheck);
-      console.log(which);
-
-      let logString = JSON.stringify(doSomething);
-      window.localStorage.setItem("user_data", logString);
-    }
-
-    if (match == true) {
-      alert("You are successfully get into freshnest");
-      window.location.href = "../pages/home.html?user=" + usercheck["userId"];
-    }
+            axios.post(url, logInObject, {
+                headers: {
+                    "Content-Type": "application/json"
+                }
+            })
+            .then(function (response) {
+                // handle success
+                let serverMessage = response.data;
+                console.log(serverMessage);
+                
+               if(serverMessage == "success"){
+                  alert("You are successfully get into freshnest");
+                  window.location.href = "./home.html";
+              }
+            })
+            .catch(function (error) {
+                // handle error
+                console.log(error);
+            });
+     
+    
   } catch (error) {
     console.log("Error ", error);
   }

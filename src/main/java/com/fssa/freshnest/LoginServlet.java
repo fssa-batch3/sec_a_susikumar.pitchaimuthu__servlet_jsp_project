@@ -11,6 +11,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.json.JSONObject;
+
 import com.fssa.freshnest.model.User;
 import com.fssa.freshnest.services.UserService;
 import com.fssa.freshnest.services.exceptions.ServiceException;
@@ -27,29 +29,31 @@ public class LoginServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
+		response.setContentType("application/json");
+		PrintWriter out = response.getWriter();
+
+		// Retrieve data from the request body
+		StringBuilder requestBody = new StringBuilder();
+		String line;
+		while ((line = request.getReader().readLine()) != null) {
+			requestBody.append(line);
+		}
+		JSONObject jsonData = new JSONObject(requestBody.toString());
+
 		// Paramaeter of the login post
-		String email = request.getParameter("email");
-		String password = request.getParameter("password");
+		String email = jsonData.getString("email");
+		String password = jsonData.getString("password");
 
 		// Instance of the user model
 		User user = new User(email, password);
 		// Instance of the UserService logIn user Service
 		UserService logInService = new UserService();
 
-		PrintWriter out = response.getWriter();
-
 		try {
 			if (logInService.logInUser(user)) {
-				out.println("Login Successfully");
-
-				User user1 = new User();
-				System.out.println(user1.getUserId());
-
 				HttpSession secondSession = request.getSession();
 				secondSession.setAttribute("loggedInEmail", email);
-
-				RequestDispatcher dispatcher = request.getRequestDispatcher("./pages/home.jsp");
-				dispatcher.forward(request, response);
+				out.print("success");
 
 			} else {
 				out.println("Login Failed");

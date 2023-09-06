@@ -4,23 +4,14 @@ signUpFrom.addEventListener("submit", (event) => {
   event.preventDefault();
 
   try {
-    let userData = [];
-
-    if (localStorage.getItem("register") != null) {
-      userData = JSON.parse(localStorage.getItem("register"));
-    }
-
-    console.log(userData);
-
+   
     let firstElement = document.getElementById("firstname").value.trim();
     let lastElement = document.getElementById("lastname").value.trim();
     let userName = document.getElementById("username").value.trim();
     let userEmail = document.getElementById("email").value.trim();
     let password = document.getElementById("password").value.trim();
-    let cryptoValue = Date.now();
 
     let avatarText = firstElement.toUpperCase().charAt(0);
-    console.log(avatarText);
 
     // avatar create
 
@@ -67,42 +58,37 @@ signUpFrom.addEventListener("submit", (event) => {
     // Replace spaces with an end dash
     let dashedText = userName.replace(spaceRegex, "_");
 
-    // return dashedText;
-
-    console.log(dashedText);
-
-    // let checkUser = JSON.parse(localStorage.getItem("register"));
-
-    for (let i = 0; i < userData.length; i++) {
-      if (userData[i]["email"] === userEmail) {
-        throw new Error("User email ID already exists");
-      } else if (userData[i]["userName"] == userName) {
-        throw new Error(
-          "Username already exists. Please choose a different username."
-        );
-      }
-    }
 
     let userObj = {
-      userId: cryptoValue,
       firstName: firstElement,
       lastName: lastElement,
       userName: dashedText,
-      email: userEmail.toLowerCase(),
+      email: userEmail,
       password: password,
-      avatarUrl: imageUrl,
-      userTheme: "Hey! I am using fresh nest",
-      registrationDate: moment().format("l"),
+      profileImage: imageUrl,
     };
+    
+    const url = "http://localhost:8080/appfreshnest/register";
 
-    console.log(userObj);
-    console.log(userData);
-
-    userData.push(userObj);
-    let str = JSON.stringify(userData);
-    localStorage.setItem("register", str);
-    alert("Success");
-    window.location.href = "./birthday.html?user=" + cryptoValue;
+            axios.post(url, userObj, {
+                headers: {
+                    "Content-Type": "application/json"
+                }
+            })
+            .then(function (response) {
+                // handle success
+                let serverMessage = response.data;
+                console.log(serverMessage);
+              if(serverMessage == "success"){
+                 alert("Success");
+                 window.location.href = "./birthday.html";
+              }
+            })
+            .catch(function (error) {
+                // handle error
+                console.log(error);
+            });
+               
   } catch (error) {
     console.log("Error: " + error.message);
   }
