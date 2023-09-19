@@ -1,6 +1,6 @@
 	console.log("Gallery");
 	function getAllStills() {
-			const url = "http://localhost:8080/appfreshnest/StillGalleryServlet";
+			const url = "http://localhost:8080/appfreshnest/GetAllStillls";
 			axios.get(url)
 			  .then(function (response) {
 			    // handle success
@@ -35,7 +35,11 @@
   } catch (error) {
     console.log("An error occurred while showing the images: ", error);
   }
+}
 
 
-		}
+
+
+		
+	
 		

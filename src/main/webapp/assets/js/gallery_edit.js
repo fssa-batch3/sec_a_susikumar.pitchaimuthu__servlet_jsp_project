@@ -8,6 +8,7 @@
 //  Gets the still from the servlet
 
 function getStillDetails() {
+	
 	const url = "http://localhost:8080/appfreshnest/StillDetailsServlet?stillId=" + stillId;
 			axios.get(url)
 			  .then(function (response) {

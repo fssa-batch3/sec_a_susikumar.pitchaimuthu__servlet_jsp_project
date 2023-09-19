@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gallery edit</title>
+    <link rel="stylesheet" href="../assets/css/gallary-edit.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css"
+    />
+  </head>
+  <body>
+    <heder>
+      <nav>
+        <!-- nav inside div container -->
+
+        <div class="nav-div-container">
+          <div class="nav-inside-div-container">
+            <!-- logo div -->
+            <div class="logo-div">
+              <img
+                class="logo-image"
+                src="../assets/images/logos/bird-logo.png"
+                alt="logo-image"
+              />
+              <link
+                rel="stylesheet"
+                href="../assets/images/logos/bird-logo.png"
+              />
+            </div>
+
+            <!-- profile div container -->
+
+            <div class="profile-name-image-div-container">
+              <!-- profile div -->
+              <div class="image-text">
+                <!-- profile name div -->
+                <div class="profile-naem-div">
+                  <p class="name"></p>
+                </div>
+
+                <!-- profile image div -->
+
+                <div class="profile-div">
+                  <img id="profile-image" src="" alt="profile-image" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </heder>
+    <!-- header end -->
+
+    <!-- section start -->
+
+    <section class="whole-section-container">
+      <!-- section first for image container -->
+
+      <section class="image-option-section-container">
+        <!-- image container div -->
+
+        <div class="image-div-container">
+          <div class="image-div"></div>
+        </div>
+
+        <!-- image option container div -->
+
+        <div class="image-option-div-container">
+          <div class="image-option-next-option-div">
+            <!-- image next previous option -->
+          </div>
+        </div>
+      </section>
+
+      <!-- section for image derails show -->
+
+      <section class="image-details-section-container">
+        <!-- image name and time showing div -->
+
+        <div class="image-details-div-container">
+          <!-- date time showing div -->
+
+          <div class="image-first-details-div">
+            <div><h3>About Still</h3></div>
+            <div class="image-type-details-div">
+              <h4>Sill Name</h4>
+              <p id="image-name"></p>
+            </div>
+
+            <div class="image-type-details-div">
+              <h4>Sill taken time</h4>
+              <p id="image-taken-time"></p>
+            </div>
+            <div class="image-type-details-div">
+              <h4>Sill taken date</h4>
+              <p id="image-taken-date"></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- image file type and image url showing div -->
+        <div></div>
+      </section>
+    </section>
+  </body>
+	<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="../assets/js/profile_user_find.js"></script>
+  <script src="../assets/js/gallery_details.js"></script>
+  <script src="../assets/js/gallery_details_option.js"></script>
+</html>

@@ -1,0 +1,119 @@
+let reelInput = document.querySelector(".reel-input");
+
+reelInput.addEventListener("change", function (event) {
+  try {
+    let file = this.files[0];
+    let reader = new FileReader();
+
+    reader.onload = function (event) {
+      let src = event.target.result;
+
+      let video = document.createElement("video");
+
+      // Wait for the metadata to load
+      video.onloadedmetadata = function () {
+        const duration = video.duration;
+
+        let reelVideoObj = {
+          media_url: src,
+          taleDuration: duration
+        };
+            
+       const url = "http://localhost:8080/appfreshnest/CreateTimeTalesServlet";
+
+            axios.post(url, reelVideoObj, {
+                headers: {
+                    "Content-Type": "application/json"
+                }
+            })
+            .then(function (response) {
+                // handle success
+                let serverMessage = response.data;
+                console.log(serverMessage);
+            })
+            .catch(function (error) {
+                // handle error
+                console.log(error);
+            });
+               
+
+        // Use the reelVideoObj as needed
+        console.log(reelVideoObj);
+      };
+
+      video.src = src;
+    };
+
+    reader.readAsDataURL(file);
+  } catch (error) {
+    console.log("An error occurred while accessing the reel file:", error);
+  }
+});
+
+// Create the user time tale div
+
+  function defaultTimeTalseElementCreation(profileUser) {
+    try {
+      let trendingBirdDivImage = document.createElement("img");
+      trendingBirdDivImage.setAttribute("class", "time-tale-user-profile-image");
+      trendingBirdDivImage.setAttribute("src", profileUser["profileImage"]);
+
+      document.querySelector(".time-tale-user-profile-div").append(trendingBirdDivImage);
+    } catch (error) {
+      console.log("An error occurred while adding the user reel profile:", error);
+    }
+  }
+
+  
+
+// Gets the all time tales of the user
+
+function getAllUserTimeTales(){
+	
+	const url = "http://localhost:8080/appfreshnest/GetUserTimeTalesServlet";
+			axios.get(url)
+			  .then(function (response) {
+			    // handle success
+			    console.log(response.data);
+			    
+			    let timeTales = response.data;
+			    
+			    if(timeTales[0] != null){
+					let reelMember = document.querySelector(".time-tale-user-profile-div");
+                    reelMember.setAttribute("id", timeTales[0]["userId"]);
+                    reelMember.setAttribute("data-user", "profileUser"); 
+                    reelMember.style.border = "2px rgb(108, 156, 180) solid";
+                    reelMember.addEventListener("click", function() {
+                    showProfileUserTimeTale();
+                  });
+				}
+			    
+			  })
+			  .catch(function (error) {
+			    // handle error
+			    console.log(error);
+			  })
+
+}
+getAllUserTimeTales();
+
+
+function showProfileUserTimeTale(){
+	
+const url = "/appfreshnest/GetUserTimeTalesServlet";
+			axios.get(url)
+			  .then(function (response) {
+			    // handle success
+			    console.log(response.data);
+			    const timeTaleResponse = response.data;
+			    
+			    if(timeTaleResponse[0] != null){
+			     // window.location.href = "../pages/reel_showing.html?timeTales=" +timeTaleResponse;
+				}
+			   
+			  })
+			  .catch(function (error) {
+			    // handle error
+			    console.log(error);
+			  }) 
+}

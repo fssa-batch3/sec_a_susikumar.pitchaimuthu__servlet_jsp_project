@@ -1,0 +1,328 @@
+#analytics {
+  background-color: #00baff;
+  border-radius: 10px;
+}
+
+.nav-link:hover {
+  background-color: #cbe7ea;
+  border-radius: 10px;
+}
+.whole-section-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+/* side bar area container */
+
+.side-bar-area-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  width: 240px;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  box-shadow: rgba(17, 17, 26, 0.05) 0px 4px 16px,
+    rgba(17, 17, 26, 0.05) 0px 8px 32px;
+}
+
+.sidebar-inside-div-container {
+  display: flex;
+  width: 95%;
+  flex-direction: column;
+  align-items: center;
+  height: 99%;
+}
+
+.company-logo-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 90%;
+}
+
+.freshnest-logo {
+  width: 10em;
+}
+
+/* main div container */
+
+.main-area-div-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-left: 16em;
+}
+
+.main-inside-div-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  gap: 1.2em;
+}
+
+/* search bar and profile area css */
+
+.searchbar-and-profile-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 3.2em;
+}
+
+.searchbar-profile-inside-div-container {
+  display: flex;
+  align-items: center;
+  width: 98%;
+}
+
+.searchbar-div {
+  display: flex;
+  align-items: center;
+  width: 60%;
+  position: relative;
+}
+
+.search-bar-input {
+  width: 80%;
+  height: 2.5em;
+  outline: none;
+  border: 0.7px solid #ccc;
+  border-radius: 15px;
+  padding-left: 50px;
+}
+
+.search-bar-input:focus {
+  border-color: #5dace9;
+  box-shadow: 0 0 0 0.2rem rgba(67, 155, 213, 0.25);
+}
+
+.bi-search {
+  position: absolute;
+  left: 3%;
+  top: 14%;
+}
+
+/* other details */
+
+.other-details-div-container {
+  display: flex;
+  align-items: center;
+  width: 40%;
+  justify-content: flex-end;
+}
+
+.other-inside-div-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.admin-image {
+  border-radius: 50%;
+  width: 39px;
+  height: 31px;
+}
+
+/* user details card container */
+
+.after-search-bar-details-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+}
+
+.user-details-card-div-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  flex-direction: column;
+  gap: 2em;
+}
+
+.user-inside-details-card-div {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+.total-users-card-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 21.3em;
+  border-radius: 6px;
+}
+
+.total-user-inside-card-div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  padding: 17px 12px;
+  width: 100%;
+  gap: 3em;
+}
+
+.total-user-card {
+  background-color: #5dace9;
+}
+
+.this-month-card {
+  background-color: green;
+}
+
+.page-viewers-card {
+  background-color: pink;
+}
+
+.card-icon-and-button-div {
+  display: flex;
+  align-items: center;
+  width: 83%;
+  justify-content: space-between;
+}
+
+.user-font-button {
+  border: none;
+  background-color: #2787d1;
+  border-radius: 5px;
+}
+
+.bi-people-fill {
+  padding: 8px 12px;
+  font-size: 18px;
+}
+
+.view-button {
+  border-radius: 5px;
+  border: 1.3px solid #fff;
+  background-color: transparent;
+  color: #fff;
+  padding: 2px 11px;
+}
+
+.card-details-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  gap: 7px;
+}
+
+.purpose-div {
+  display: flex;
+  align-items: center;
+  width: 99%;
+}
+
+.purpose-para {
+  color: #fff;
+}
+
+.card-details-and-purpose-div {
+  display: flex;
+  width: 90%;
+  gap: 10%;
+  justify-content: space-between;
+}
+
+.image-and-count-div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.count-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.user-short-image-div,
+.total-user-short-image-div {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.added-user-image {
+  width: 1.8em;
+  height: 1.3em;
+  border-radius: 50%;
+}
+
+.increase-percentage-para-div {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.percentage-para {
+  color: #fff;
+}
+
+.chart-div-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 30em;
+  gap: 10%;
+}
+
+.chart-inside-div-container {
+  display: flex;
+  flex-direction: column;
+  width: 99%;
+  gap: 2em;
+}
+
+.main-chart-div-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 8%;
+}
+
+.user-growth-div {
+  display: flex;
+  width: 50%;
+  box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px;
+  height: 22em;
+  justify-content: center;
+  align-items: center;
+  border-radius: 6px;
+}
+
+.user-growth-inside-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 88%;
+  height: 60%;
+}
+
+.total-growth-div-container {
+  display: flex;
+  width: 40%;
+  align-items: center;
+  box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px;
+  height: 22em;
+  justify-content: center;
+  border-radius: 6px;
+}
+
+.total-growth-div {
+  display: flex;
+  align-items: center;
+  width: 73%;
+  height: 60%;
+}

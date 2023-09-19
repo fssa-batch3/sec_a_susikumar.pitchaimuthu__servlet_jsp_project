@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Gallery crop</title>
+<link rel="stylesheet" href="../assets/css/gallery-crop.css" />
+
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css" />
+
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/cropperjs@1.5.12/dist/cropper.min.css" />
+<script
+	src="https://cdn.jsdelivr.net/npm/cropperjs@1.5.12/dist/cropper.min.js"></script>
+</head>
+<body>
+	<!-- Nav bar -->
+
+	<nav>
+		<!-- nav inside div container -->
+
+		<div class="nav-div-container">
+			<div class="nav-inside-div-container">
+				<!-- logo div -->
+				<div class="logo-div">
+					<img class="logo-image" src="../assets/images/logos/bird-logo.png"
+						alt="logo-image" />
+					<link rel="stylesheet" href="../assets/images/logos/bird-logo.png" />
+				</div>
+
+				<!-- profile div container -->
+
+				<div class="profile-name-image-div-container">
+					<!-- profile div -->
+					<div class="image-text">
+						<!-- profile name div -->
+						<div class="profile-naem-div">
+							<p class="name"></p>
+						</div>
+
+						<!-- profile image div -->
+
+						<div class="profile-div">
+							<img id="profile-image" src="" alt="profile-image" />
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</nav>
+	<!-- header end -->
+
+	<section class="whole-section-container">
+		<!-- side bar div -->
+
+		<div class="side-bar-div-container">
+			<!-- side bar inside div -->
+
+			<div class="side-bar-option-div">
+				<!-- inside options -->
+
+				<div class="crop-div-container" onclick="clickAdjustment()">
+					<div class="crop-option-div">
+						<i class="bi bi-crop"></i>
+						<p>Adjustment</p>
+					</div>
+
+					<div>
+						<i class="bi bi-arrow-right"></i>
+					</div>
+				</div>
+
+				<div class="crop-div-container">
+					<div class="emoji-edit-div">
+						<i class="bi bi-emoji-heart-eyes"></i>
+						<p>Emoji</p>
+					</div>
+					<div>
+						<i class="bi bi-arrow-right"></i>
+					</div>
+
+					<!-- sticker div -->
+				</div>
+
+				<div class="crop-div-container">
+					<div class="sticker-edit-div">
+						<i class="bi bi-reddit"></i>
+
+						<p>Stickers</p>
+					</div>
+					<div>
+						<i class="bi bi-arrow-right"></i>
+					</div>
+				</div>
+
+				<div class="crop-div-container" onclick="addFilter()">
+					<div class="filters-edit-div">
+						<i class="bi bi-emoji-laughing"></i>
+						<p>Filters</p>
+					</div>
+					<div>
+						<i class="bi bi-arrow-right"></i>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- image and option div -->
+
+		<div class="image-change-option-div">
+			<!-- image div -->
+			<div class="image-div-container">
+				<div class="image-div"></div>
+			</div>
+
+			<!-- image changing option div -->
+
+			<div class="image-option-next-option-div">
+				<button class="option-div right-div">
+					<i class="bi bi-check-circle-fill"></i>
+					<p>Right</p>
+				</button>
+				<button class="option-div wrong-div">
+					<i class="bi bi-skip-forward-btn"></i>
+					<p>No</p>
+				</button>
+			</div>
+		</div>
+
+		<!-- event listener dynamic element  -->
+
+		<div class="clicking-option-div-container">
+			<div class="clicking-option-inside-div">
+				<!-- option div -->
+
+				<div class="option-name-div">
+					<h3 class="name-h3">Adjustment options</h3>
+				</div>
+
+				<div class="all-option-div-container">
+					<!-- crop button -->
+					<div class="crop-image-div">
+						<p>Crop image</p>
+						<button id="crop-button">
+							<i class="bi bi-crop"></i>
+						</button>
+					</div>
+
+					<!-- rotate button dvi -->
+
+					<div class="rotate-image-div">
+						<div class="rotate-name-div">
+							<p>Rotate Image</p>
+						</div>
+						<div class="rotate-button-div">
+							<button>
+								<i class="bi bi-arrow-clockwise"></i>
+							</button>
+
+							<button>
+								<i class="bi bi-arrow-counterclockwise"></i>
+							</button>
+						</div>
+					</div>
+
+					<!-- erase the some content -->
+
+					<div class="erase-div">
+						<p>Delete</p>
+
+						<button class="delete-button">
+							<i class="bi bi-trash"></i>
+						</button>
+					</div>
+
+					<!-- edit option div -->
+
+					<div class="random-filter-div" onclick="beauty()">
+						<p>Make beauty</p>
+						<i class="bi bi-caret-down"></i>
+					</div>
+
+					<!-- contrast and brightness option -->
+
+					<div class="beauty-div-container">
+						<div class="brightness-div">
+							<p>Brightness</p>
+							<input id="brightness-range" type="range" min="0" max="200"
+								value="100" />
+						</div>
+
+						<div class="contrast-div">
+							<p>Contrast</p>
+
+							<input id="contrast-range" type="range" min="0" max="200"
+								value="100" />
+						</div>
+
+						<div class="contrast-div">
+							<p>Saturation</p>
+
+							<input id="contrast-range" type="range" min="0" max="200"
+								value="100" />
+						</div>
+					</div>
+
+					<div class="random-filter-div-container" onclick="filter()">
+						<p>Fill some color</p>
+						<i class="bi bi-caret-down"></i>
+					</div>
+
+					<!-- next div -->
+
+					<div class="normal-filter-option-div-container">
+						<!-- input div -->
+
+						<div class="input-div">
+							<i class="bi bi-search-heart"></i> <input type="text" />
+						</div>
+
+						<!-- filter showing option div -->
+
+						<div class="filter-showing-div-container">
+							<div class="filter-inside-div"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- filter showing and hiding div -->
+
+		<div class="clicking-filter-showing-div-container">
+			<div class="filter-inside-div-container">
+				<!-- head and input container -->
+				<div class="filter-inside-head-div">
+					<div class="input-div">
+						<i class="bi bi-search-heart"></i> <input type="text" />
+					</div>
+					<div>
+						<p>Choose your filter</p>
+					</div>
+				</div>
+
+				<!-- all filter div contaiiner -->
+
+				<div class="filter-div-container">
+					<div class="filter-div-showing-container"></div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- sectin start -->
+
+	<!-- script -->
+	<script src="../assets/js/profile_user_find.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+	<script src="https://momentjs.com/downloads/moment.js"
+		integrity="sha384-mFSRsfjTuXtihSLc/J0LxrFE1H9WRRllwGM6pxxyiYACkVdxRG82d3DQVlq8yXZM"
+		crossorigin="anonymous"></script>
+	<script src="../assets/js/gallery_edit.js"></script>
+
+	<script>
+      let cropButton = document.getElementById("crop-button");
+
+      let cropper;
+      function cropButtonClickHandler() {
+        // Get the cropped image data
+        const croppingImage = document.querySelector(".user-still");
+        cropper = new Cropper(croppingImage, {
+          aspectRatio: 16 / 9,
+          crop(event) {},
+        });
+      }
+
+      cropButton.addEventListener("click", cropButtonClickHandler);
+
+      // crop and wrong showing deciding function created
+
+      let wrongButton = document.querySelector(".wrong-div");
+      console.log(wrongButton);
+
+      function wrongButtonClickHandler() {
+        console.log("susi");
+        cropButton.removeEventListener("click", cropButtonClickHandler);
+      }
+
+      wrongButton.addEventListener("click", wrongButtonClickHandler);
+
+      // Save the images
+      let rightButton = document.querySelector(".right-div");
+
+      rightButton.addEventListener("click", (e) => {
+        e.preventDefault();
+
+        let croppedImage = cropper.getCroppedCanvas().toDataURL("image/png");
+        console.log(croppedImage);
+
+        let imageName = "image" + Date.now();
+        let croppedObject = {
+          parent_id : stillId,	
+          stillName: imageName,
+          stillUrl: croppedImage,
+        };
+
+        const url = "http://localhost:8080/appfreshnest/StillEditServlet";
+
+        axios.post(url, croppedObject, {
+            headers: {
+                "Content-Type": "application/json"
+            }
+        })
+        .then(function (response) {
+            // handle success
+            console.log(response.data);
+          const serverMsg = response.data;
+            if(serverMsg.trim() === 'success') {
+		    	window.location.href="./snap-gallery.html";
+		    }  
+		    
+            
+        })
+        .catch(function (error) {
+            // handle error
+            console.log(error);
+        });
+    
+      });
+    </script>
+</body>
+</html>

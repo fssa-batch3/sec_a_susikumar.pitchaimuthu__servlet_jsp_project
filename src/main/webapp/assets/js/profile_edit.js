@@ -5,7 +5,6 @@ changes.addEventListener("submit", function (e) {
     let fname = document.getElementById("firstName").value.trim();
     let lname = document.getElementById("lastName").value.trim();
     let u1name = document.getElementById("userName").value.trim();
-    let gmail = document.getElementById("email").value.trim();
     let mobile = document.getElementById("phone").value;
     let old = document.getElementById("dateOfBirth").value.trim();
     let editBio = document.getElementById("bio").value.trim();
@@ -19,31 +18,41 @@ changes.addEventListener("submit", function (e) {
       }
     }
 
-    console.log(mobile);
-
     let editObj = {
       firstName: fname,
       lastName: lname,
       userName: u1name,
       mobileNumber: mobile,
-      age: old,
       city: editCity,
       userTheme: editBio,
       userGender: currentGender,
+      dob: old
     };
 
-    if (findUser["email"] !== gmail) {
-      alert("You can't change your email");
-      return;
-    } else {
-      let objestAssign = Object.assign(findUser, editObj);
-      console.log(objestAssign);
+     const url = "http://localhost:8080/appfreshnest/ProfileDetailsUpdateServlet";
 
-      info[userIndex] = objestAssign;
-
-      localStorage.setItem("register", JSON.stringify(info));
-      alert("Your data successfully changed");
-    }
+            axios.post(url, editObj, {
+                headers: {
+                    "Content-Type": "application/json"
+                }
+            })
+            .then(function (response) {
+                // handle success
+                console.log(response.data);
+                let ServerMessage = response.data;
+                
+                if(ServerMessage == "success"){
+                window.location.href = "../pages/profile.html";
+                }
+            })
+            .catch(function (error) {
+                // handle error
+                console.log(error);
+            });
+        
+    
+   
+    
   } catch (error) {
     console.log("An error occurred while save profile edit data", error);
   }
@@ -55,7 +64,7 @@ let cancelButton = document.querySelector("#cancel-button");
 
 cancelButton.addEventListener("click", () => {
   try {
-    window.location.href = "../pages/profile.html?user=" + findUser["userId"];
+    window.location.href = "../pages/profile.html";
   } catch (error) {
     console.log("An error occurred while cancel edit :", error);
   }

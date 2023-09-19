@@ -1,28 +1,25 @@
 // Creating a function to get the user list form the database
 
-function getAllUsers(){
-	
-	const url = "http://localhost:8080/appfreshnest/GetAllUserListServlet";
-			axios.get(url)
-			  .then(function (response) {
-			    // handle success
-			    console.log(response.data);
-			    const usersArray = response.data;
-			    ShowListOfUsers(usersArray);
-			  })
-			  .catch(function (error) {
-			    // handle error
-			    console.log(error);
-			  })
+function getAllUsers() {
+  const url = "http://localhost:8080/appfreshnest/GetAllUserList";
+  axios
+    .get(url)
+    .then(function (response) {
+      // handle success
+      console.log(response.data);
+      const usersArray = response.data;
+      ShowListOfUsers(usersArray);
+    })
+    .catch(function (error) {
+      // handle error
+      console.log(error);
+    });
 }
-
 
 getAllUsers();
 
-
-function ShowListOfUsers(usersArray){
-	
-	 for (let elseFillData of usersArray) {
+function ShowListOfUsers(usersArray) {
+  for (let elseFillData of usersArray) {
     // Code to create user cards
     let userCardContainer = document.createElement("div");
     userCardContainer.setAttribute("class", "user-card-container");
@@ -84,54 +81,44 @@ function ShowListOfUsers(usersArray){
   }
 }
 
-
-
 // Creating a function get the user details from the database
 
-function showUser(userId) {
+async function showUser(userId) {
   try {
-
     // getting element of creating element to remove
 
     let removingElement = document.querySelector(
       ".details-inside-div-container"
     );
 
-      let userObject = {
-		  userId : userId
-	  }
+    let userObject = {
+      userId: userId,
+    };
     if (removingElement !== null) {
       document.querySelector(".details-inside-div-container").remove();
     }
-    
-     const url = "http://localhost:8080/appfreshnest/HomePageUserDetailsGets";
 
-        axios.post(url, userObject, {
-            headers: {
-                "Content-Type": "application/json"
-            }
-        })
-        .then(function (response) {
-            // handle success
-            console.log(response.data);
-            const userDetails = response.data;
+    const url = "http://localhost:8080/appfreshnest/HomePageUserDetail";
 
-		    userCardDetailsShow(userDetails);
-        })
-        .catch(function (error) {
-            // handle error
-            console.log(error);
-        });
-  
+    const response = await axios.post(url, userObject, {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+
+    // handle success
+    console.log(response.data);
+    const userDetails = response.data;
+
+    userCardDetailsShow(userDetails);
   } catch (error) {
-    console.log("Error:", error);
+    console.error("Error:", error);
   }
 }
 
-function userCardDetailsShow(findClickingUser){
-	
-	try {
-		  let detailsInsideDivContainer = document.createElement("div");
+async function userCardDetailsShow(findClickingUser) {
+  try {
+    let detailsInsideDivContainer = document.createElement("div");
     detailsInsideDivContainer.setAttribute(
       "class",
       "details-inside-div-container"
@@ -185,21 +172,21 @@ function userCardDetailsShow(findClickingUser){
     showingPara.innerHTML = findClickingUser["userTheme"];
     contentInsideDiv.append(showingPara);
 
-    // Creating for loop to get the this friends data
+    // Creating for loop to get this friend's data
 
-    let buttonFollow = false;
+    const isFollowing = await checkUserFollowingOrNot(findClickingUser.userId);
 
-    if (buttonFollow) {
+    if (isFollowing) {
       let followingButton = document.createElement("button");
       followingButton.setAttribute("class", "following-button");
-      followingButton.setAttribute("id", findClickingUser["userId"]);
+      followingButton.setAttribute("id", findClickingUser.userId);
       followingButton.setAttribute("onclick", "removeFollow(this.id)");
       followingButton.innerHTML = "Following";
       contentInsideDiv.append(followingButton);
     } else {
       let followButton = document.createElement("button");
       followButton.setAttribute("class", "follow-button");
-      followButton.setAttribute("id", findClickingUser["userId"]);
+      followButton.setAttribute("id", findClickingUser.userId);
       followButton.setAttribute("onclick", "getFollow(this.id)");
       followButton.innerHTML = "Follow";
       contentInsideDiv.append(followButton);
@@ -208,10 +195,23 @@ function userCardDetailsShow(findClickingUser){
     document
       .querySelector(".details-showing-container")
       .append(detailsInsideDivContainer);
-	}catch (error) {
+  } catch (error) {
     console.log("Error:", error);
   }
-	
+}
+
+async function checkUserFollowingOrNot(userId) {
+  try {
+    const url =
+      "http://localhost:8080/appfreshnest/CheckUserFriendsServlet?userId=" +
+      userId;
+    const response = await axios.get(url);
+    const serverMessage = response.data;
+    return serverMessage === "follow";
+  } catch (error) {
+    console.error("Error:", error);
+    return false; // Default to not following in case of an error
+  }
 }
 
 function removediv() {

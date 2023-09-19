@@ -72,6 +72,10 @@ getStillDetails();
     editButton.append(edit_p);
 
     // like button
+    
+    let checkFavourite = still["is_favourite"];
+    
+    if(checkFavourite){
 
     let likeButton = document.createElement("button");
     likeButton.setAttribute("id", still["stillId"]);
@@ -86,6 +90,22 @@ getStillDetails();
     let like_p = document.createElement("p");
     like_p.innerHTML = "Like";
     likeButton.append(like_p);
+    }else {
+		
+    let likeButton = document.createElement("button");
+    likeButton.setAttribute("id", still["stillId"]);
+    likeButton.setAttribute("class", "option-div like-option");
+    likeButton.setAttribute("onclick" , "setLike()");
+    imageEditDiv.append(likeButton);
+
+    let like_i = document.createElement("i");
+    like_i.setAttribute("class", "bi bi-heart");
+    likeButton.append(like_i);
+
+    let like_p = document.createElement("p");
+    like_p.innerHTML = "Like";
+    likeButton.append(like_p);
+	}
 
     // share button
 

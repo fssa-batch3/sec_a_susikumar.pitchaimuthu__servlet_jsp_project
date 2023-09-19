@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reel showing</title>
+
+    <!-- css links -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+    />
+
+    <link rel="stylesheet" href="../assets/css/reel_showing.css" />
+  </head>
+  <body>
+    <!-- script files -->
+
+    <div class="reel-whole-div-container">
+      <!-- div for cotaining all reel div -->
+
+      <div class="reel-and-arrow-div-container">
+        <div class="left-arrow-div-container">
+          <i class="bi bi-chevron-double-left icon"></i>
+        </div>
+
+        <!-- reel container -->
+
+        <div class="reel-div-container">
+          <div class="reel-inside-div-container">
+            <!-- reeling person name div -->
+            <div class="profile-showing-whole-container">
+              <!-- profile div -->
+
+              <dic class="reel-name-div-container">
+                <div class="profile-div"></div>
+
+                <!-- div for show the rooling person name -->
+
+                <div class="user-name-div"></div>
+              </dic>
+
+              <div class="reel-delete-div"></div>
+            </div>
+
+            <!-- reel showing div -->
+
+            <div class="reel-showing-container">
+              <div class="range-input-div"></div>
+              <div class="reel-inside-div"></div>
+            </div>
+
+            <!-- reel option showing our reaction -->
+
+            <div class="reel-option-div-container">
+              <div class="reel-inside-option-div">
+                <div class="input-emoji-div">
+                  <i class="bi bi-emoji-smile"></i>
+
+                  <input
+                    type="text"
+                    id="input-for-reel-reaction"
+                    placeholder="Type your message..."
+                  />
+                </div>
+                <div class="heart-send-div">
+                  <i class="bi bi-send"></i>
+                  <i class="bi bi-heart"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- right side div container -->
+
+        <div class="right-side-arrow-container">
+          <i class="bi bi-chevron-double-right icon"></i>
+        </div>
+      </div>
+    </div>
+    <script src="../assets/js/profile_user_find.js"></script>
+    <script>
+      let profileImg = document.createElement("img");
+      profileImg.setAttribute("src", findUser["avatarUrl"]);
+      profileImg.setAttribute("class", "profile-image");
+      document.querySelector(".profile-div").append(profileImg);
+
+      let nameFind = document.createElement("p");
+      nameFind.innerHTML = findUser["userName"];
+      document.querySelector(".user-name-div").append(nameFind);
+    </script>
+
+    <script
+      src="https://momentjs.com/downloads/moment.js"
+      integrity="sha384-mFSRsfjTuXtihSLc/J0LxrFE1H9WRRllwGM6pxxyiYACkVdxRG82d3DQVlq8yXZM"
+      crossorigin="anonymous"
+    ></script>
+    <script src="../assets/js/reel_showing.js"></script>
+  </body>
+</html>

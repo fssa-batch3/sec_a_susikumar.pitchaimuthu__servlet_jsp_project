@@ -36,7 +36,8 @@ birthdayForm.addEventListener("submit", (event) => {
     let ageInYears = ageInMilliseconds / 1000 / 60 / 60 / 24 / 365;
 
     if (ageInYears <= 18) {
-      alert("Your should be more than 18");
+		let serverMessage = "Age should be more than 18";
+       errorMessageElementCreation(serverMessage);
       return;
     }
 
@@ -57,7 +58,7 @@ birthdayForm.addEventListener("submit", (event) => {
     console.log(birthDayObject);
     
     
-     const url = "http://localhost:8080/appfreshnest/updateBirthday";
+     const url = "http://localhost:8080/appfreshnest/updateUserBirthdayDetails";
 
             axios.post(url, birthDayObject, {
                 headers: {
@@ -71,7 +72,10 @@ birthdayForm.addEventListener("submit", (event) => {
               if(serverMessage == "success"){
                  alert("Birthday updated successfully");
                  window.location.href = "./login.html";
-              }
+              }else {
+				  errorMessageElementCreation(serverMessage);
+			  }
+              
             })
             .catch(function (error) {
                 // handle error
@@ -82,3 +86,25 @@ birthdayForm.addEventListener("submit", (event) => {
     console.log("Error: " + error.message);
   }
 });
+
+function errorMessageElementCreation(serverMessage){
+	  const icon = document.createElement('i');
+                icon.className = 'bi bi-exclamation-circle-fill error-icon';
+                icon.setAttribute('aria-hidden', 'true');
+
+              // Create the <p> element with class and text content
+               const paragraph = document.createElement('p');
+               paragraph.className = 'error-para';
+               paragraph.textContent = serverMessage;
+
+               let parent = document.querySelector(".error-message-div");
+
+              // Remove previous error message elements
+              while (parent.firstChild) {
+                parent.removeChild(parent.firstChild);
+              }
+
+              // Append the new error message elements
+              parent.appendChild(icon);
+              parent.appendChild(paragraph);
+	  }

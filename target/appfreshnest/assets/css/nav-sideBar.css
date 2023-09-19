@@ -1,0 +1,180 @@
+/* nav bar */
+
+nav {
+  display: flex;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 4.5em;
+  background-color: #ecf3ff;
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
+    rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+}
+
+/* logo div */
+
+.logo-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+}
+
+.logo-image {
+  width: 11.23em;
+}
+
+/* link container */
+
+.link-container {
+  display: flex;
+  align-items: center;
+  flex: 3;
+}
+
+.link-container ul {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  list-style-type: none;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.link-container ul li {
+  cursor: pointer;
+  color: #1c1f64;
+}
+
+/* input feild */
+
+.input-globe-container {
+  display: flex;
+  align-items: center;
+  flex: 1.5;
+  gap: 2em;
+}
+
+/* .form {
+  position: relative;
+  width: 243px;
+}
+
+.form .fa-search {
+  position: absolute;
+  top: 8px;
+  left: 10px;
+  color: #9ca3af;
+}
+
+.form span {
+  position: absolute;
+  right: 17px;
+  top: 8px;
+  padding: 2px;
+  border-left: 1px solid #d1d5db;
+}
+
+.left-pan {
+  padding-left: 7px;
+}
+
+.left-pan i {
+  padding-left: 10px;
+}
+
+.form-input {
+  height: 30px;
+  text-indent: 33px;
+  border-radius: 5px;
+  width: 232px;
+  outline: none;
+  border: 1px solid grey;
+}
+
+.form-input:focus {
+  box-shadow: none;
+  border: none;
+}
+
+.fa-globe {
+  font-size: 1.42em;
+  cursor: pointer;
+} */
+
+/* chat area */
+
+.side-bar {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 4.53em;
+  bottom: 0;
+  width: 5em;
+  background-color: #f35369;
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
+    rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+}
+
+.side-bar-profile-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #e5e4e2;
+  width: 2.5em;
+  height: 2.4em;
+  border-radius: 2em;
+}
+
+/* user image */
+
+#user-image {
+  width: 2em;
+  height: 1.9em;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.chat-profile-area-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  width: 4em;
+  align-items: center;
+  margin-top: 13px;
+}
+
+.side-bar-control-div {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  align-items: center;
+}
+
+/* fa fa icon */
+
+.bi-house,
+.fa-at,
+.fa-message,
+.fa-camera,
+.fa-battle-net,
+.bi-bell,
+.fa-circle-user,
+.bi-gear,
+.bi-box-arrow-left {
+  font-size: 1.5em;
+  cursor: pointer;
+}
+
+/* log out container */
+
+.log-out-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bi-box-arrow-left {
+  font-size: 1.4em;
+}

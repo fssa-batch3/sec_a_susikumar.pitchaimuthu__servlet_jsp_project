@@ -1,0 +1,612 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
+}
+
+.whole-section-div-container {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+.background-image-and-card-div-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.background-div {
+  background-image: linear-gradient(#000000, #923cb5);
+  height: 350px;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.top-content-div {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: white;
+}
+
+.user-profile-div {
+  display: flex;
+  margin-left: 2em;
+}
+
+.top-user-div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-right: 2em;
+}
+
+.top-user-div-image {
+  width: 30px;
+  border-radius: 20px;
+}
+
+/* user profile and last activity css */
+
+.user-last-activity-and-profile-div-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.user-profile-last-activity-inside-container {
+  display: flex;
+  width: 98%;
+  justify-content: space-between;
+}
+
+/* use last activity div container */
+
+.user-last-activity-showing-div-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30em;
+}
+
+.user-last-acitivty-inside-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 3em;
+  height: 29em;
+}
+
+.activity-head-div {
+  display: flex;
+  width: 95%;
+  gap: 3em;
+  align-items: center;
+}
+
+.suggestion-head {
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  height: 37px;
+  color: #fff;
+  font-size: 17px;
+  background-image: linear-gradient(to right, #25aae1, #4481eb);
+  box-shadow: 0 4px 15px 0 rgba(65, 132, 234, 0.75);
+  width: 13em;
+}
+
+.activity-head {
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  height: 37px;
+  color: #fff;
+  font-size: 17px;
+  background-image: linear-gradient(to right, #25aae1, #b344eb);
+  box-shadow: 0 4px 15px 0 rgba(65, 132, 234, 0.75);
+  width: 13em;
+}
+
+.user-last-activity-showing-inside-div {
+  display: flex;
+  align-items: center;
+  width: auto;
+}
+
+.card-inside-control-div {
+  display: flex;
+  width: 850px;
+  overflow-x: scroll;
+  gap: 1.4em;
+  height: 370px;
+  align-items: center;
+}
+
+.card-inside-control-div::-webkit-scrollbar {
+  display: none;
+}
+
+/* profile page card for the activity */
+
+.card-div-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px,
+    rgba(17, 17, 26, 0.1) 0px 0px 8px;
+  height: 340px;
+  margin-left: 1.3em;
+}
+
+.card-inside-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 12em;
+  padding: 13px;
+  align-items: center;
+  gap: 2em;
+}
+
+.user-activity-image-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 8em;
+  height: 7em;
+  border: 1px solid rgb(197, 191, 191);
+  border-radius: 7px;
+}
+
+.activity-image {
+  width: 7.5em;
+  height: 6.5em;
+  border-radius: 7px;
+}
+
+.user-activity-name-div {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  align-items: center;
+}
+
+.user-name-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.user-name {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.user-theme-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.user-theme {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+/* profile */
+
+.profile-and-content-div {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  margin: 5em 0em 0em 2em;
+}
+
+/* our static bio div */
+
+.our-static-bio-div {
+  display: flex;
+  flex-direction: column;
+  color: white;
+}
+
+.profile-card-div {
+  display: flex;
+  background-color: #fff;
+  width: 450px;
+  border-radius: 8px;
+  position: absolute;
+  right: 5%;
+  top: 11%;
+  height: 760px;
+  box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px,
+    rgba(17, 17, 26, 0.1) 0px 0px 8px;
+}
+
+.profile-card-content-div {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+  gap: 2em;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-connect-message-div {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+/* profile image css */
+
+.profile-image-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid rgb(250, 228, 250);
+  border-radius: 50%;
+  height: 14em;
+  width: 226px;
+}
+
+#profile-image {
+  border-radius: 50%;
+  cursor: pointer;
+  position: relative;
+  height: 13em;
+  width: 210px;
+}
+
+.profile-option-div {
+  position: absolute;
+  top: 32%;
+  background-color: #fff;
+  transition: 0.5s ease ease;
+  box-shadow: 0 4px 15px 0 rgba(65, 132, 234, 0.75);
+  border-radius: 6px;
+  width: 8em;
+}
+
+.profile-option-inside-div {
+  display: flex;
+  align-items: center;
+  gap: 0.6em;
+  flex-direction: column;
+  padding: 4px 7px;
+}
+
+.choose-photo {
+  cursor: pointer;
+  font-size: 90%;
+}
+.choose-photo:hover {
+  color: #fff;
+}
+
+#file {
+  display: none;
+}
+
+.change-profile-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 99%;
+  padding: 2px 4px;
+}
+
+.change-profile-div:hover {
+  background-color: #25aae1;
+  border-radius: 4px;
+}
+
+.default-button-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 99%;
+  padding: 2px 4px;
+}
+
+.default-button-div:hover {
+  background-color: #25aae1;
+  border-radius: 4px;
+}
+
+.default-button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.default-button:hover {
+  color: #fff;
+}
+/* profile- button */
+
+.connect-button {
+  border: none;
+  height: 2em;
+  width: 6em;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: #4481eb;
+}
+
+/* user experience in our website */
+
+.user-experience-and-details-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.user-experience-inside-div-container {
+  display: flex;
+  flex-direction: column;
+  width: 96%;
+  gap: 2.4em;
+}
+
+.user-experience-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.user-experience-inside-div {
+  display: flex;
+  align-items: center;
+  gap: 2em;
+}
+
+.friends-div,
+.photos-div,
+.videos-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+}
+
+.user-h2 {
+  margin: 0;
+}
+
+.user-para {
+  margin: 0;
+}
+
+/* user details div */
+
+.user-details-div-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.details-head-div {
+  display: flex;
+  align-items: center;
+}
+
+.user-details-inside-div {
+  display: flex;
+  flex-direction: column;
+}
+
+.each-details-div {
+  display: flex;
+  justify-content: space-between;
+  width: 96%;
+}
+
+.details-option-head-div {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 30%;
+}
+
+.details-div {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 45%;
+  flex-wrap: wrap;
+}
+
+/* clicking data showing div */
+
+.clicking-card-whole-container {
+  width: 29em;
+  background-color: azure;
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: none;
+  bottom: 0;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
+}
+
+.clicking-inside-div-container {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  height: 870px;
+  transition: width 2s;
+}
+
+/* remove button div */
+
+.click-details-remove-div {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.remove-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.bi-x-circle {
+  font-size: 1.5em;
+}
+
+.clicking-inside-div {
+  display: flex;
+  flex-direction: column;
+  width: 94%;
+  height: 830px;
+  gap: 2em;
+}
+
+/* card image and details div */
+
+.card-image-and-details-div-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.image-and-details-inside-div {
+  display: flex;
+  flex-direction: column;
+  width: 99%;
+  align-items: center;
+  gap: 1.3em;
+}
+
+.card-image-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 6.5em;
+  height: 5.5em;
+  border: 1px solid violet;
+  border-radius: 50%;
+}
+
+.card-image {
+  width: 6em;
+  height: 5em;
+  border-radius: 50%;
+}
+
+.card-details-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6em;
+}
+
+/* suggestion div */
+.suggestion-head-and-details-div {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.suggestion-inside-div {
+  display: flex;
+  flex-direction: column;
+  width: 99%;
+}
+
+.suggestion-head-div {
+  display: flex;
+  align-items: center;
+}
+
+/* suggestion */
+
+.user-suggestion-div-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.user-suggestion-inside-div {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 1.3em;
+  height: 470px;
+  overflow-y: scroll;
+}
+.user-suggestion-inside-div::-webkit-scrollbar {
+  display: none;
+}
+
+.suggestion-div-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.suggestion-side-inside-div {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 1.2em;
+}
+
+.suggestion-image-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid rgb(216, 232, 216);
+  width: 4em;
+  height: 3.5em;
+  border-radius: 50%;
+}
+
+.suggested-image {
+  width: 3.5em;
+  height: 3em;
+  border-radius: 50%;
+}
+
+.user-name-div-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7em;
+}
+
+.suggestion-name,
+.suggestion-theme {
+  margin: 0;
+  padding: 0;
+}
+
+.follow-button-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

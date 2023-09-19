@@ -8,6 +8,7 @@ let chat = document.querySelector("#chat");
 let invite = document.querySelector("#invite");
 let setting = document.querySelector("#setting");
 let logOut = document.querySelector(".logOut");
+let notification = document.querySelector("#notification");
 
 // home page direction location
 
@@ -18,6 +19,17 @@ home.addEventListener("click", () => {
     console.log("An error occurred while home page redirection :", error);
   }
 });
+
+// Notification page redirection
+
+notification.addEventListener("click", () => {
+  try {
+    window.location.href = "../pages/notification.html";
+  } catch (error) {
+    console.log("An error occurred while notification page redirection :", error);
+  }
+});
+
 
 // camera page direction location
 
@@ -64,17 +76,43 @@ chat.addEventListener("click", () => {
 logOut.addEventListener("click", () => {
   try {
 
-     let message = confirm("Are sure to log out your account in Fresh Nest?");
+     let message = confirm("Are sure to log out your account in the Fresh Nest?");
 
       if (message !== true) {
         return;
       } else {
-        logOutValue.splice(logOutValue[0], 1);
-        localStorage.setItem("user_data", JSON.stringify(logOutValue));
-        window.location.href = "../index.html";
+		  const url = "http://localhost:8080/freshnest/LogoutServlet";
+			axios.get(url)
+			  .then(function (response) {
+			    // handle success
+			    console.log(response.data);
+			    const logOutResponse = response.data;
+			    
+			    if(logOutResponse == "success"){					
+                    window.location.href = "/appfreshnest/index.htmll";
+				}
+			    
+			  })
+			  .catch(function (error) {
+			    // handle error
+			    console.log(error);
+			  })      
       }
     
   } catch (error) {
     console.log("An error occurred while logout the account :", error);
   }
 });
+
+
+// Profile page redirection redirection 
+let profile = document.querySelector(".image");
+
+profile.addEventListener("click", () => {
+  try {
+    window.location.href = "../pages/profile.html";
+  } catch (error) {
+    console.log(("An error occurred while redirect the profile page :", error));
+  }
+});
+

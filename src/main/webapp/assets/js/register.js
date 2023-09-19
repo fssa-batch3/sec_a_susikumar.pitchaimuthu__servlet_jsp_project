@@ -68,7 +68,7 @@ signUpFrom.addEventListener("submit", (event) => {
       profileImage: imageUrl,
     };
     
-    const url = "http://localhost:8080/appfreshnest/register";
+    const url = "http://localhost:8080/appfreshnest/UserRegister";
 
             axios.post(url, userObj, {
                 headers: {
@@ -82,7 +82,29 @@ signUpFrom.addEventListener("submit", (event) => {
               if(serverMessage == "success"){
                  alert("Success");
                  window.location.href = "./birthday.html";
+              }else {
+				const icon = document.createElement('i');
+                icon.className = 'bi bi-exclamation-circle-fill error-icon';
+                icon.setAttribute('aria-hidden', 'true');
+
+              // Create the <p> element with class and text content
+               const paragraph = document.createElement('p');
+               paragraph.className = 'error-para';
+               paragraph.textContent = serverMessage;
+
+               let parent = document.querySelector(".error-message-div");
+
+              // Remove previous error message elements
+              while (parent.firstChild) {
+                parent.removeChild(parent.firstChild);
               }
+
+              // Append the new error message elements
+              parent.appendChild(icon);
+              parent.appendChild(paragraph);
+
+			  }
+              
             })
             .catch(function (error) {
                 // handle error

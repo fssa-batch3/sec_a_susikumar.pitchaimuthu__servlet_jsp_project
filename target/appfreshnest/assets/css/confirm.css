@@ -1,0 +1,41 @@
+body {
+  background-color: #f7faff;
+  font-family: "Kanit", sans-serif;
+}
+
+.div-container {
+  display: flex;
+  justify-content: center;
+  padding-top: 100px;
+}
+
+.main-div {
+  border: 3px solid black;
+  border-radius: 10px;
+  height: 500px;
+  margin: 40px;
+}
+
+.content-container {
+  margin: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 450px;
+}
+
+.content-container-logo {
+  width: 50%;
+  display: flex;
+  padding-top: 0.1em;
+  padding-left: 5em;
+}
+.label-div {
+  line-height: 56px;
+}
+
+#inputpassword {
+  padding: 7px 12px;
+  border: grey 1px solid;
+  border-radius: 5px;
+}

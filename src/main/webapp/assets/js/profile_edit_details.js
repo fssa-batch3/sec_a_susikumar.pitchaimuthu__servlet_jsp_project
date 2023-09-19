@@ -1,5 +1,25 @@
 // first getting all the elements for the forms
 
+
+function findUserProfileDetails(){
+		const url = "http://localhost:8080/appfreshnest/UserProfileDetails";
+			axios.get(url)
+			  .then(function (response) {
+			    // handle success
+			    console.log(response.data);
+			    const profileUser = response.data;
+			    showUserProfileDetails(profileUser);
+			  })
+			  .catch(function (error) {
+			    // handle error
+			    console.log(error);
+			  })
+}
+
+findUserProfileDetails();
+
+function showUserProfileDetails(findUser){
+
 try {
   let userNameP = document.querySelector(".profile-user-name");
   let userSloganP = document.querySelector(".profile-user-slogan");
@@ -16,24 +36,25 @@ try {
 
   // set the value to the all inputs
 
-  profileImage.src = findUser["avatarUrl"];
-  userNameP.innerHTML = findUser["userName"];
+  profileImage.src = findUser["profileImage"];
+  userNameP.innerHTML = findUser["username"];
   userSloganP.innerHTML = findUser["userTheme"];
   fName.value = findUser["firstName"];
   lName.value = findUser["lastName"];
-  uName.value = findUser["userName"];
+  uName.value = findUser["username"];
   bio.value = findUser["userTheme"];
   email.value = findUser["email"];
-  city.value = findUser["city"] || "";
+  city.value = findUser["nationality"] || "";
   phoneNumber.value = findUser["mobileNumber"] || "";
 
   for (let allGender of gender) {
-    if (allGender["value"] === findUser["userGender"]) {
+    if (allGender["value"] === findUser["gender"]) {
       allGender.checked = true;
     }
   }
 
-  dateOfBirth.value = findUser["dateOfBirth"];
+  dateOfBirth.value = findUser["dob"];
 } catch (error) {
   console.log("An error occured while adding the value to the input :", error);
+}
 }

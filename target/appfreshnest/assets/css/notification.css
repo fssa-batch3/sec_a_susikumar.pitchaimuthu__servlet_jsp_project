@@ -1,0 +1,496 @@
+#notification {
+  background-color: #00baff;
+  border-radius: 10px;
+  color: #fff;
+}
+
+.nav-link:hover {
+  background-color: #cbe7ea;
+  border-radius: 10px;
+}
+
+.mention-whole-container {
+  display: flex;
+  align-items: center;
+  margin: 2em 0em 0em 3.9em;
+}
+
+.mention-box-container {
+  display: flex;
+  justify-content: center;
+  flex: 1.5;
+  height: 848px;
+  flex-direction: column;
+  gap: 3em;
+}
+
+.mention-box-inside-container {
+  display: flex;
+  flex-direction: column;
+  width: 95%;
+  height: 773px;
+  overflow-y: scroll;
+  align-items: center;
+  padding: 4px;
+  gap: 1em;
+}
+
+/* follow button div contaienr css */
+
+.notification-button-div-container {
+  display: flex;
+  align-items: center;
+  width: 82%;
+}
+
+.button-div-container {
+  display: flex;
+  align-items: center;
+  gap: 3em;
+}
+
+.follow-button,
+.other-button {
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+}
+
+.other-button-div,
+.follow-button-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 6em;
+  height: 3em;
+}
+
+.other-count-para {
+  position: absolute;
+  background-color: aquamarine;
+  border-radius: 50%;
+  padding: 1px 6px;
+  font-size: 60%;
+  right: 9px;
+  top: 0px;
+}
+
+.follow-count-para {
+  position: absolute;
+  background-color: aquamarine;
+  border-radius: 50%;
+  padding: 1px 6px;
+  font-size: 60%;
+  right: 9px;
+  top: 0px;
+}
+
+/* notification css container */
+
+.mention-box-inside-container::-webkit-scrollbar {
+  display: none;
+}
+
+.mention-box-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  border: 1px solid rgb(237, 206, 211);
+  width: 90%;
+  border-radius: 10px;
+}
+
+.mention-box-inside-div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex: 0.95;
+  padding: 8px;
+}
+
+/* Pro image css */
+
+.image-and-name-div {
+  display: flex;
+  align-items: center;
+  gap: 2em;
+}
+
+.pro-image-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid greenyellow;
+  width: 4em;
+  height: 3.9em;
+  border-radius: 2em;
+}
+
+.name-content-div {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+}
+
+.name-content-div h3,
+.name-content-div p {
+  margin: 0;
+}
+
+.mention-profile-image {
+  width: 3.4em;
+  height: 3em;
+  border-radius: 2em;
+}
+
+/* user mention media css */
+
+.user-mention-media-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 5em;
+  height: 4em;
+  border-radius: 8px;
+}
+
+.bi-heart-fill {
+  font-size: 1.25em;
+  cursor: pointer;
+}
+.bi-heart-fill:hover {
+  color: red;
+}
+
+#hr {
+  height: 850px;
+}
+
+/* notification details showing css */
+
+.display-container {
+  display: flex;
+  flex: 0.8;
+  justify-content: center;
+  height: 53em;
+}
+
+.display-inside-div {
+  display: flex;
+  flex-direction: column;
+  gap: 2.6em;
+  height: 750;
+  overflow-y: scroll;
+}
+
+.display-inside-div::-webkit-scrollbar {
+  display: none;
+}
+
+.details-display-inside-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 98%;
+  gap: 2.5em;
+}
+
+.details-inside-align-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 86%;
+  gap: 1.5em;
+}
+
+.profile-and-name-div-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 2.5em;
+}
+
+.profile-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 3.5em;
+  height: 3em;
+  border-radius: 50%;
+  border: 1px solid rgb(231, 52, 82);
+}
+
+.profile-image {
+  width: 3em;
+  height: 2.5em;
+  border-radius: 50%;
+}
+
+/* notification details content css */
+
+.details-content-div-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.details-content-inside-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 99%;
+  gap: 1em;
+}
+
+.content-div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 80%;
+}
+
+/* notification file details showing div */
+
+.notification-file-showing-div-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 99%;
+}
+
+.notification-file-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1.3px solid gray;
+  border-radius: 5px;
+  height: 450px;
+  width: 92%;
+}
+
+.notification-file {
+  width: 96%;
+  height: 430px;
+}
+
+/* related notification div container css */
+
+.related-head-div {
+  width: 71%;
+  display: flex;
+  justify-content: center;
+}
+
+.related-notification-div-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.related-notification-inside-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 95%;
+  height: 20em;
+  overflow-y: scroll;
+  gap: 1em;
+}
+
+.related-notification-inside-div::-webkit-scrollbar {
+  display: none;
+}
+
+/* notification div */
+
+.notification-div-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 97.5%;
+  border: 1px solid grey;
+  height: 4em;
+  border-radius: 7px;
+}
+
+.notification-inside-div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 97%;
+}
+
+.user-profile-and-name-div {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+
+.user-profile-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3em;
+  height: 2.5em;
+  border-radius: 50%;
+  border: 1px solid grey;
+}
+
+.user-profile-image {
+  width: 2.5em;
+  height: 2em;
+  border-radius: 50%;
+}
+
+.user-name-and-noti-div {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  justify-content: center;
+}
+
+.user-name-h3,
+.user-name-p {
+  margin: 0;
+  padding: 0;
+}
+
+.user-invite-image-div {
+  width: 3.5em;
+  height: 3em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid red;
+}
+
+.image-of-invite {
+  width: 3em;
+  height: 2.5em;
+}
+
+/* follow notification card css */
+
+.follow-card-div-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 550px;
+  height: 4.4em;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+}
+
+.follow-card-inside-container {
+  display: flex;
+  align-items: center;
+  width: 95%;
+  height: 95%;
+  gap: 1em;
+}
+
+.follow-image-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 1px solid #808080;
+  width: 3em;
+  height: 2.5em;
+}
+
+.follower-image {
+  width: 2.5em;
+  height: 2em;
+  border-radius: 50%;
+}
+
+.follow-name-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px;
+}
+
+.follower-name {
+  margin: 0;
+  padding: 0;
+}
+
+.our-para {
+  margin: 0;
+  padding: 0;
+}
+
+/* follow details showing css */
+
+.following-details-div-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.follow-details-inside-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.4em;
+}
+
+.details-follower-image-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.details-follower-image {
+  width: 13.5em;
+  height: 12.5em;
+  border-radius: 10px;
+}
+
+.follower-button-div-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6em;
+}
+
+.following-button {
+  border: none;
+  padding: 6px 13px;
+  border-radius: 7px;
+  background-color: rgb(146, 50, 235);
+  color: #fff;
+}
+
+/* no notification css */
+
+.no-notification-element-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.no-notification-inside-element-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 99%;
+  gap: 1em;
+}
+
+.no-message-gif {
+  width: 18em;
+  height: 15em;
+  border-radius: 5px;
+}
+
+.no-message-para {
+  text-align: center;
+  font-size: 94%;
+}

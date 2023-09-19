@@ -215,3 +215,15 @@ nav {
   flex-direction: column;
   gap: 1em;
 }
+
+
+/* Add the css for the fav button*/
+
+.favourite {
+	background-color: red;
+	color:white;
+	
+}
+
+
+

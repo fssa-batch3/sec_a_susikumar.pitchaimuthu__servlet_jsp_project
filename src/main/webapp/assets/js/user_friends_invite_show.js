@@ -36,39 +36,8 @@ function reomoveInvite() {
   }
 }
 
-let findPresentInvite;
-function showInvite(invId) {
+function showInvite(userInvite) {
   try {
-    presentInvId = invId;
-    // checking invite to know whose invite is this...
-
-    findPresentInvite = friendsInvitesData.find(
-      (preInv) => preInv["inviteId"] == presentInvId
-    );
-    console.log(findPresentInvite);
-
-    let userLike = false;
-
-    for (let invLike of findPresentInvite["inviteLike"]) {
-      if (invLike == findUser["userId"]) {
-        userLike = true;
-      }
-    }
-
-    let userDislike = false;
-    for (let inviteNo of findPresentInvite["inviteNo"]) {
-      if (inviteNo == findUser["userId"]) {
-        userDislike = true;
-      }
-    }
-
-    let userHeart = false;
-    for (let invHeart of findPresentInvite["inviteHeart"]) {
-      if (invHeart == findUser["userId"]) {
-        userHeart = true;
-      }
-    }
-
     // invite type showing container
 
     removeBackground();
@@ -97,7 +66,7 @@ function showInvite(invId) {
 
     let inviteImage = document.createElement("img");
     inviteImage.setAttribute("class", "invite-images");
-    inviteImage.setAttribute("src", findPresentInvite["inviteImage"]);
+    inviteImage.setAttribute("src", userInvite["inviteDetail"]["inviteImage"]);
     inviteDetailsShowInsideDiv.append(inviteImage);
 
     // invite option like and comment option
@@ -160,7 +129,7 @@ function showInvite(invId) {
 
     let glimpsePara = document.createElement("p");
     glimpsePara.setAttribute("class", "glipse-para");
-    glimpsePara.innerHTML = findPresentInvite["inviteGlimpse"];
+    glimpsePara.innerHTML = userInvite["inviteDetail"]["inviteGlimpse"];
     inviteGlimpseDiv.append(glimpsePara);
 
     let eraDiv = document.createElement("era-div");
@@ -174,7 +143,7 @@ function showInvite(invId) {
 
     let eraPara = document.createElement("p");
     eraPara.setAttribute("class", "era-para");
-    eraPara.innerHTML = findPresentInvite["inviteExplanation"];
+    eraPara.innerHTML = userInvite["inviteDetail"]["inviteExplanation"];
     eraDiv.append(eraPara);
 
     let commentAndInputAreaContainer = document.createElement("div");
@@ -194,13 +163,17 @@ function showInvite(invId) {
 
     let heartDiv = document.createElement("div");
     heartDiv.setAttribute("class", "heart-div");
-    heartDiv.setAttribute("id", findPresentInvite["inviteId"]);
-    heartDiv.setAttribute("onclick", "likeHeart(this.id)");
-    likeCommentInsideDiv.append(heartDiv);
+    heartDiv.setAttribute("id", userInvite.inviteDetail.inviteId);
+    heartDiv.addEventListener("click", () => {
+    let inviteId = heartDiv.id; 
+    let value = checkLikeValue();
+    inviteLikeFunction(value, inviteId);
+});
 
-    console.log(findPresentInvite["inviteLike"].length);
+likeCommentInsideDiv.append(heartDiv);
 
-    if (userHeart == true) {
+
+    if (userInvite["userInviteReactionDetail"]["like"] == true) {
       let heartI = document.createElement("i");
       heartI.setAttribute("class", "bi bi-heart-fill");
       heartDiv.append(heartI);
@@ -212,11 +185,15 @@ function showInvite(invId) {
 
     let okDiv = document.createElement("div");
     okDiv.setAttribute("class", "ok-div");
-    okDiv.setAttribute("id", findPresentInvite["inviteId"]);
-    okDiv.setAttribute("onclick", "thumbsUp(this.id)");
+    okDiv.setAttribute("id", userInvite["inviteId"]);
+    okDiv.addEventListener("click", ()=> {
+		let inviteId = okDiv.id;
+		let value = getSendRequestValue();
+		inviteRequestSendFunction(value, inviteId);
+	})
     likeCommentInsideDiv.append(okDiv);
 
-    if (userLike == true) {
+    if (userInvite["userInviteReactionDetail"]["sendRequest"] == true) {
       let okI = document.createElement("i");
       okI.setAttribute("class", "bi bi-hand-thumbs-up-fill");
       okDiv.append(okI);
@@ -228,11 +205,15 @@ function showInvite(invId) {
 
     let sorryDiv = document.createElement("div");
     sorryDiv.setAttribute("class", "sorry-div");
-    sorryDiv.setAttribute("id", findPresentInvite["inviteId"]);
-    sorryDiv.setAttribute("onclick", "thumbsDown(this.id)");
+    sorryDiv.setAttribute("id", userInvite["inviteDetail"]["inviteId"]);
+    sorryDiv.addEventListener("click", ()=> {
+		let inviteId = sorryDiv.id;
+		let value = getInviteRejectValue();
+		inviteRejectFunction(value, inviteId);
+	})
     likeCommentInsideDiv.append(sorryDiv);
 
-    if (userDislike == true) {
+    if (userInvite["userInviteReactionDetail"]["reject"] == true) {
       let sorryI = document.createElement("i");
       sorryI.setAttribute("class", "bi bi-hand-thumbs-down-fill");
       sorryDiv.append(sorryI);
@@ -262,34 +243,6 @@ function showInvite(invId) {
     inviterUserProfileDiv.setAttribute("class", "inviter-user-profile-div");
     inviteProfileNameInsideDiv.append(inviterUserProfileDiv);
 
-    const arrayBuffer = findPresentInvite["inviterImage"];
-
-    // Get the first two bytes of the binary data
-
-    let videofile = false;
-    let imagefile = false;
-
-    if (arrayBuffer.includes("image")) {
-      imagefile = true;
-    } else {
-      videofile = true;
-    }
-
-    if (imagefile == true) {
-      let inviterImage = document.createElement("img");
-      inviterImage.setAttribute("class", "inviter-image");
-      inviterImage.setAttribute("src", findPresentInvite["inviterImage"]);
-      inviterImage.setAttribute("alt", "invite-user-image");
-      inviterUserProfileDiv.append(inviterImage);
-    } else {
-      let video = document.createElement("video");
-      video.setAttribute("class", "invite-video-element");
-      inviterUserProfileDiv.append(video);
-
-      let videoSource = document.createElement("source");
-      videoSource.setAttribute("src", findPresentInvite["inviteImage"]);
-      videoSource.setAttribute("class", "invite-video");
-    }
 
     let inviteMessageEmojiReplyDiv = document.createElement("div");
     inviteMessageEmojiReplyDiv.setAttribute(
@@ -320,23 +273,83 @@ function showInvite(invId) {
 
     let sendArrowI = document.createElement("i");
     sendArrowI.setAttribute("class", "bi bi-arrow-up-right-circle");
-    sendArrowI.setAttribute("id", findPresentInvite["inviteId"]);
+    sendArrowI.setAttribute("id", userInvite["inviteDetail"]["inviteId"]);
     sendArrowI.setAttribute("onclick", "inviteChatNotification(this.id)");
     inviteReplyEmojiInsideDiv.append(sendArrowI);
 
     let keyboardDiv = document.createElement("div");
     keyboardDiv.setAttribute("class", "keyboard-div");
-    keyboardDiv.setAttribute("id", findPresentInvite["inviteId"]);
+    keyboardDiv.setAttribute("id", userInvite["inviteDetail"]["inviteId"]);
     inviteMessageEmojiReplyDiv.append(keyboardDiv);
 
     let keyboardI = document.createElement("i");
     keyboardI.setAttribute("class", "bi bi-keyboard");
+    keyboardI.addEventListener("click", () => {
+		showKeyboard();
+	})
     keyboardDiv.append(keyboardI);
 
-    let keyboard = document.querySelector(".keyboard-div");
-    console.log(keyboard);
+  } catch (error) {
+    console.log("An error occured while show the user invite :", error);
+  }
+}
 
-    keyboard.addEventListener("click", () => {
+
+// Check like value
+let currentLike; 
+function checkLikeValue(){
+	   let likeButton = document.querySelector(".heart-div").firstChild;
+    console.log(likeButton);
+
+    let buttonValue = likeButton.classList["value"];
+    
+    if(buttonValue == "bi bi-heart"){
+		currentLike = true;
+		return true;
+	}else {
+		currentLike = false;
+	    return false;
+	}
+}
+
+// Check the invite request value
+let inviteRequestValue;
+function getSendRequestValue(){
+	let thumbsDownFill = document.querySelector(".sorry-div").firstChild;
+
+    let fillValue = thumbsDownFill.classList["value"];
+    
+    if(fillValue == "bi bi-hand-thumbs-up"){
+		inviteRequestValue = true;
+		return true;
+	}else {
+		inviteRequestValue = false;
+		return false;
+	}
+}
+
+
+// Check the invite reject value
+let inviteRejectValue;
+function getInviteRejectValue(){
+	 let thumbsDownFill = document.querySelector(".sorry-div").firstChild;
+
+    let fillValue = thumbsDownFill.classList["value"];
+    
+       if (fillValue == "bi bi-hand-thumbs-down") {
+		   inviteRejectValue = true;
+		   return true;
+		}else {
+		   inviteRejectValue = false;
+		   return false;
+		}
+	
+}
+
+
+// Keyboard enable function
+
+function showKeyboard(){
       let inputEmojiDiv = document.querySelector(
         ".invite-reply-emoji-inside-div"
       );
@@ -346,12 +359,8 @@ function showInvite(invId) {
       } else {
         inputEmojiDiv.style.display = "none";
       }
-    });
-  } catch (error) {
-    console.log("An error occured while show the user invite :", error);
-  }
+    
 }
-
 // creating a function to show the details of the invite
 
 function showInviteEra() {
@@ -367,3 +376,89 @@ function showInviteEra() {
     console.log("An error occurred while the invite era function :", error);
   }
 }
+
+
+// Invite like function
+
+function inviteLikeFunction(value, inviteId){	
+const url = "/appfreshnest/InviteLikeServlet?inviteId=" + encodeURIComponent(inviteId) +
+            "&value=" + encodeURIComponent(value);
+            
+			axios.get(url)
+			  .then(function (response) {
+			    // handle success
+			    let serverLikeResponse = response.data;
+			    console.log(serverLikeResponse);
+			    if(serverLikeResponse === "success"){
+					
+					let innerLikeButton = document.querySelector(".heart-div").firstChild;
+
+					if(currentLike == true){
+                        innerLikeButton.remove("bi bi-heart");
+
+                        let likeFill = document.createElement("i");
+                        likeFill.setAttribute("class", "bi bi-heart-fill");
+                        document.querySelector(".heart-div").append(likeFill);						
+					}else {
+						innerLikeButton.remove("bi bi-heart-fill");
+
+                        let likeFill = document.createElement("i");
+                        likeFill.setAttribute("class", "bi bi-heart");
+                        document.querySelector(".heart-div").append(likeFill);
+						
+					}
+				}   
+			  })
+			  .catch(function (error) {
+			    // handle error
+			    console.log(error);
+	       })
+	
+}
+
+
+// Invite reject function
+function inviteRejectFunction(value ,inviteId){
+	
+	const url = "/appfreshnest/InviteSendRejectResponseServlet?inviteId=" + encodeURIComponent(inviteId) +
+            "&value=" + encodeURIComponent(value);
+            
+			axios.get(url)
+			  .then(function (response) {
+			    // handle success
+			    let serverLikeResponse = response.data;
+			    console.log(serverLikeResponse);
+			    if(serverLikeResponse === "success"){
+					
+				}			    
+			  })
+			  .catch(function (error) {
+			    // handle error
+			    console.log(error);
+	  })
+	
+}
+
+// Invite request send function
+function inviteRequestSendFunction(value ,inviteId){
+	const url = "/appfreshnest/InviteSendRequestServlet?inviteId=" + encodeURIComponent(inviteId) +
+            "&value=" + encodeURIComponent(value);
+            
+			axios.get(url)
+			  .then(function (response) {
+			    // handle success
+			    let serverLikeResponse = response.data;
+			    console.log(serverLikeResponse);
+			    if(serverLikeResponse === "success"){
+					
+				}
+			    	    
+			  })
+			  .catch(function (error) {
+			    // handle error
+			    console.log(error);
+	  })
+            
+            
+}
+

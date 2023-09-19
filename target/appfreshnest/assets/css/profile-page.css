@@ -1,0 +1,219 @@
+.common-section-container {
+  display: flex;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.profile-details-showing-whole-container {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.profile-details-inside-div-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 95%;
+  height: 840px;
+}
+
+.profile-details-common-container {
+  display: flex;
+  width: 95%;
+  border: 1px solid grey;
+  border-radius: 10px;
+  justify-content: center;
+  align-items: center;
+  height: 800px;
+}
+
+.profile-background-and-image-div {
+  display: flex;
+  flex-direction: column;
+  width: 99%;
+  gap: 7em;
+  height: 780px;
+}
+.image-background-image-div {
+  background-image: linear-gradient(
+    95.2deg,
+    rgba(173, 252, 234, 1) 26.8%,
+    rgba(192, 229, 246, 1) 64%
+  );
+  width: 100%;
+  height: 10em;
+  position: relative;
+}
+
+.profile-image-name-button-div {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 70%;
+  left: 14%;
+  width: 80%;
+  height: 10em;
+}
+
+.profile-div-container {
+  display: flex;
+  justify-content: space-between;
+  height: 10em;
+  width: 46%;
+}
+
+.profile-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 50%;
+  height: 7em;
+  width: 9em;
+}
+
+.profile-image {
+  width: 8em;
+  border-radius: 50%;
+  height: 6em;
+}
+
+.profile-person-name-and-slogan-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 8em;
+}
+
+.profile-slogan-inside-div {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+/* profile input div container */
+
+.profile-input-details-div-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-input-inside-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2em;
+}
+
+.input-and-label-div {
+  display: flex;
+  width: 80%;
+  justify-content: space-between;
+}
+
+.label-div {
+  display: flex;
+  align-items: center;
+  width: 30%;
+}
+
+.input-div {
+  display: flex;
+  align-items: center;
+  width: 60%;
+}
+
+.profile-input {
+  width: 30em;
+  border: 1px solid grey;
+  border-radius: 5px;
+  height: 3em;
+}
+
+#button-div {
+  margin-top: 2.4em;
+  margin-left: 1em;
+}
+
+.btn-primary {
+  margin-left: 1.7em;
+}
+
+.mandatory {
+  color: #eb44bc;
+}
+
+/* otp send css */
+
+.otp-card-div-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 10px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+  position: absolute;
+  top: 25%;
+  left: 40%;
+}
+
+.otp-card-inside-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 99%;
+  padding: 10px;
+  gap: 2em;
+}
+
+.otp-container {
+  display: flex;
+  justify-content: center;
+}
+
+.otp-input {
+  width: 40px;
+  height: 40px;
+  margin: 0 5px;
+  text-align: center;
+  font-size: 18px;
+}
+
+.otp-input::-webkit-inner-spin-button,
+.otp-input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.button-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 95%;
+  gap: 1.4em;
+}
+
+.otp-submit {
+  border: none;
+  background-color: #448aeb;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.resend-otp {
+  border: none;
+  background-color: #eb44bc;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.otp-content {
+  text-align: center;
+}

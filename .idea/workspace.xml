@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="2c88bdbc-a74f-4800-8ba7-787b99bfe3ae" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fssa/freshnest/AddInviteServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fssa/freshnest/CreateStillServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fssa/freshnest/FreshStillServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fssa/freshnest/FreshStillServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fssa/freshnest/HomePageUserDetailsGets.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fssa/freshnest/HomePageUserDetailsGets.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fssa/freshnest/HomeServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fssa/freshnest/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fssa/freshnest/LoginServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fssa/freshnest/LogoutServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fssa/freshnest/LogoutServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fssa/freshnest/ProfileEditServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fssa/freshnest/ProfileEditServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fssa/freshnest/RegisterServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fssa/freshnest/RegisterServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fssa/freshnest/StillDeleteServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fssa/freshnest/StillDeleteServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fssa/freshnest/StillDetailsServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fssa/freshnest/StillDetailsServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fssa/freshnest/StillFavouriteServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fssa/freshnest/StillFavouriteServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fssa/freshnest/StillFilterServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fssa/freshnest/StillFilterServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fssa/freshnest/UpdateBirthdayServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fssa/freshnest/UpdateBirthdayServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/assets/css/add-invite.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/assets/css/add-invite.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/assets/css/birthday.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/assets/css/birthday.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/assets/css/gallary-edit.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/assets/css/gallary-edit.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/assets/css/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/assets/css/login.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/assets/css/register.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/assets/css/register.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/assets/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/assets/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/assets/js/add_invite.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/assets/js/add_invite.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/assets/js/birthday.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/assets/js/birthday.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/assets/js/gallery.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/assets/js/gallery.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/assets/js/gallery_details.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/assets/js/gallery_details.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/assets/js/gallery_details_option.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/assets/js/gallery_details_option.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/assets/js/gallery_edit.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/assets/js/gallery_edit.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/assets/js/gallery_redirection.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/assets/js/gallery_redirection.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/assets/js/logIn.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/assets/js/logIn.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/assets/js/page-direction.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/assets/js/page-direction.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/assets/js/profile.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/assets/js/profile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/assets/js/profile_edit.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/assets/js/profile_edit.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/assets/js/profile_edit_details.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/assets/js/profile_edit_details.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/assets/js/register.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/assets/js/register.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/pages/add_invite_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pages/add_invite_form.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/pages/birthday.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pages/birthday.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/pages/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pages/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/pages/profile-edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pages/profile-edit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/pages/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pages/profile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/pages/userRegister.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pages/userRegister.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/appfreshnest.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/appfreshnest.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/appfreshnest/WEB-INF/classes/com/fssa/freshnest/CreateInviteServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/appfreshnest/WEB-INF/classes/com/fssa/freshnest/CreateInviteServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/appfreshnest/WEB-INF/classes/com/fssa/freshnest/ListInviteServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/appfreshnest/WEB-INF/classes/com/fssa/freshnest/ListInviteServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/appfreshnest/WEB-INF/classes/com/fssa/freshnest/LoginServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/appfreshnest/WEB-INF/classes/com/fssa/freshnest/LoginServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/appfreshnest/WEB-INF/classes/com/fssa/freshnest/ReadInviteServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/appfreshnest/WEB-INF/classes/com/fssa/freshnest/RegisterServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/appfreshnest/WEB-INF/classes/com/fssa/freshnest/RegisterServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/appfreshnest/WEB-INF/classes/com/fssa/freshnest/UpdateBirthdayServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/appfreshnest/WEB-INF/classes/com/fssa/freshnest/UpdateBirthdayServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/appfreshnest/WEB-INF/classes/invite/jsp/Invite.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/appfreshnest/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/appfreshnest/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/appfreshnest/birthday.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/appfreshnest/birthday.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/appfreshnest/freshStill.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/appfreshnest/freshStill.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/appfreshnest/freshStill.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/appfreshnest/home.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/appfreshnest/home.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/appfreshnest/index.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/appfreshnest/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/appfreshnest/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/appfreshnest/invite.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/appfreshnest/invite.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/appfreshnest/invite.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/appfreshnest/inviteAdd.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/appfreshnest/inviteAdd.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/appfreshnest/login.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/appfreshnest/login.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/appfreshnest/profile.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/appfreshnest/register.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/appfreshnest/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fssa/freshnest/AddInviteServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fssa/freshnest/CreateStillServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fssa/freshnest/FreshStillServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fssa/freshnest/FreshStillServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fssa/freshnest/HomePageUserDetailsGets.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fssa/freshnest/HomePageUserDetailsGets.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fssa/freshnest/HomeServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fssa/freshnest/LoginServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fssa/freshnest/LoginServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fssa/freshnest/LogoutServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fssa/freshnest/LogoutServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fssa/freshnest/ProfileEditServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fssa/freshnest/ProfileEditServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fssa/freshnest/RegisterServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fssa/freshnest/RegisterServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fssa/freshnest/StillDeleteServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fssa/freshnest/StillDeleteServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fssa/freshnest/StillDetailsServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fssa/freshnest/StillDetailsServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fssa/freshnest/StillFavouriteServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fssa/freshnest/StillFavouriteServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fssa/freshnest/UpdateBirthdayServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fssa/freshnest/UpdateBirthdayServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/m2e-wtp/web-resources/META-INF/maven/com.fssa/appfreshnest/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/m2e-wtp/web-resources/META-INF/maven/com.fssa/appfreshnest/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 4
+}]]></component>
+  <component name="ProjectId" id="2VBrbFehc2ds95NUbnksZ0bzO5N" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/Users/SusikumarPitchaimuth/eclipse-workspace/susikumar.pitchaimuthu__corejava_project_2"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="2c88bdbc-a74f-4800-8ba7-787b99bfe3ae" name="Changes" comment="" />
+      <created>1694320386930</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1694320386930</updated>
+    </task>
+    <servers />
+  </component>
+</project>
