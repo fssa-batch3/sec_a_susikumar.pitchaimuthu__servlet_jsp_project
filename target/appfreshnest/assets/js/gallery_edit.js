@@ -8,14 +8,15 @@
 //  Gets the still from the servlet
 
 function getStillDetails() {
-	const url = "http://localhost:8080/appfreshnest/StillDetailsServlet?stillId=" + stillId;
+	
+	const url = "/appfreshnest/StillDetailsServlet?stillId=" + stillId;
 			axios.get(url)
 			  .then(function (response) {
 			    // handle success
 			    console.log(response.data);
 			    const imageObject = response.data;
 			     try {
-                     diplayStill(imageObject); // Pass the image object directly
+                     diplayStill(imageObject);
                   } catch (error) {
                      console.log("An error occurred while changing the image:", error);
                 }    
@@ -101,7 +102,7 @@ deleteImage.addEventListener("click", () => {
       stillId: stillId,
     };
     
-     const url = "http://localhost:8080/appfreshnest/StillDeleteServlet";
+     const url = "/appfreshnest/StillDeleteServlet";
 
         axios.post(url, deleteObject, {
             headers: {

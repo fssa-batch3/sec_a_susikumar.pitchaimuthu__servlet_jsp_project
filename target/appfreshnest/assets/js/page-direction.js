@@ -8,6 +8,7 @@ let chat = document.querySelector("#chat");
 let invite = document.querySelector("#invite");
 let setting = document.querySelector("#setting");
 let logOut = document.querySelector(".logOut");
+let notification = document.querySelector("#notification");
 
 // home page direction location
 
@@ -18,6 +19,17 @@ home.addEventListener("click", () => {
     console.log("An error occurred while home page redirection :", error);
   }
 });
+
+// Notification page redirection
+
+notification.addEventListener("click", () => {
+  try {
+    window.location.href = "../pages/notification.html";
+  } catch (error) {
+    console.log("An error occurred while notification page redirection :", error);
+  }
+});
+
 
 // camera page direction location
 

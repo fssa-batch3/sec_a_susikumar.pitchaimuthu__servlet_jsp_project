@@ -1,102 +1,159 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Reel showing</title>
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Reel showing</title>
 
-    <!-- css links -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
-    />
+<!-- css links -->
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
 
-    <link rel="stylesheet" href="../assets/css/reel_showing.css" />
-  </head>
-  <body>
-    <!-- script files -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+	href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,300;6..12,400;6..12,500;6..12,600;6..12,700&display=swap"
+	rel="stylesheet" />
+<link rel="stylesheet" href="../assets/css/reel_showing.css" />
+</head>
+<body>
+	<!-- script files -->
 
-    <div class="reel-whole-div-container">
-      <!-- div for cotaining all reel div -->
+	<div class="reel-whole-div-container">
+		<!-- div for cotaining all reel div -->
 
-      <div class="reel-and-arrow-div-container">
-        <div class="left-arrow-div-container">
-          <i class="bi bi-chevron-double-left icon"></i>
-        </div>
+		<div class="reel-and-arrow-div-container">
+			<div class="left-arrow-div-container">
+				<i class="bi bi-chevron-double-left icon"></i>
+			</div>
 
-        <!-- reel container -->
+			<!-- reel container -->
 
-        <div class="reel-div-container">
-          <div class="reel-inside-div-container">
-            <!-- reeling person name div -->
-            <div class="profile-showing-whole-container">
-              <!-- profile div -->
+			<div class="reel-div-container">
+				<div class="reel-inside-div-container">
+					<!-- reeling person name div -->
+					<div class="profile-showing-whole-container">
+						<!-- profile div -->
 
-              <dic class="reel-name-div-container">
-                <div class="profile-div"></div>
+						<div class="reel-name-div-container">
+							<div class="profile-div">
+								<img class="profile-image" src="" alt="user-image">
+							</div>
+							<div class="user-name-div">
+								<p class="user-name">
+								<p>
+							</div>
 
-                <!-- div for show the rooling person name -->
+							<!-- div for show the rooling person name -->
+						</div>
 
-                <div class="user-name-div"></div>
-              </dic>
+						<div class="reel-delete-div">
+							<i class="bi bi-x-octagon-fill" onclick="deleteTimeTale(this.id)"></i>
 
-              <div class="reel-delete-div"></div>
-            </div>
+						</div>
+					</div>
 
-            <!-- reel showing div -->
+					<!-- reel showing div -->
 
-            <div class="reel-showing-container">
-              <div class="range-input-div"></div>
-              <div class="reel-inside-div"></div>
-            </div>
+					<div class="reel-showing-container">
+						<div class="range-input-div"></div>
+						<div class="reel-inside-div"></div>
+					</div>
 
-            <!-- reel option showing our reaction -->
+					<!-- reel option showing our reaction -->
 
-            <div class="reel-option-div-container">
-              <div class="reel-inside-option-div">
-                <div class="input-emoji-div">
-                  <i class="bi bi-emoji-smile"></i>
+					<div class="reel-option-div-container">
+						<div class="reel-inside-option-div">
+							<div class="input-emoji-div">
+								<i class="bi bi-emoji-smile"></i> <input type="text"
+									id="input-for-reel-reaction tale-input"
+									placeholder="Let your voice be heard..." />
+							</div>
+							<div class="heart-send-div">
+								<i class="bi bi-send"></i> <i class="bi bi-heart"></i>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 
-                  <input
-                    type="text"
-                    id="input-for-reel-reaction"
-                    placeholder="Type your message..."
-                  />
-                </div>
-                <div class="heart-send-div">
-                  <i class="bi bi-send"></i>
-                  <i class="bi bi-heart"></i>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+			<!-- right side div container -->
 
-        <!-- right side div container -->
+			<div class="right-side-arrow-container">
+				<i class="bi bi-chevron-double-right icon"></i>
+			</div>
+		</div>
 
-        <div class="right-side-arrow-container">
-          <i class="bi bi-chevron-double-right icon"></i>
-        </div>
-      </div>
-    </div>
-    <script src="../assets/js/profile_user_find.js"></script>
-    <script>
-      let profileImg = document.createElement("img");
-      profileImg.setAttribute("src", findUser["avatarUrl"]);
-      profileImg.setAttribute("class", "profile-image");
-      document.querySelector(".profile-div").append(profileImg);
+		<!-- Reel viewers details container -->
 
-      let nameFind = document.createElement("p");
-      nameFind.innerHTML = findUser["userName"];
-      document.querySelector(".user-name-div").append(nameFind);
-    </script>
+		<div class="user-and-reel-reader-div-container">
+			<div class="user-and-reel-reader-div-container-inside-div">
+				<div class="user-profile-name-div-container">
+					<div class="user-profile-name-inside-div-container">
+						<div class="profile-image-div">
+							<img id="profile-image"
+								src="../assets/images/Hero section/User-review/2.jpg"
+								alt="user-profile-image" />
+						</div>
+						<div class="user-name-div">
+							<p class=".name">I am susikumar</p>
+						</div>
+					</div>
+				</div>
 
-    <script
-      src="https://momentjs.com/downloads/moment.js"
-      integrity="sha384-mFSRsfjTuXtihSLc/J0LxrFE1H9WRRllwGM6pxxyiYACkVdxRG82d3DQVlq8yXZM"
-      crossorigin="anonymous"
-    ></script>
-    <script src="../assets/js/reel_showing.js"></script>
-  </body>
+				<div class="tale-reader-div-container">
+					<div class="tale-reader-inside-div">
+						<div class="tale-head-search-filter-div">
+							<!-- reel reader search bar and head div -->
+							<div class="tale-reader-head-div">
+								<h3 class="tale-reader-h2">Tale Readers</h3>
+							</div>
+							<div class="invite-page-inside-search-filter-div">
+								<input class="search-input" type="text" />
+								<button class="search-button">
+									<i class="bi bi-search"></i>
+								</button>
+							</div>
+						</div>
+
+						<!-- reel readers div showing area -->
+						<div class="tale-readers-showing-div">
+							<div class="reader-div-container">
+								<div class="reader-inside-div">
+									<div class="reader-image-and-name-div">
+										<img class="taller-image"
+											src="../assets/images/Hero section/User-review/4.jpg"
+											alt="tale-reader-image" />
+										<p class="reader-name-para">I am crack</p>
+									</div>
+
+									<div class="reader-time-div">
+										<p class="read-time">7.33 PM</p>
+									</div>
+								</div>
+							</div>
+							<div class="reader-div-container">
+								<div class="reader-inside-div">
+									<div class="reader-image-and-name-div">
+										<img class="taller-image"
+											src="../assets/images/Hero section/User-review/4.jpg"
+											alt="tale-reader-image" />
+										<p class="reader-name-para">I am crack</p>
+									</div>
+
+									<div class="reader-time-div">
+										<p class="read-time">7.33 PM</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+	<script src="../assets/js/time_tale_showing.js"></script>
+</body>
 </html>

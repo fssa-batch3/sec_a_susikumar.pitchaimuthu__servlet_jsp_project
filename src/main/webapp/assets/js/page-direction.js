@@ -110,7 +110,7 @@ let profile = document.querySelector(".image");
 
 profile.addEventListener("click", () => {
   try {
-    window.location.href = "../pages/profile.html";
+    window.location.href = "../pages/user-profile.html";
   } catch (error) {
     console.log(("An error occurred while redirect the profile page :", error));
   }

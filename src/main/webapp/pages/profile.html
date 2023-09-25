@@ -76,14 +76,14 @@
 							<!-- profile -->
 							<div class="profile-connect-message-div">
 								<div class="profile-image-div">
-									<img id="profile-image" alt="profile-image" />
+									<img id="profile-image" alt="profile-image"
+										onclick="showProfileOption()" />
 
 									<div class="profile-option-div" style="display: none">
 										<div class="profile-option-inside-div">
 											<div class="change-profile-div">
 												<input type="file" id="file" /> <label for="file"
-													class="choose-photo">Change
-													profile</label>
+													class="choose-photo">Change profile</label>
 											</div>
 
 											<div class="default-button-div">
@@ -101,17 +101,23 @@
 								<div class="user-experience-inside-div-container">
 									<div class="user-experience-div">
 										<div class="user-experience-inside-div">
-											<div class="friends-div">
-												<h2 class="user-h2">22</h2>
-												<p class="user-para">Friends</p>
+											<div class="friends-div" id="count-div">
+												<div class="count-inside-div">
+													<h2 class="user-h2">22</h2>
+													<p class="user-para">Friends</p>
+												</div>
 											</div>
-											<div class="photos-div">
-												<h2 class="user-h2">143</h2>
-												<p class="user-para">Photos</p>
+											<div class="photos-div" id="count-div">
+												<div class="count-inside-div">
+													<h2 class="user-h2">143</h2>
+													<p class="user-para">Photos</p>
+												</div>
 											</div>
-											<div class="videos-div">
-												<h2 class="user-h2">33</h2>
-												<p class="user-para">Videos</p>
+											<div class="videos-div" id="count-div">
+												<div class="count-inside-div">
+													<h2 class="user-h2">33</h2>
+													<p class="user-para">Videos</p>
+												</div>
 											</div>
 										</div>
 									</div>
@@ -174,7 +180,7 @@
 	</div>
 	<!-- profile page script files -->
 	<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+	<script src="../assets/js/get_user_count.js"></script>
 	<script src="../assets/js/profile.js"></script>
-	<script src="../assets/js/user_checking_users.js"></script>
 </body>
 </html>

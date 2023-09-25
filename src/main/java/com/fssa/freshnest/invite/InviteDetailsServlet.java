@@ -52,7 +52,7 @@ public class InviteDetailsServlet extends HttpServlet {
 		InviteService inviteService = new InviteService();
 
 		try {
-			Invite inviteDetails = inviteService.listInviteDetails(invite);
+			Invite inviteDetails = inviteService.readInviteDetails(inviteId);
 			JSONObject accountsJSonArray = new JSONObject(inviteDetails);
 			PrintWriter out = response.getWriter();
 			out.println(accountsJSonArray.toString());
@@ -71,7 +71,7 @@ public class InviteDetailsServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		
+
 		response.setContentType("application/json");
 		PrintWriter out = response.getWriter();
 
@@ -82,9 +82,7 @@ public class InviteDetailsServlet extends HttpServlet {
 			requestBody.append(line);
 		}
 
-
 		String id = request.getParameter("inviteId");
-		System.out.println(id);
 		Integer inviteId = Integer.parseInt(id);
 
 		JSONObject jsonData = new JSONObject(requestBody.toString());
@@ -99,17 +97,16 @@ public class InviteDetailsServlet extends HttpServlet {
 		LocalTime time = LocalTime.parse(inviteTime);
 
 		Invite invite = new Invite(inviteType, date, time, specialPerson, inviteSlogan, inviteExplanation, inviteId);
-        invite.setInviteImage(inviteImage);
+		invite.setInviteImage(inviteImage);
 		InviteService inviteService = new InviteService();
 
 		try {
 			if (inviteService.updateInvite(invite)) {
-				out.println("success");
-			} else {
-				out.println("Inivte detials update failed");
+				out.print("success");
 			}
 		} catch (ServiceException e) {
 			e.printStackTrace();
+			out.print(e.getMessage());
 		}
 
 	}

@@ -1,511 +1,408 @@
 <!DOCTYPE html>
 <html lang="en" id="html">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>freshnest</title>
-    <link rel="stylesheet" href="./assets/css/index.css" />       
-    <link rel="stylesheet" href="./assets/css/message-me.css" />
-    <link rel="stylesheet" href="./assets/css/button.css" />
-    <link rel="stylesheet" href="./assets/css/nav.css" />
-    <link rel="stylesheet" href="./assets/css/footer.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Ewert&display=swap"
-      rel="stylesheet"
-    />
-    <style>
-      @import url("https://fonts.googleapis.com/css2?family=Ewert&display=swap");
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>freshnest</title>
+<link rel="stylesheet" href="./assets/css/index.css" />
+<link rel="stylesheet" href="./assets/css/message-me.css" />
+<link rel="stylesheet" href="./assets/css/button.css" />
+<link rel="stylesheet" href="./assets/css/nav.css" />
+<link rel="stylesheet" href="./assets/css/footer.css" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+	href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700;800&display=swap"
+	rel="stylesheet" />
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Ewert&display=swap"
+	rel="stylesheet" />
+<style>
+@import
+	url("https://fonts.googleapis.com/css2?family=Ewert&display=swap");
 
-      @import url("https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700;800&display=swap");
-    </style>
-  </head>
-  <body>
-    <header>
-      <nav>
-        <!-- monile-menu-icon -->
-        <div class="mobile-menu-div">
-          <img
-            class="mobile-menu-icon"
-            src="./assets/images/nav-bar/Menu-dot.png"
-            alt="menuList-icon"
-            onclick="togglemenu()"
-          />
-        </div>
+@import
+	url("https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700;800&display=swap")
+	;
+</style>
+</head>
+<body>
+	<header>
+		<nav>
+			<!-- monile-menu-icon -->
+			<div class="mobile-menu-div">
+				<img class="mobile-menu-icon"
+					src="./assets/images/nav-bar/Menu-dot.png" alt="menuList-icon"
+					onclick="togglemenu()" />
+			</div>
 
-        <!-- nav-logo -->
-        <div class="nav-logo-div">
-          <a href="http://127.0.0.1:5500/pages/home.html">
-            <img
-              class="nav-logo-div-image"
-              src="./assets/images/common/Fresh-nest-logo-black.png"
-              alt="fresh-nest-logo"
-            />
-          </a>
-        </div>
+			<!-- nav-logo -->
+			<div class="nav-logo-div">
+				<a href="http://127.0.0.1:5500/pages/home.html"> <img
+					class="nav-logo-div-image"
+					src="./assets/images/common/Fresh-nest-logo-black.png"
+					alt="fresh-nest-logo" />
+				</a>
+			</div>
 
-        <!-- nav-links -->
-        <div class="nav-link-div">
-          <ul id="menuList">
-            <li><a href="#">About Us</a></li>
-            <li class="feature-li">
-              <a href="#">Features</a>
-              <div class="dropdown">
-                <i class="bi bi-caret-down-fill down-arrow"></i>
-                <div class="dropdown-content">
-                  <ol id="feature-dropdown-ol">
-                    <a
-                      class="still-a"
-                      href="./pages/still.html"
-                    >
-                      <li class="still-li">
-                        <p class="li-para">Still</p>
-                      </li>
-                    </a>
+			<!-- nav-links -->
+			<div class="nav-link-div">
+				<ul id="menuList">
+					<li><a href="#">About Us</a></li>
+					<li class="feature-li"><a href="#">Features</a>
+						<div class="dropdown">
+							<i class="bi bi-caret-down-fill down-arrow"></i>
+							<div class="dropdown-content">
+								<ol id="feature-dropdown-ol">
+									<a class="still-a" href="./pages/still.html">
+										<li class="still-li">
+											<p class="li-para">Still</p>
+									</li>
+									</a>
 
-                    <a
-                      class="nest-a"
-                      href="./pages/nest.html"
-                    >
-                      <li class="Nest-li">
-                        <p class="li-para">Nest</p>
-                      </li>
-                    </a>
-                  </ol>
-                </div>
-              </div>
-            </li>
-            <li>Support</li>
-          </ul>
-        </div>
+									<a class="nest-a" href="./pages/nest.html">
+										<li class="Nest-li">
+											<p class="li-para">Nest</p>
+									</li>
+									</a>
+								</ol>
+							</div>
+						</div></li>
+					<li>Support</li>
+				</ul>
+			</div>
 
-        <!--Nav-signin and login button  -->
-        <div class="nav-button-div-container" id="sign-log">
-          <a href="./pages/userRegister.html">
-            <div class="sign-up-button-div">
-              <p class="sign-up-button-div-text">SIGN</p>
+			<!--Nav-signin and login button  -->
+			<div class="nav-button-div-container" id="sign-log">
+				<a href="./pages/userRegister.html">
+					<button class="register-button">Sign Up</button>
+				</a> <a href="./pages/login.html">
+					<button class="login-button">Log in</button>
 
-              <div class="swip-up-button-div">
-                <p class="swip-up-button-div-up">UP</p>
-              </div>
-            </div></a
-          >
+				</a>
+			</div>
 
-          <a href="./pages/login.html">
-            <div class="sign-up-button-div">
-              <p class="sign-up-button-div-text">LOG</p>
+			<!-- mobile profile image -->
 
-              <div class="swip-up-button-div">
-                <p class="swip-up-button-div-up">IN</p>
-              </div>
-            </div>
-          </a>
-        </div>
+			<div class="user-div">
+				<img class="user-icon" src="./assets/images/nav-bar/user.png"
+					alt="mobile-profile-icon" onclick="togglemenu()" />
+			</div>
+		</nav>
 
-        <!-- mobile profile image -->
+		<!-- Hero section -->
 
-        <div class="user-div">
-          <img
-            class="user-icon"
-            src="./assets/images/nav-bar/user.png"
-            alt="mobile-profile-icon"
-            onclick="togglemenu()"
-          />
-        </div>
-      </nav>
+		<div class="header-first-main-container">
+			<div class="header-first-main-container-control-div">
+				<div class="header-first-container-flex-div">
+					<div class="header-hello-user-div">
+						<div>
+							<img class="header-hello-user-div-image"
+								src="./assets/images/Hero section/Gif/hello hand.gif"
+								alt="hello-hand-for-users" /> <span
+								class="header-hello-user-div-content">Hello users</span>
+						</div>
+					</div>
 
-      <!-- Hero section -->
+					<div class="joyfull-div">
+						<p class="joyfull-div-content">This Browser for</p>
+						<p class="joyfull-user-content-word">Joyful users</p>
+					</div>
+					<div class="header-first-para-div">
+						<p class="header-first-para-div-para">Build your joyful more
+							and more as soon as extreme cheerful. Because our world routate
+							with happy motive. It's rotating for happy living. If we are
+							cheerful our earth also get joy and rotata happily.Save hours on
+							each happy, love every minute of it.</p>
+					</div>
 
-      <div class="header-first-main-container">
-        <div class="header-first-main-container-control-div">
-          <div class="header-first-container-flex-div">
-            <div class="header-hello-user-div">
-              <div>
-                <img
-                  class="header-hello-user-div-image"
-                  src="./assets/images/Hero section/Gif/hello hand.gif"
-                  alt="hello-hand-for-users"
-                />
-                <span class="header-hello-user-div-content">Hello users</span>
-              </div>
-            </div>
+					<div>
+						<button class="hero-section-button" onclick="signUpButton()">
+							<p class="try-para">Try Nest for free</p>
+							<span>&#8594;</span>
+						</button>
+					</div>
+					<div>
+						<p class="head-its-trial-para">It's a free trial. Then why are
+							you waiting for.</p>
+					</div>
+					<div id="google_translate_element"></div>
+				</div>
+			</div>
 
-            <div class="joyfull-div">
-              <p class="joyfull-div-content">This Browser for</p>
-              <p class="joyfull-user-content-word">Joyful users</p>
-            </div>
-            <div class="header-first-para-div">
-              <p class="header-first-para-div-para">
-                Build your joyful more and more as soon as extreme cheerful.
-                Because our world routate with happy motive. It's rotating for
-                happy living. If we are cheerful our earth also get joy and
-                rotata happily.Save hours on each happy, love every minute of
-                it.
-              </p>
-            </div>
+			<!-- second-part-of-hero-section -->
+			<div class="header-video-container">
+				<div class="header-video-container-div">
+					<video class="header-video-container-div-video" autoplay muted
+						playsinline loop>
+						<source src="./assets/videos/home/home-head-video.mp4"
+							type="video/mp4" />
+					</video>
+				</div>
+			</div>
+		</div>
+	</header>
 
-            <div>
-              <button class="hero-section-button" onclick="signUpButton()">
-                <p class="try-para">Try Nest for free</p>
-                <span>&#8594;</span>
-              </button>
-            </div>
-            <div>
-              <p class="head-its-trial-para">
-                It's a free trial. Then why are you waiting for.
-              </p>
-            </div>
-            <div id="google_translate_element"></div>
-          </div>
-        </div>
+	<!-- section-start -->
 
-        <!-- second-part-of-hero-section -->
-        <div class="header-video-container">
-          <div class="header-video-container-div">
-            <video
-              class="header-video-container-div-video"
-              autoplay
-              muted
-              playsinline
-              loop
-            >
-              <source
-                src="./assets/videos/home/home-head-video.mp4"
-                type="video/mp4"
-              />
-            </video>
-          </div>
-        </div>
-      </div>
-    </header>
+	<section class="section-whole-container">
+		<div class="message-me-div">
+			<img class="message-me-div-image"
+				src="./assets/images/Hero section/message me.png" alt="message-me"
+				onclick="popup()" />
+		</div>
 
-    <!-- section-start -->
+		<div id="popup">
+			<!-- nav message me image -->
 
-    <section class="section-whole-container">
-      <div class="message-me-div">
-        <img
-          class="message-me-div-image"
-          src="./assets/images/Hero section/message me.png"
-          alt="message-me"
-          onclick="popup()"
-        />
-      </div>
+			<div class="message-me-nav-div">
+				<!-- image of navigation -->
+				<div class="navigation-image-div">
+					<div class="bird-div">
+						<img class="bird-div-image"
+							src="../assets/images/chat/message me/bird-removebg-preview.png"
+							alt="bird image" />
+					</div>
+					<div class="message-div">
+						<img class="message-div-image"
+							src="../assets/images/chat/message me/chat.png" alt="message-me" />
+					</div>
+					<div class="minus-div">
+						<img class="minus-div-image"
+							src="../assets/images/chat/message me/minus.png" alt="exit-image"
+							onclick="closepopup()" />
+					</div>
+				</div>
+			</div>
 
-      <div id="popup">
-        <!-- nav message me image -->
+			<!-- message board -->
 
-        <div class="message-me-nav-div">
-          <!-- image of navigation -->
-          <div class="navigation-image-div">
-            <div class="bird-div">
-              <img
-                class="bird-div-image"
-                src="../assets/images/chat/message me/bird-removebg-preview.png"
-                alt="bird image"
-              />
-            </div>
-            <div class="message-div">
-              <img
-                class="message-div-image"
-                src="../assets/images/chat/message me/chat.png"
-                alt="message-me"
-              />
-            </div>
-            <div class="minus-div">
-              <img
-                class="minus-div-image"
-                src="../assets/images/chat/message me/minus.png"
-                alt="exit-image"
-                onclick="closepopup()"
-              />
-            </div>
-          </div>
-        </div>
+			<div class="text-place-container">
+				<div class="text-place-container-div">
+					<img /> <img />
+				</div>
+			</div>
 
-        <!-- message board -->
+			<!-- text-area -->
+			<div class="text-area-container">
+				<div class="text-area-div">
+					<div class="text-div">
+						<textarea id="textarea" placeholder="Message me"></textarea>
+					</div>
+					<div class="send-option-div">
+						<img class="send-image"
+							src="../assets/images/chat/message me/send.png" alt="send-icon" />
+					</div>
+					<div class="emoji-option-div">
+						<img class="emoji-image"
+							src="../assets/images/chat/message me/in-love.png" alt="emoji" />
+					</div>
+				</div>
+			</div>
+		</div>
 
-        <div class="text-place-container">
-          <div class="text-place-container-div">
-            <img />
-            <img />
-          </div>
-        </div>
+		<!-- section-first -->
+		<section>
+			<div class="section-first-heading-div">
+				<p class="everything-para">EVERYTHING FOR ENJOY AND CHEERFUL
+					USERS</p>
 
-        <!-- text-area -->
-        <div class="text-area-container">
-          <div class="text-area-div">
-            <div class="text-div">
-              <textarea id="textarea" placeholder="Message me"></textarea>
-            </div>
-            <div class="send-option-div">
-              <img
-                class="send-image"
-                src="../assets/images/chat/message me/send.png"
-                alt="send-icon"
-              />
-            </div>
-            <div class="emoji-option-div">
-              <img
-                class="emoji-image"
-                src="../assets/images/chat/message me/in-love.png"
-                alt="emoji"
-              />
-            </div>
-          </div>
-        </div>
-      </div>
+				<h2 class="jolly-heading">Jolly features in one humorous
+					browser</h2>
 
-      <!-- section-first -->
-      <section>
-        <div class="section-first-heading-div">
-          <p class="everything-para">EVERYTHING FOR ENJOY AND CHEERFUL USERS</p>
+				<p class="feature-head-para">In our website we have three
+					features. You can use this browser for your entertainment and spend
+					funny times with your friend , lover, or your's close heart
+					touchable peerson.</p>
+			</div>
 
-          <h2 class="jolly-heading">Jolly features in one humorous browser</h2>
+			<!--first section features defenitiion-->
 
-          <p class="feature-head-para">
-            In our website we have three features. You can use this browser for
-            your entertainment and spend funny times with your friend , lover,
-            or your's close heart touchable peerson.
-          </p>
-        </div>
+			<div class="first-section-container">
+				<div class="first-section-container-still-div">
+					<div class="first-section-container-still-div-image-div">
+						<img class="first-section-container-still-div-image-div-image"
+							src="./assets/images/Hero section/still-feature-image.png"
+							alt="still-feature-image" />
+					</div>
 
-        <!--first section features defenitiion-->
+					<div class="first-section-still-about-div">
+						<h2 id="capture">Capturing Still</h2>
+						<p class="first-section-still-about-div-para">In our browser
+							we have a some camera filters for capturing filters</p>
+					</div>
+				</div>
 
-        <div class="first-section-container">
-          <div class="first-section-container-still-div">
-            <div class="first-section-container-still-div-image-div">
-              <img
-                class="first-section-container-still-div-image-div-image"
-                src="./assets/images/Hero section/still-feature-image.png"
-                alt="still-feature-image"
-              />
-            </div>
+				<div class="first-section-nest-feature-div">
+					<div class="first-section-container-nest-div-image-div">
+						<img class="first-section-container-nest-div-image-div-image"
+							src="./assets/images/Hero section/chat-feature-image.png"
+							alt="neat-feature-div" />
+					</div>
+					<div class="first-section-nest-about-div">
+						<h2 id="capture">Chat in Nest</h2>
+						<p class="first-section-nest-about-div-para">If you want to
+							share your photos to your friends or lovers you can use this
+							website.</p>
+					</div>
+				</div>
 
-            <div class="first-section-still-about-div">
-              <h2 id="capture">Capturing Still</h2>
-              <p class="first-section-still-about-div-para">
-                In our browser we have a some camera filters for capturing
-                filters
-              </p>
-            </div>
-          </div>
+				<!-- Rolling feature div -->
 
-          <div class="first-section-nest-feature-div">
-            <div class="first-section-container-nest-div-image-div">
-              <img
-                class="first-section-container-nest-div-image-div-image"
-                src="./assets/images/Hero section/chat-feature-image.png"
-                alt="neat-feature-div"
-              />
-            </div>
-            <div class="first-section-nest-about-div">
-              <h2 id="capture">Chat in Nest</h2>
-              <p class="first-section-nest-about-div-para">
-                If you want to share your photos to your friends or lovers you
-                can use this website.
-              </p>
-            </div>
-          </div>
+				<div class="first-section-container-rolling-div">
+					<div class="first-section-container-rolling-div-image-div">
+						<img class="first-section-container-rolling-div-image-div-image"
+							src="./assets/images/Hero section/Rollings-feature-image.png"
+							alt="rolling-features-div" />
+					</div>
+					<div class="first-section-rolling-about-div">
+						<h2>
+							<h2 id="capture">Show your mode</h2>
+							<p class="first-section-rolling-about-div-para">You can also
+								show your daily mode in our browser. It was anyone watch who
+								have permission from you.</p>
+						</h2>
+					</div>
+				</div>
+			</div>
+		</section>
 
-          <!-- Rolling feature div -->
+		<!--Our user review section-->
 
-          <div class="first-section-container-rolling-div">
-            <div class="first-section-container-rolling-div-image-div">
-              <img
-                class="first-section-container-rolling-div-image-div-image"
-                src="./assets/images/Hero section/Rollings-feature-image.png"
-                alt="rolling-features-div"
-              />
-            </div>
-            <div class="first-section-rolling-about-div">
-              <h2>
-                <h2 id="capture">Show your mode</h2>
-                <p class="first-section-rolling-about-div-para">
-                  You can also show your daily mode in our browser. It was
-                  anyone watch who have permission from you.
-                </p>
-              </h2>
-            </div>
-          </div>
-        </div>
-      </section>
+		<section class="user-review-section">
+			<div class="user-section-heading-div">
+				<h2 class="our-user-head">Our User Review</h2>
+				<p class="our-user-para">They are our user and they gives some
+					review about our browser</p>
+			</div>
 
-      <!--Our user review section-->
+			<div class="user-review-section-container"></div>
+		</section>
 
-      <section class="user-review-section">
-        <div class="user-section-heading-div">
-          <h2 class="our-user-head">Our User Review</h2>
-          <p class="our-user-para">
-            They are our user and they gives some review about our browser
-          </p>
-        </div>
+		<!-- Special thanks div-->
 
-        <div class="user-review-section-container"></div>
-      </section>
+		<section>
+			<div class="special-thank-heading-div">
+				<h2 class="special-thank-head">Special Thanks</h2>
 
-      <!-- Special thanks div-->
+				<p class="special-thank-para">These websites are give some idea
+					to build our website. So I wants to thank for these websites.</p>
+			</div>
 
-      <section>
-        <div class="special-thank-heading-div">
-          <h2 class="special-thank-head">Special Thanks</h2>
+			<div class="thank-saying-div-container">
+				<div class="whatsapp-logo-div">
+					<img class="whatsapp-logo-div-image"
+						src="./assets/images/Hero section/thank website/Whatsapp-logo.png"
+						alt="whatsapp-logo" />
+				</div>
+				<div class="instagram-logo-div">
+					<img class="instagram-logo-div-image"
+						src="./assets/images/Hero section/thank website/instagram-logo.png"
+						alt="instagram-logo" />
+				</div>
+				<div class="snapchat-logo-div">
+					<img class="snapchat-logo-div-image"
+						src="./assets/images/Hero section/thank website/Snapchat-logo.png"
+						alt="snapchat-logo" />
+				</div>
+				<div class="freshworks-logo-div">
+					<img class="freshworks-logo-div-image"
+						src="./assets/images/Hero section/thank website/Freshwork-logo.png"
+						alt="freshwork-logo" />
+				</div>
+				<div class="polypane-logo-div">
+					<img class="polypane-logo-div-image"
+						src="./assets/images/Hero section/thank website/polypane-logo.png"
+						alt="polypane-logo" />
+				</div>
+			</div>
+		</section>
+	</section>
 
-          <p class="special-thank-para">
-            These websites are give some idea to build our website. So I wants
-            to thank for these websites.
-          </p>
-        </div>
+	<!--footer start-->
+	<footer>
+		<div class="footer-container">
+			<div class="footer-logo-div">
+				<div class="logo-div-footer">
+					<div class="logo-image-div">
+						<img class="footer-logo-div-image-white"
+							src="./assets/images/footer/fresh-nest-logo-white.png"
+							alt="footer-website-logo" />
+					</div>
+					<div>
+						<p>The browser for entertainment</p>
+					</div>
+				</div>
 
-        <div class="thank-saying-div-container">
-          <div class="whatsapp-logo-div">
-            <img
-              class="whatsapp-logo-div-image"
-              src="./assets/images/Hero section/thank website/Whatsapp-logo.png"
-              alt="whatsapp-logo"
-            />
-          </div>
-          <div class="instagram-logo-div">
-            <img
-              class="instagram-logo-div-image"
-              src="./assets/images/Hero section/thank website/instagram-logo.png"
-              alt="instagram-logo"
-            />
-          </div>
-          <div class="snapchat-logo-div">
-            <img
-              class="snapchat-logo-div-image"
-              src="./assets/images/Hero section/thank website/Snapchat-logo.png"
-              alt="snapchat-logo"
-            />
-          </div>
-          <div class="freshworks-logo-div">
-            <img
-              class="freshworks-logo-div-image"
-              src="./assets/images/Hero section/thank website/Freshwork-logo.png"
-              alt="freshwork-logo"
-            />
-          </div>
-          <div class="polypane-logo-div">
-            <img
-              class="polypane-logo-div-image"
-              src="./assets/images/Hero section/thank website/polypane-logo.png"
-              alt="polypane-logo"
-            />
-          </div>
-        </div>
-      </section>
-    </section>
+				<div class="footer-copyright-div">
+					<img class="footer-copyright-div-image"
+						src="./assets/images/footer/copyright-logo.png"
+						alt="copyright-image" />
+					<p>2022 Fresh Nest</p>
+				</div>
+				<div class="footer-term-policy-div">
+					<a class="footer-policy-a" href="#">Privacy</a> <a
+						class="footer-term-condition-a" href="#">Terms and Conditions</a>
+				</div>
+			</div>
 
-    <!--footer start-->
-    <footer>
-      <div class="footer-container">
-        <div class="footer-logo-div">
-          <div class="logo-div-footer">
-            <div class="logo-image-div">
-              <img
-                class="footer-logo-div-image-white"
-                src="./assets/images/footer/fresh-nest-logo-white.png"
-                alt="footer-website-logo"
-              />
-            </div>
-            <div>
-              <p>The browser for entertainment</p>
-            </div>
-          </div>
+			<div class="footer-home-div">
+				<p class="footer-home-head">Page</p>
+				<a class="footer-home-about" href="#">About us</a> <a
+					class="footer-home-download" href="#">Download</a> <a
+					class="footer-home-support" href="#">Support</a>
+			</div>
+			<div class="footer-features-div">
+				<p>Features</p>
+				<a class="footer-still-a" href="#">Still</a> <a
+					class="footer-nest-a" href="#">Nest</a> <a class="footer-rolling-a"
+					href="#">Rolling</a>
+			</div>
+			<div class="footer-download-div">
+				<p>Download</p>
+				<a class="footer-mac-a" href="#">Mac/Pc</a> <a
+					class="footer-iphone-a" href="#">Iphone</a> <a
+					class="footer-android-a" href="#">Android</a>
+			</div>
 
-          <div class="footer-copyright-div">
-            <img
-              class="footer-copyright-div-image"
-              src="./assets/images/footer/copyright-logo.png"
-              alt="copyright-image"
-            />
-            <p>2022 Fresh Nest</p>
-          </div>
-          <div class="footer-term-policy-div">
-            <a class="footer-policy-a" href="#">Privacy</a>
-            <a class="footer-term-condition-a" href="#">Terms and Conditions</a>
-          </div>
-        </div>
+			<div class="footer-social-media-div">
+				<p>Social Media contacts</p>
+				<div class="footer-social-media-div-twitter-div">
+					<img class="footer-social-media-div-twitter-div-image"
+						src="./assets/images/footer/Twitter-logo.png" alt="twitter-logo" />
+					<a href="#">@freshnest</a>
+				</div>
+				<div class="footer-social-media-div-facebook-div">
+					<img class="footer-social-media-div-facebook-div-image"
+						src="./assets/images/footer/facebook-logo.png" alt="facebook-logo" />
+					<a href="#">freshnest</a>
+				</div>
+				<div class="footer-social-media-div-github-div">
+					<img class="footer-social-media-div-github-div-image"
+						src="./assets/images/footer/github-logo.png" alt="github-logo" />
+					<a href="#">freshnest.io</a>
+				</div>
+				<div class="footer-social-media-div-whatsapp-div">
+					<img class="footer-social-media-div-whatsapp-div-image"
+						src="./assets/images/footer/whatsapp-logo.png" alt="whatsapp-logo" />
+					<a href="#">freshnest</a>
+				</div>
+				<div class="footer-social-media-div-instagram-div">
+					<img class="footer-social-media-div-instagram-div-image"
+						src="./assets/images/footer/Instagram-logo.png"
+						alt="instagram-logo" /> <a href="#">fresh_nest_&_co </a>
+				</div>
+			</div>
+		</div>
+	</footer>
 
-        <div class="footer-home-div">
-          <p class="footer-home-head">Page</p>
-          <a class="footer-home-about" href="#">About us</a>
-          <a class="footer-home-download" href="#">Download</a>
-          <a class="footer-home-support" href="#">Support</a>
-        </div>
-        <div class="footer-features-div">
-          <p>Features</p>
-          <a class="footer-still-a" href="#">Still</a>
-          <a class="footer-nest-a" href="#">Nest</a>
-          <a class="footer-rolling-a" href="#">Rolling</a>
-        </div>
-        <div class="footer-download-div">
-          <p>Download</p>
-          <a class="footer-mac-a" href="#">Mac/Pc</a>
-          <a class="footer-iphone-a" href="#">Iphone</a>
-          <a class="footer-android-a" href="#">Android</a>
-        </div>
-
-        <div class="footer-social-media-div">
-          <p>Social Media contacts</p>
-          <div class="footer-social-media-div-twitter-div">
-            <img
-              class="footer-social-media-div-twitter-div-image"
-              src="./assets/images/footer/Twitter-logo.png"
-              alt="twitter-logo"
-            />
-            <a href="#">@freshnest</a>
-          </div>
-          <div class="footer-social-media-div-facebook-div">
-            <img
-              class="footer-social-media-div-facebook-div-image"
-              src="./assets/images/footer/facebook-logo.png"
-              alt="facebook-logo"
-            />
-            <a href="#">freshnest</a>
-          </div>
-          <div class="footer-social-media-div-github-div">
-            <img
-              class="footer-social-media-div-github-div-image"
-              src="./assets/images/footer/github-logo.png"
-              alt="github-logo"
-            />
-            <a href="#">freshnest.io</a>
-          </div>
-          <div class="footer-social-media-div-whatsapp-div">
-            <img
-              class="footer-social-media-div-whatsapp-div-image"
-              src="./assets/images/footer/whatsapp-logo.png"
-              alt="whatsapp-logo"
-            />
-            <a href="#">freshnest</a>
-          </div>
-          <div class="footer-social-media-div-instagram-div">
-            <img
-              class="footer-social-media-div-instagram-div-image"
-              src="./assets/images/footer/Instagram-logo.png"
-              alt="instagram-logo"
-            />
-            <a href="#">fresh_nest_&_co </a>
-          </div>
-        </div>
-      </div>
-    </footer>
-
-    <script src="./assets/js/message-me.js"></script>
-    <script src="./assets/js/review-card.js"></script>
-    <script src="./assets/js/nav.js"></script>
-  </body>
+	<script src="./assets/js/message-me.js"></script>
+	<script src="./assets/js/review-card.js"></script>
+	<script src="./assets/js/nav.js"></script>
+</body>
 </html>

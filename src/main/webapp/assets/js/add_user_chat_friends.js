@@ -4,7 +4,7 @@
 let userId;
 
 function findUserProfileDetails(){
-		const url = "http://localhost:8080/appfreshnest/UserProfileDetails";
+		const url = "/appfreshnest/UserProfileDetails";
 			axios.get(url)
 			  .then(function (response) {
 			    // handle success
@@ -49,7 +49,7 @@ try {
 
 function getUserChatFriends(){
 	
-	const url = "http://localhost:8080/appfreshnest/GetAllUserChatFriends";
+	const url = "/appfreshnest/GetAllUserChatFriends";
 			axios.get(url)
 			  .then(function (response) {
 			    // handle success
@@ -65,7 +65,7 @@ function getUserChatFriends(){
 }
   
   getUserChatFriends();
-// const intervalId = setInterval(getUserChatFriends, 5000);
+ // const intervalId = setInterval(getUserChatFriends, 5000);
   
   
   // Removing previous chat cards by removing all child nodes
@@ -83,7 +83,7 @@ let chatType;
   
  function showAllUserChatFriends(chatGroup){
 	 
- // chatCardRemoveFunction();
+  chatCardRemoveFunction();
   
   for (const friendData of chatGroup) {
       let div = document.createElement("div");
@@ -114,7 +114,7 @@ let chatType;
 
       let img = document.createElement("img");
       img.setAttribute("class", "member-image");
-      img.setAttribute("src", friendData["profileImage"]);
+      img.setAttribute("src", friendData["groupImage"]);
       image.append(img);
 
       let nameOne = document.createElement("div");
@@ -122,11 +122,11 @@ let chatType;
       image_div.append(nameOne);
 
       let para = document.createElement("p");
-      para.innerHTML = friendData["username"];
+      para.innerHTML = friendData["chatName"];
       nameOne.append(para);
 
       let paragraph = document.createElement("p");
-      paragraph.innerText = friendData["chatMessage"];
+      paragraph.innerText = friendData["chatMessage"] || "start conversation";
       nameOne.append(paragraph);
 
       let timeCountDiv = document.createElement("div");
@@ -152,16 +152,18 @@ let chatType;
       }
       
       // Convert the time of the message using localeDate
-       timestamp = new Date('2023-09-14 10:37:02.0');
+       timestamp = new Date(friendData["timestamp"]);
 
       // Format the timestamp with AM and PM
        let  formattedTime = timestamp.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: true });
-
-      // Display the formatted time
-       console.log(formattedTime);
+       
+       if(formattedTime === "Invalid Date"){
+		   const currentTime = new Date();
+          formattedTime = currentTime.toLocaleTimeString([], { hour: '2-digit', minute:'2-digit', hour12: true }).toUpperCase();
+	   }
 
       let timeAgo = document.createElement("div");
-      timeAgo.setAttribute("id", "time-ago");
+      timeAgo.setAttribute("id", "time-ago" );
       timeCountDiv.append(timeAgo);
 
       let time = document.createElement("p");
@@ -171,12 +173,11 @@ let chatType;
       document.querySelector(".chat-member-inside-container").append(div);
     }
   }
-  
- 
+   
     
 function  getSpecificChatGroupDetails(chatId, chatType){
 	
-const url = "http://localhost:8080/appfreshnest/GetChatGroupDeatils?chatId=" + chatId + "&chatType=" + chatType;
+const url = "/appfreshnest/GetChatGroupDeatils?chatId=" + chatId + "&chatType=" + chatType;
 			axios.get(url)
 			  .then(function (response) {
 			    // handle success
@@ -354,6 +355,7 @@ function chatCard(userSelectionIdFind) {
         emoji.innerHTML = String.fromCodePoint(emojiCode);
         emoji.addEventListener("click", () => { 
         let clickedEmoji = emoji.innerHTML; 
+        
         inputEmoji(clickedEmoji);
         });
         emojiDivContainer.appendChild(emoji);
@@ -377,6 +379,7 @@ function chatCard(userSelectionIdFind) {
 
       let mikeI = document.createElement("i");
       mikeI.setAttribute("class", "fa fa-microphone");
+      mikeI.setAttribute("onclick", "voiceText()");
       chatFileOptionDiv.append(mikeI);
 
       let chatSubmitDiv = document.createElement("div");
@@ -411,9 +414,7 @@ function chatCard(userSelectionIdFind) {
     }
     
     
-   function chatMessageDivide(chatMessage){ 
-	   console.log("divide "+userId)
-    
+   function chatMessageDivide(chatMessage){     
    for (let senders of chatMessage) {
     if (senders["senderId"] == userId ) {
       // usrer chat elemeent creation function

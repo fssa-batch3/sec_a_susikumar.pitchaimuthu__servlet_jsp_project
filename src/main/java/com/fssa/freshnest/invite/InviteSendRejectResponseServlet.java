@@ -39,7 +39,7 @@ public class InviteSendRejectResponseServlet extends HttpServlet {
 		InviteReaction inviteReaction = new InviteReaction();
 		inviteReaction.setInviteId(inviteId);
 		inviteReaction.setUserId(userId);
-		inviteReaction.setLike(value);
+		inviteReaction.setReject(value);
 
 		try {
 			if (inviteReactionService.userSendRejectResponse(inviteReaction)) {

@@ -72,7 +72,7 @@ let goToCamera = document.querySelector("#go-to-camera");
 
 goToCamera.addEventListener("click", () => {
   try {
-    window.location.href = "../pages/webcam.html?user=" + findUser["userId"];
+    window.location.href = "../pages/webcam.html";
   } catch (error) {
     console.log("An error occurred while redirect the webcam page :", error);
   }
@@ -95,12 +95,7 @@ allPhoto.addEventListener("click", (event) => {
     // removing the element
     removeCardElement();
 
-    for (let imageGP of imageGallery) {
-      let imageId = imageGP["imageId"];
-      let imageLink = imageGP["imageLink"];
-      let imageName = imageGP["imageName"];
-      snapImageCreation(imageId, imageLink, imageName);
-    }
+   getAllStills();
   } catch (error) {
     console.log("An error occured while all photo function :", error);
   }
@@ -114,7 +109,7 @@ favourite_image.addEventListener("click", (event) => {
     // removing the element
     removeCardElement();
   
-    const url = "http://localhost:8080/BookWebApp/StillFavouriteServlet";
+    const url = "http://localhost:8080/appfreshnest/StillFavouriteServlet";
 			axios.get(url)
 			  .then(function (response) {
 			    // handle success
@@ -123,9 +118,9 @@ favourite_image.addEventListener("click", (event) => {
 			    
 			    if(favStills != null){
 					for (let favouriteImages of favStills) {
-                    let imageId = favouriteImages["imageId"];
-                     let imageLink = favouriteImages["imageLink"];
-                     let imageName = favouriteImages["imageName"];
+                    let imageId = favouriteImages["stillId"];
+                     let imageLink = favouriteImages["stillUrl"];
+                     let imageName = favouriteImages["stillName"];
 
                     snapImageCreation(imageId, imageLink, imageName);
                 }
@@ -222,19 +217,18 @@ recent.addEventListener("click", (event) => {
     // removing the element
     removeCardElement();
      
-     
-      const url = "http://localhost:8080/BookWebApp/StillDeleteServlet";
+      const url = "http://localhost:8080/appfreshnest/StillDeleteServlet";
 			axios.get(url)
 			  .then(function (response) {
 			    // handle success
 			    console.log(response.data);
 			    const recentlyDeletedStills = response.data;
 			    
-			    if(recentlyDeletedStills != null){
+			    if(recentlyDeletedStills != "No still are found"){
 					for (let favouriteImages of recentlyDeletedStills) {
-                    let imageId = favouriteImages["imageId"];
-                     let imageLink = favouriteImages["imageLink"];
-                     let imageName = favouriteImages["imageName"];
+                    let imageId = favouriteImages["stillId"];
+                     let imageLink = favouriteImages["stillUrl"];
+                     let imageName = favouriteImages["stillName"];
 
                     snapImageCreation(imageId, imageLink, imageName);
                 }
@@ -263,13 +257,8 @@ function snapImageCreation(imageId, imageLink, imageName) {
     imageContainer.append(image_name_container);
 
     let a = document.createElement("a");
-    a.setAttribute(
-      "href",
-      "../pages/snap-details.html?user=" +
-        findUser["userId"] +
-        "&image=" +
-        imageId
-    );
+    a.setAttribute( "href", "../pages/snap-details.html?stilId=" + imageId);
+
     image_name_container.append(a);
     let image = document.createElement("img");
     image.setAttribute("id", imageId);

@@ -3,8 +3,8 @@
 let GetInviteDetails;
 let thisUserInvite;
 	
-		function getAllUserInvites() {
-			const url = "http://localhost:8080/appfreshnest/InvitePageServlet";
+ function getAllUserInvites() {
+			const url = "http://localhost:8080/appfreshnest/InvitePage";
 			axios.get(url)
 			  .then(function (response) {
 			    console.log(response.data);
@@ -209,3 +209,10 @@ let addInviteButton = document.querySelector(".invite-adding-div-container");
 addInviteButton.addEventListener("click", () => {
   window.location.href = "./add_invite_form.html";
 });
+
+// Get the invitation like count
+
+function getInvitationLikeCount(){
+	
+	
+}

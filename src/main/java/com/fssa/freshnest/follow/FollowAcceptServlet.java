@@ -14,6 +14,8 @@ import com.fssa.freshnest.model.RequestAndResponse;
 import com.fssa.freshnest.services.FollowConnectionService;
 import com.fssa.freshnest.services.exceptions.ServiceException;
 
+
+
 /**
  * Servlet implementation class FollowAcceptServlet
  */

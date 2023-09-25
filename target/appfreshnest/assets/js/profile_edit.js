@@ -1,3 +1,16 @@
+// Get the current date
+let currentDate = new Date();
+
+// Calculate the date 18 years ago from the current date
+let eighteenYearsAgo = new Date(currentDate);
+eighteenYearsAgo.setFullYear(currentDate.getFullYear() - 18);
+
+// Convert the date to ISO format and split it
+let maxDate = eighteenYearsAgo.toISOString().split("T")[0];
+
+// Set the maximum date for the input element
+document.getElementById("dateOfBirth").setAttribute("max", maxDate);
+
 let changes = document.getElementById("change-form");
 changes.addEventListener("submit", function (e) {
   e.preventDefault();
@@ -29,7 +42,7 @@ changes.addEventListener("submit", function (e) {
       dob: old
     };
 
-     const url = "http://localhost:8080/appfreshnest/ProfileEditServlet";
+     const url = "/appfreshnest/ProfileDetailsUpdateServlet";
 
             axios.post(url, editObj, {
                 headers: {
@@ -39,7 +52,32 @@ changes.addEventListener("submit", function (e) {
             .then(function (response) {
                 // handle success
                 console.log(response.data);
+                let ServerMessage = response.data;
                 
+                if(ServerMessage == "success"){
+                window.location.href = "../pages/profile.html";
+                }else {
+					
+				const icon = document.createElement('i');
+                icon.className = 'bi bi-exclamation-circle-fill error-icon';
+                icon.setAttribute('aria-hidden', 'true');
+
+              // Create the <p> element with class and text content
+               const paragraph = document.createElement('p');
+               paragraph.className = 'error-para';
+               paragraph.textContent = serverMessage;
+
+               let parent = document.querySelector(".error-message-div");
+
+              // Remove previous error message elements
+              while (parent.firstChild) {
+                parent.removeChild(parent.firstChild);
+              }
+
+              // Append the new error message elements
+              parent.appendChild(icon);
+              parent.appendChild(paragraph);
+				}
             })
             .catch(function (error) {
                 // handle error
@@ -60,7 +98,7 @@ let cancelButton = document.querySelector("#cancel-button");
 
 cancelButton.addEventListener("click", () => {
   try {
-    window.location.href = "../pages/profile.html?user=" + findUser["userId"];
+    window.location.href = "../pages/profile.html";
   } catch (error) {
     console.log("An error occurred while cancel edit :", error);
   }

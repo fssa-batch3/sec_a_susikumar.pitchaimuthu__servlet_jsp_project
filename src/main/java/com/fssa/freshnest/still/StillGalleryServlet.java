@@ -34,14 +34,11 @@ public class StillGalleryServlet extends HttpServlet {
 
 		HttpSession session = request.getSession();
 
-		Integer loggedInUserId = (Integer) session.getAttribute("UserId");
-		User user = new User();
-		user.setUserId(loggedInUserId);
+		Integer userId = (Integer) session.getAttribute("UserId");
 
-		Still still = new Still(user);
 		StillService stillService = new StillService();
 		try {
-			List<Still> stillList = stillService.listStills(still);
+			List<Still> stillList = stillService.listStills(userId);
 
 			JSONArray StillJsonArray = new JSONArray(stillList);
 			System.out.println(stillList);

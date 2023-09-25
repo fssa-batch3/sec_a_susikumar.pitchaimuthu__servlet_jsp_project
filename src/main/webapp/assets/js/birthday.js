@@ -1,3 +1,18 @@
+// Get the current date
+let currentDate = new Date();
+
+// Calculate the date 18 years ago from the current date
+let eighteenYearsAgo = new Date(currentDate);
+eighteenYearsAgo.setFullYear(currentDate.getFullYear() - 18);
+
+// Convert the date to ISO format and split it
+let maxDate = eighteenYearsAgo.toISOString().split("T")[0];
+
+// Set the maximum date for the input element
+document.getElementById("birthday").setAttribute("max", maxDate);
+
+
+
 // Birthday page form element
 
 let birthdayForm = document.querySelector("#birthday-form");

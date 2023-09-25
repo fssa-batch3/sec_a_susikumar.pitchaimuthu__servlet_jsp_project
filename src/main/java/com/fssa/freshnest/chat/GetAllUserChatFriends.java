@@ -2,6 +2,7 @@ package com.fssa.freshnest.chat;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -14,7 +15,6 @@ import javax.servlet.http.HttpSession;
 import org.json.JSONArray;
 
 import com.fssa.freshnest.model.Chat;
-import com.fssa.freshnest.model.User;
 import com.fssa.freshnest.services.ChatService;
 import com.fssa.freshnest.services.exceptions.ServiceException;
 
@@ -31,7 +31,8 @@ public class GetAllUserChatFriends extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-
+		request.setCharacterEncoding("UTF-8");
+		response.setCharacterEncoding("UTF-8");
 		HttpSession session = request.getSession();
 		PrintWriter out = response.getWriter();
 
@@ -40,13 +41,23 @@ public class GetAllUserChatFriends extends HttpServlet {
 
 		ChatService chatService = new ChatService();
 
-		User user = new User();
-		user.setUserId(userId);
-		Chat chat = new Chat();
-		chat.setUser(user);
-
 		try {
-			List<Chat> groups = chatService.listAllUserChatAccount(chat);
+			
+			List<Chat> chatGroups = chatService.getUserChatGroups(userId);
+			List<Chat> groups = new ArrayList<>(); 
+			
+			for (Chat ch : chatGroups) {
+			    String chatType = ch.getChatType(); 
+			    int chatId = ch.getChatId();
+			    System.out.println(chatType);
+			    System.out.println(chatId);
+			    if(chatType.equals("direct")) {
+			    	groups.add(chatService.getUserDirectConversationGroupDetails(chatId));
+			    }else {
+			    	groups.add(chatService.getUserGroupConversationGroupDetails(chatId));
+			    }
+			}
+			
 			JSONArray userChatGroup = new JSONArray(groups);
 			out.print(userChatGroup.toString());
 			out.flush();
@@ -57,4 +68,4 @@ public class GetAllUserChatFriends extends HttpServlet {
 
 	}
 
-}
+} 

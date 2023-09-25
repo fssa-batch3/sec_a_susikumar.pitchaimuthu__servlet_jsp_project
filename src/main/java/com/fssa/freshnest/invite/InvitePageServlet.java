@@ -45,13 +45,10 @@ public class InvitePageServlet extends HttpServlet {
 			request.setAttribute("userDetails", userDetails);
 			System.out.println(userDetails);
 
-			User user1 = new User();
-			user1.setUserId(userId);
 			// Create an Invite object using the user1 object
-			Invite invite = new Invite(user1);
 			InviteService inviteService = new InviteService();
 
-			List<Invite> inviteList = inviteService.listInvites(invite);
+			List<Invite> inviteList = inviteService.listInvites(userId);
 			JSONArray userInvitesArray = new JSONArray(inviteList);
 			out.println(userInvitesArray.toString());
 			out.flush();

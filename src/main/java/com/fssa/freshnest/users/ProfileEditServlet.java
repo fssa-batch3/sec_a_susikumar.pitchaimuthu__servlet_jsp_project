@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.time.LocalDate;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -47,7 +46,7 @@ public class ProfileEditServlet extends HttpServlet {
 		
 		String firstName = jsonData.getString("firstName");
 		String lastName = jsonData.getString("lastName");
-		String userName = jsonData.getString("lastName");
+		String userName = jsonData.getString("userName");
 		String nationality = jsonData.getString("city");
 		String gender = jsonData.getString("userGender");
 		String userTheme = jsonData.getString("userTheme");

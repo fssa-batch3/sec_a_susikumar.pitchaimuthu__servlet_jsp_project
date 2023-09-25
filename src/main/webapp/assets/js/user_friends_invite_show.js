@@ -185,13 +185,16 @@ likeCommentInsideDiv.append(heartDiv);
 
     let okDiv = document.createElement("div");
     okDiv.setAttribute("class", "ok-div");
-    okDiv.setAttribute("id", userInvite["inviteId"]);
-    okDiv.addEventListener("click", ()=> {
-		let inviteId = okDiv.id;
-		let value = getSendRequestValue();
-		inviteRequestSendFunction(value, inviteId);
-	})
+    okDiv.setAttribute("id", userInvite.inviteDetail.inviteId);
+    okDiv.setAttribute("user-data", userInvite.creatorDetails["userId"]);
+    okDiv.addEventListener("click", () => {
+    let inviteId = okDiv.id;
+    let userId = okDiv.getAttribute("user-data");
+    let value = getSendRequestValue();
+    inviteRequestSendFunction(value, inviteId, userId);
+    });
     likeCommentInsideDiv.append(okDiv);
+
 
     if (userInvite["userInviteReactionDetail"]["sendRequest"] == true) {
       let okI = document.createElement("i");
@@ -205,7 +208,7 @@ likeCommentInsideDiv.append(heartDiv);
 
     let sorryDiv = document.createElement("div");
     sorryDiv.setAttribute("class", "sorry-div");
-    sorryDiv.setAttribute("id", userInvite["inviteDetail"]["inviteId"]);
+    sorryDiv.setAttribute("id", userInvite.inviteDetail.inviteId);
     sorryDiv.addEventListener("click", ()=> {
 		let inviteId = sorryDiv.id;
 		let value = getInviteRejectValue();
@@ -242,7 +245,12 @@ likeCommentInsideDiv.append(heartDiv);
     let inviterUserProfileDiv = document.createElement("div");
     inviterUserProfileDiv.setAttribute("class", "inviter-user-profile-div");
     inviteProfileNameInsideDiv.append(inviterUserProfileDiv);
-
+    
+    let inviterImage = document.createElement("img");
+    inviterImage.setAttribute("class", "inviter-image");
+    inviterImage.setAttribute("src", userInvite.creatorDetails["profileImage"]);
+    inviterImage.setAttribute("alt", "invite-user-image");
+    inviterUserProfileDiv.append(inviterImage);
 
     let inviteMessageEmojiReplyDiv = document.createElement("div");
     inviteMessageEmojiReplyDiv.setAttribute(
@@ -296,53 +304,28 @@ likeCommentInsideDiv.append(heartDiv);
 
 
 // Check like value
-let currentLike; 
 function checkLikeValue(){
-	   let likeButton = document.querySelector(".heart-div").firstChild;
-    console.log(likeButton);
-
+	let likeButton = document.querySelector(".heart-div").firstChild;
     let buttonValue = likeButton.classList["value"];
     
-    if(buttonValue == "bi bi-heart"){
-		currentLike = true;
-		return true;
-	}else {
-		currentLike = false;
-	    return false;
-	}
+    return buttonValue == "bi bi-heart";
 }
 
 // Check the invite request value
-let inviteRequestValue;
 function getSendRequestValue(){
-	let thumbsDownFill = document.querySelector(".sorry-div").firstChild;
-
+	let thumbsDownFill = document.querySelector(".ok-div").firstChild;
     let fillValue = thumbsDownFill.classList["value"];
     
-    if(fillValue == "bi bi-hand-thumbs-up"){
-		inviteRequestValue = true;
-		return true;
-	}else {
-		inviteRequestValue = false;
-		return false;
-	}
+    return fillValue == "bi bi-hand-thumbs-up";
 }
 
 
 // Check the invite reject value
-let inviteRejectValue;
 function getInviteRejectValue(){
 	 let thumbsDownFill = document.querySelector(".sorry-div").firstChild;
-
-    let fillValue = thumbsDownFill.classList["value"];
+     let fillValue = thumbsDownFill.classList["value"];
     
-       if (fillValue == "bi bi-hand-thumbs-down") {
-		   inviteRejectValue = true;
-		   return true;
-		}else {
-		   inviteRejectValue = false;
-		   return false;
-		}
+     return fillValue == "bi bi-hand-thumbs-down";
 	
 }
 
@@ -389,24 +372,8 @@ const url = "/appfreshnest/InviteLikeServlet?inviteId=" + encodeURIComponent(inv
 			    // handle success
 			    let serverLikeResponse = response.data;
 			    console.log(serverLikeResponse);
-			    if(serverLikeResponse === "success"){
-					
-					let innerLikeButton = document.querySelector(".heart-div").firstChild;
-
-					if(currentLike == true){
-                        innerLikeButton.remove("bi bi-heart");
-
-                        let likeFill = document.createElement("i");
-                        likeFill.setAttribute("class", "bi bi-heart-fill");
-                        document.querySelector(".heart-div").append(likeFill);						
-					}else {
-						innerLikeButton.remove("bi bi-heart-fill");
-
-                        let likeFill = document.createElement("i");
-                        likeFill.setAttribute("class", "bi bi-heart");
-                        document.querySelector(".heart-div").append(likeFill);
-						
-					}
+			    if(serverLikeResponse === "success"){	
+					getInviteDetails(inviteId);
 				}   
 			  })
 			  .catch(function (error) {
@@ -429,7 +396,7 @@ function inviteRejectFunction(value ,inviteId){
 			    let serverLikeResponse = response.data;
 			    console.log(serverLikeResponse);
 			    if(serverLikeResponse === "success"){
-					
+					getInviteDetails(inviteId);
 				}			    
 			  })
 			  .catch(function (error) {
@@ -440,9 +407,9 @@ function inviteRejectFunction(value ,inviteId){
 }
 
 // Invite request send function
-function inviteRequestSendFunction(value ,inviteId){
+function inviteRequestSendFunction(value ,inviteId, userId){
 	const url = "/appfreshnest/InviteSendRequestServlet?inviteId=" + encodeURIComponent(inviteId) +
-            "&value=" + encodeURIComponent(value);
+            "&value=" + encodeURIComponent(value) + "&userId=" +encodeURIComponent(userId);
             
 			axios.get(url)
 			  .then(function (response) {
@@ -450,7 +417,7 @@ function inviteRequestSendFunction(value ,inviteId){
 			    let serverLikeResponse = response.data;
 			    console.log(serverLikeResponse);
 			    if(serverLikeResponse === "success"){
-					
+					getInviteDetails(inviteId);
 				}
 			    	    
 			  })

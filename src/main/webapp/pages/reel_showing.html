@@ -37,14 +37,21 @@
 						<!-- profile div -->
 
 						<div class="reel-name-div-container">
-							<div class="profile-div"></div>
+							<div class="profile-div">
+								<img class="profile-image" src="" alt="user-image">
+							</div>
+							<div class="user-name-div">
+								<p class="user-name">
+								<p>
+							</div>
 
 							<!-- div for show the rooling person name -->
-
-							<div class="user-name-div"></div>
 						</div>
 
-						<div class="reel-delete-div"></div>
+						<div class="reel-delete-div">
+							<i class="bi bi-x-octagon-fill" onclick="deleteTimeTale(this.id)"></i>
+
+						</div>
 					</div>
 
 					<!-- reel showing div -->
@@ -60,7 +67,7 @@
 						<div class="reel-inside-option-div">
 							<div class="input-emoji-div">
 								<i class="bi bi-emoji-smile"></i> <input type="text"
-									id="input-for-reel-reaction"
+									id="input-for-reel-reaction tale-input"
 									placeholder="Let your voice be heard..." />
 							</div>
 							<div class="heart-send-div">
@@ -146,6 +153,7 @@
 			</div>
 		</div>
 	</div>
+	<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 	<script src="../assets/js/time_tale_showing.js"></script>
 </body>
 </html>

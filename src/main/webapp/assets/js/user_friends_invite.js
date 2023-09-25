@@ -142,7 +142,6 @@ function showUserFrindsInvite(friendsInvites) {
 // Get invite details
 
 function getInviteDetails(inviteId){
-	console.log("inviteId " + inviteId);
 		const url = "http://localhost:8080/appfreshnest/GetUserFriendInviteDetailServlet?inviteId="+ inviteId;
 			axios.get(url)
 			  .then(function (response) {

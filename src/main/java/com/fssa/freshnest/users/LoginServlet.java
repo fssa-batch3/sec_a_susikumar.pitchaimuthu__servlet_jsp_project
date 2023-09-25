@@ -16,6 +16,8 @@ import com.fssa.freshnest.model.User;
 import com.fssa.freshnest.services.UserService;
 import com.fssa.freshnest.services.exceptions.ServiceException;
 
+
+
 /**
  * Servlet implementation class LoginServlet
  * 

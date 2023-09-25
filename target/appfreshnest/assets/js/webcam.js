@@ -72,7 +72,7 @@ snap.addEventListener("click", () => {
      
     };
     console.log(imageObject);
-    const url = "http://localhost:8080/appfreshnest/FreshStillServlet";
+    const url = "http://localhost:8080/appfreshnest/CreateStillServlet";
 
             axios.post(url, imageObject, {
                 headers: {

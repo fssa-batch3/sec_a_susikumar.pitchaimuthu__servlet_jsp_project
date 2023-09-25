@@ -1,9 +1,8 @@
-// Profile user element value set creations
 
 // get user from the url
 
 function findUserProfileDetails(){
-		const url = "http://localhost:8080/appfreshnest/UserProfileDetailServlet";
+		const url = "/appfreshnest/UserProfileDetails";
 			axios.get(url)
 			  .then(function (response) {
 			    // handle success
@@ -19,23 +18,35 @@ function findUserProfileDetails(){
 
 findUserProfileDetails();
 
+let userFirstName; 
+
 function displayProfileDetails(findUser){
 
 try {
-  document.querySelector(".userName").innerHTML = findUser["username"];
+  // Store references to HTML elements in variables
+const userNameElement = document.querySelector(".userName");
+const profileHeadElement = document.getElementById("profile-head");
+const userThemeElement = document.querySelector(".user-theme");
+const ageParaElement = document.querySelector(".age-para");
+const profileImageElement = document.querySelector("#profile-image");
+const cityParaElement = document.querySelector(".city-para");
 
-  document.getElementById("profile-head").innerText =
-    "Hello" + "   " + findUser["userName"];
+// Assign values to the elements
+const userFirstName = findUser["firstName"];
+const username = findUser["username"];
+const userTheme = findUser["userTheme"];
+const age = findUser["age"] || "";
+const profileImage = findUser["profileImage"];
+const nationality = findUser["nationality"] || ""; 
 
-  document.querySelector(".user-theme").innerHTML = findUser["userTheme"];
+// Update the elements with the assigned values
+userNameElement.innerText = username;
+profileHeadElement.innerText = "Hello " + username; 
+userThemeElement.innerText = userTheme;
+ageParaElement.innerText = age;
+profileImageElement.src = profileImage;
+cityParaElement.innerText = nationality;
 
-  document.querySelector(".age-para").innerHTML = findUser["age"];
-
-  // profile image
-
-  document.querySelector("#profile-image").src = findUser["profileImage"];
-
-  document.querySelector(".city-para").innerHTML = findUser["city"] || "";
 } catch (error) {
   console.log("An error occurred while show the profile details :", error);
 }
@@ -45,7 +56,7 @@ try {
 
 function getAllUsers(){
 	
-	const url = "http://localhost:8080/appfreshnest/GetAllUserListServlet";
+	const url = "/appfreshnest/GetAllUserList";
 			axios.get(url)
 			  .then(function (response) {
 			    // handle success
@@ -110,3 +121,136 @@ profileEdit.addEventListener("click", () => {
     "../pages/profile-edit.html";
 });
 
+
+// Profile image edit option div
+
+let file = document.getElementById("file");
+
+let image = document.getElementById("profile-image");
+
+let ProfileOption = document.querySelector(".profile-option-div");
+
+// onclick function for option display block
+
+function showProfileOption() {
+  try {
+    if (ProfileOption.style.display === "none") {
+      ProfileOption.style.display = "block";
+    } else {
+      ProfileOption.style.display = "none";
+    }
+  } catch (error) {
+    console.log("An error occurred while imge element block :", error);
+  }
+};
+
+
+// User profile image change function
+
+file.addEventListener("change", function () {
+  let choosePhoto = this.files[0];
+
+  if (choosePhoto) {
+    let reader = new FileReader();
+
+    reader.addEventListener("load", function () {
+      image.setAttribute("src", reader.result);
+
+      
+      let userProfileObj = {
+        profileImage: reader.result,
+      };
+      
+      profileImageChangeServer(userProfileObj);
+       
+    });
+
+    reader.readAsDataURL(choosePhoto);
+  }
+});
+
+// Transform to default profile image
+
+function defaultProfile() {
+  try {
+
+    let avatarText = userFirstName.toUpperCase().charAt(0);
+    console.log(avatarText);
+
+    // avatar create
+
+    let avatarCanva = document.createElement("canvas");
+    let avatarContext = avatarCanva.getContext("2d");
+
+    avatarCanva.width = 200;
+    avatarCanva.height = 200;
+
+    // creating a random color creation function
+    let letters = "0123456789ABCDEF";
+    let color = "#";
+
+    let randomArray = new Uint32Array(1);
+    window.crypto.getRandomValues(randomArray);
+    for (let i = 0; i < 6; i++) {
+      color += letters[randomArray[0] % 16];
+      window.crypto.getRandomValues(randomArray);
+    }
+
+    // draw background
+    avatarContext.fillStyle = color;
+    avatarContext.fillRect(0, 0, avatarCanva.width, avatarCanva.height);
+
+    // draw text
+
+    avatarContext.font = "bold 100px Assistant";
+    avatarContext.textAlign = "center";
+    avatarContext.textBaseline = "middle";
+    avatarContext.fillStyle = "#fff";
+    avatarContext.fillText(
+      avatarText,
+      avatarCanva.width / 2,
+      avatarCanva.height / 2
+    );
+
+    // return
+
+    let imageUrl = avatarCanva.toDataURL("image/png");
+
+    let changeImage = {
+      profileImage: imageUrl,
+    };
+    
+    profileImageChangeServer(changeImage);
+
+  } catch (error) {
+    console.log("An error occurred while chage the default image :", error);
+  }
+}
+
+
+// Profile image change server
+
+function profileImageChangeServer(profileObject){
+
+const url = "/appfreshnest/UserProfileImageChangeServlet";
+
+            axios.post(url, profileObject, {
+                headers: {
+                    "Content-Type": "application/json"
+                }
+            })
+            .then(function (response) {
+                // handle success
+                let profileUpdateMessage = response.data;
+                console.log(profileUpdateMessage);
+                
+                if(profileUpdateMessage === "success"){
+					findUserProfileDetails();
+					showProfileOption();
+				}
+            })
+            .catch(function (error) {
+                // handle error
+                console.log(error);
+            });
+}

@@ -8,38 +8,38 @@ logIn.addEventListener("submit", (event) => {
   try {
     let userEmail = document.getElementById("inputemail").value.trim();
     let password = document.getElementById("password").value.trim();
-    
+
     let logInObject = {
-		email : userEmail,
-		password
-	}
+      email: userEmail,
+      password,
+    };
 
-    
-    const url = "http://localhost:8080/appfreshnest/login";
+    console.log(logInObject);
 
-            axios.post(url, logInObject, {
-                headers: {
-                    "Content-Type": "application/json"
-                }
-            })
-            .then(function (response) {
-                // handle success
-                let serverMessage = response.data;
-                console.log(serverMessage);
-                
-               if(serverMessage == "success"){
-                  alert("You are successfully get into freshnest");
-                  window.location.href = "./home.html";
-              }else {
-				  errorMessageElementCreation(serverMessage);
-			  }
-            })
-            .catch(function (error) {
-                // handle error
-                console.log(error);
-            });
-     
-    
+    const url = "http://localhost:8080/appfreshnest/LoginServlet";
+
+    axios
+      .post(url, logInObject, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      })
+      .then(function (response) {
+        // handle success
+        let serverMessage = response.data;
+        console.log(serverMessage);
+
+        if (serverMessage == "success") {
+          alert("You are successfully get into freshnest");
+          window.location.href = "./home.html";
+        } else {
+          errorMessageElementCreation(serverMessage);
+        }
+      })
+      .catch(function (error) {
+        // handle error
+        console.log(error);
+      });
   } catch (error) {
     console.log("Error ", error);
   }
@@ -74,25 +74,24 @@ eyeDiv.addEventListener("click", (e) => {
   }
 });
 
+function errorMessageElementCreation(serverMessage) {
+  const icon = document.createElement("i");
+  icon.className = "bi bi-exclamation-circle-fill error-icon";
+  icon.setAttribute("aria-hidden", "true");
 
-function errorMessageElementCreation(serverMessage){
-	  const icon = document.createElement('i');
-                icon.className = 'bi bi-exclamation-circle-fill error-icon';
-                icon.setAttribute('aria-hidden', 'true');
+  // Create the <p> element with class and text content
+  const paragraph = document.createElement("p");
+  paragraph.className = "error-para";
+  paragraph.textContent = serverMessage;
 
-              // Create the <p> element with class and text content
-               const paragraph = document.createElement('p');
-               paragraph.className = 'error-para';
-               paragraph.textContent = serverMessage;
+  let parent = document.querySelector(".error-message-div");
 
-               let parent = document.querySelector(".error-message-div");
+  // Remove previous error message elements
+  while (parent.firstChild) {
+    parent.removeChild(parent.firstChild);
+  }
 
-              // Remove previous error message elements
-              while (parent.firstChild) {
-                parent.removeChild(parent.firstChild);
-              }
-
-              // Append the new error message elements
-              parent.appendChild(icon);
-              parent.appendChild(paragraph);
-	  }
+  // Append the new error message elements
+  parent.appendChild(icon);
+  parent.appendChild(paragraph);
+}

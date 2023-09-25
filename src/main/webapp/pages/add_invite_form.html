@@ -6,6 +6,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Add-invite</title>
 <link rel="stylesheet" href="../assets/css/add-invite.css" />
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
 </head>
 <body>
 	<section class="whole-div-control-section">
@@ -16,7 +18,8 @@
 					<p class="profile-user-name name"></p>
 				</div>
 				<div class="user-profile-div">
-					<img class="profile-image" id="profile-image" src="" alt="user-profile-image"/>
+					<img class="profile-image" id="profile-image" src=""
+						alt="user-profile-image" />
 				</div>
 			</div>
 		</div>
@@ -55,7 +58,7 @@
 							<label for="text" class="invite-label">Invite name <span
 								class="mandatory">*</span>
 							</label> <input class="party-page-input" id="party_name" type="text"
-								autocomplete="off" value="Reunion party" required />
+								autocomplete="off"  required />
 						</div>
 						<div class="invite-content-div">
 							<label for="text" class="invite-label">Party Time <span
@@ -73,14 +76,27 @@
 						<div class="invite-content-div">
 							<label for="text" class="invite-label">Special Person</label> <input
 								class="party-page-input" id="special_person" type="text"
-								autocomplete="off" value="Virus Coach"/>
+								autocomplete="off" value="Virus Coach" />
 						</div>
 						<div class="invite-content-div">
-							<label class="invite-label" >Party file <span
+							<label class="invite-label">Party file <span
 								class="mandatory">*</span>
 							</label>
+							<button class="add-file" onclick="chooseInviteFile()"
+								type="button">
+								<svg xmlns="http://www.w3.org/2000/svg" fill="none"
+									viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
+									aria-hidden="true">
+    <path stroke-linecap="round" stroke-linejoin="round"
+										d="M13.5 3H12H8C6.34315 3 5 4.34315 5 6V18C5 19.6569 6.34315 21 8 21H11M13.5 3L19 8.625M13.5 3V7.625C13.5 8.17728 13.9477 8.625 14.5 8.625H19M19 8.625V11.8125"
+										stroke="#fffffff" stroke-width="2"></path>
+<path d="M17 15V18M17 21V18M17 18H14M17 18H20" stroke="#fffffff"
+										stroke-width="2" stroke-linecap="round"
+										stroke-linejoin="round"></path>
+  </svg>
+								Choose Invitation file
+							</button>
 
-							<button class="choose-file-button" onclick="chooseInviteFile()">Choose invitation</button>
 						</div>
 
 						<div class="invite-content-div">
@@ -88,7 +104,7 @@
 								Invite's slogan <span class="mandatory">*</span>
 							</p>
 							<textarea name="text" id="party_short_note" cols="30" rows="10"
-								class="party-slogan-textarea" autocomplete="off">All is well</textarea>
+								class="party-slogan-textarea" autocomplete="off"></textarea>
 						</div>
 
 						<div class="invite-content-div">
@@ -97,11 +113,10 @@
 							</p>
 							<textarea class="party-page-textarea" name="text"
 								id="party_expand_passage" cols="30" required rows="10"
-								autocomplete="off">We are warmly welcome to our party. We have the facility foods and DJ</textarea>
+								autocomplete="off"></textarea>
 						</div>
-						
-						<div class="errror-message-div">
-						</div>
+
+						<div class="error-message-div"></div>
 						<div class="invite-button-div">
 							<button id="invite-button" type="submit">Invite</button>
 						</div>

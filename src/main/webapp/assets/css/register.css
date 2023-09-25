@@ -2,21 +2,6 @@ body {
 	margin: 0;
 	padding: 0;
 	display: flex;
-	/* background: #f093fb; */
-	height: auto;
-	/* 
-  background: -webkit-linear-gradient(
-    to bottom right,
-    #2EAFFA
-,
-#1F2F98
-  ); 
-
-  /* background: linear-gradient(
-    to bottom right,
-    rgba(240, 147, 251, 1),
-    rgba(245, 87, 108, 1)
-  ); */
 	background-size: 100% 100%;
 	background-repeat: no-repeat;
 	background-color: hsl(0, 0%, 96%);

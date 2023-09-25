@@ -7,7 +7,6 @@ function filterItems() {
 
     // Replace spaces with an end dash
     let dashedText = input.replace(spaceRegex, "_");
-    console.log(dashedText);
     // Get list items
     let items = document.querySelectorAll(".user-card-container");
 

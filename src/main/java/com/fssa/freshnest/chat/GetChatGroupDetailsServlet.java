@@ -31,7 +31,8 @@ public class GetChatGroupDetailsServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-
+		request.setCharacterEncoding("UTF-8");
+		response.setCharacterEncoding("UTF-8");
 		int chatId = Integer.parseInt(request.getParameter("chatId"));
 		String chatType = request.getParameter("chatType");
 		PrintWriter out = response.getWriter();

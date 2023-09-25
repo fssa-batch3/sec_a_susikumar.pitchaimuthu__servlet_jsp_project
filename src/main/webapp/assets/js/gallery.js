@@ -1,6 +1,6 @@
 	console.log("Gallery");
 	function getAllStills() {
-			const url = "http://localhost:8080/appfreshnest/GetAllStillls";
+			const url = "/appfreshnest/GetAllStillls";
 			axios.get(url)
 			  .then(function (response) {
 			    // handle success

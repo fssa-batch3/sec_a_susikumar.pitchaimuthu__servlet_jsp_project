@@ -18,7 +18,7 @@ import com.fssa.freshnest.services.exceptions.ServiceException;
 /**
  * Servlet implementation class StillDetailsServlet
  */
-@WebServlet("/getStillDetails")
+@WebServlet("/StillDetailsServlet")
 public class StillDetailsServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 

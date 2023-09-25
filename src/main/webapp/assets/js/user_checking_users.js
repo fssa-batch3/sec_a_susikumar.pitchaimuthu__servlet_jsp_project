@@ -16,7 +16,7 @@ function showDetails(sd) {
     findDetails = SuggestedUsers.find((e) => e["userId"] == sd);
     console.log(findDetails);
 
-    if ((clickDetails.style.display = "none")) {
+    if ((clickDetails.style.display === "none")) {
       clickDetails.style.display = "block";
     }
 

@@ -1,6 +1,43 @@
-console.log("yeah");
+// Get user details
 
+function findUserProfileDetails(){
+		const url = "/appfreshnest/UserProfileDetails";
+			axios.get(url)
+			  .then(function (response) {
+			    // handle success
+			    console.log(response.data);
+			     profileUser = response.data;
+			    displayProfileImageAndName(profileUser);
+			  })
+			  .catch(function (error) {
+			    // handle error
+			    console.log(error);
+			  })
+}
+findUserProfileDetails();
 
+// Profile user details adding
+function displayProfileImageAndName(profileUser){
+
+let profileNameDiv = document.createElement("div");
+profileNameDiv.setAttribute("class", "profile-user-nmae-div");
+document.querySelector(".invite-inside-profile-div").append(profileNameDiv);
+
+let profileName = document.createElement("p");
+profileName.setAttribute("class", "prfile-user-name");
+profileName.innerHTML = profileUser["username"];
+profileNameDiv.append(profileName);
+
+let profileDiv = document.createElement("div");
+profileDiv.setAttribute("class", "user-profile-div");
+document.querySelector(".invite-inside-profile-div").append(profileDiv);
+
+let profileImg = document.createElement("img");
+profileImg.setAttribute("class", "profile-image");
+profileImg.setAttribute("src", profileUser["profileImage"]);
+profileDiv.append(profileImg);
+
+}
 // using url parameters for get a invite id
 
 let inviteUrl = window.location.search;

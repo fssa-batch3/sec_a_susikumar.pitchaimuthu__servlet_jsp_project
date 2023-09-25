@@ -49,7 +49,6 @@ public class StillDeleteServlet extends HttpServlet {
 		Integer loggedInUserId = (Integer) session.getAttribute("UserId");
 		User user = new User();
 		user.setUserId(loggedInUserId);
-		
 
 		JSONObject jsonData = new JSONObject(requestBody.toString());
 		int still_id = jsonData.getInt("stillId");
@@ -67,8 +66,8 @@ public class StillDeleteServlet extends HttpServlet {
 				out.println("failed");
 			}
 		} catch (ServiceException e) {
-		     out.println(e.getMessage());
-		     e.printStackTrace();
+			out.println(e.getMessage());
+			e.printStackTrace();
 		}
 	}
 
@@ -77,22 +76,18 @@ public class StillDeleteServlet extends HttpServlet {
 		HttpSession session = request.getSession();
 		PrintWriter out = response.getWriter();
 
-		Integer loggedInUserId = (Integer) session.getAttribute("UserId");
+		Integer userId = (Integer) session.getAttribute("UserId");
 
-		User user = new User();
-		user.setUserId(loggedInUserId);
-
-		Still still = new Still(user);
 		StillService stillService = new StillService();
-		
+
 		try {
-			
-			List<Still> recentlyDeletedStills = stillService.filterStillByRecentlyDeleted(still);
+
+			List<Still> recentlyDeletedStills = stillService.filterStillByRecentlyDeleted(userId);
 			JSONArray recentlyDeleteArray = new JSONArray(recentlyDeletedStills);
 			out.print(recentlyDeleteArray.toString());
 			out.flush();
 			out.close();
-		}catch(ServiceException e) {
+		} catch (ServiceException e) {
 			out.print(e.getMessage());
 			e.printStackTrace();
 		}

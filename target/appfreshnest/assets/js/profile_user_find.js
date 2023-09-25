@@ -1,12 +1,13 @@
 // get user from the url
+let profileUser; 
 
 function findUserProfileDetails(){
-		const url = "http://localhost:8080/appfreshnest/UserProfileDetailServlet";
+		const url = "http://localhost:8080/appfreshnest/UserProfileDetails";
 			axios.get(url)
 			  .then(function (response) {
 			    // handle success
 			    console.log(response.data);
-			    const profileUser = response.data;
+			     profileUser = response.data;
 			    displayProfileImageAndName(profileUser);
 			  })
 			  .catch(function (error) {
@@ -14,7 +15,6 @@ function findUserProfileDetails(){
 			    console.log(error);
 			  })
 }
-
 findUserProfileDetails();
 function displayProfileImageAndName(profileUser){
 try {

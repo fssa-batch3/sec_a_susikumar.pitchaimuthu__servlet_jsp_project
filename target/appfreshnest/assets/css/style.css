@@ -61,6 +61,7 @@ body.dark {
   display: flex;
   align-items: center;
   margin-top: 10px;
+  position:relative;
 }
 
 .sidebar header .image,
@@ -301,11 +302,11 @@ body.dark .home .text {
 }
 
 .notification-para {
-  position: absolute;
-  right: 24%;
-  top: 40.2%;
-  background-color: #2ec866;
-  border-radius: 50%;
-  padding: 0px 6px;
-  font-size: 65%;
+    position: absolute;
+    right: 24%;
+    top: 15.2%;
+    background-color: #2ec866;
+    border-radius: 50%;
+    padding: 0px 6px;
+    font-size: 65%;
 }

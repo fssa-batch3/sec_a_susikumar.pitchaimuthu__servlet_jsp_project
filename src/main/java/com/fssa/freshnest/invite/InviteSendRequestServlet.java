@@ -11,7 +11,9 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.fssa.freshnest.model.InviteReaction;
+import com.fssa.freshnest.model.RequestAndResponse;
 import com.fssa.freshnest.services.InviteReactionService;
+import com.fssa.freshnest.services.NotificationService;
 import com.fssa.freshnest.services.exceptions.ServiceException;
 
 /**
@@ -29,7 +31,8 @@ public class InviteSendRequestServlet extends HttpServlet {
 			throws ServletException, IOException {
 		int inviteId = Integer.parseInt(request.getParameter("inviteId"));
 		boolean value = Boolean.parseBoolean(request.getParameter("value"));
-		
+		int receiverId = Integer.parseInt(request.getParameter("userId"));
+
 		HttpSession session = request.getSession();
 		Integer userId = (Integer) session.getAttribute("UserId");
 
@@ -39,14 +42,23 @@ public class InviteSendRequestServlet extends HttpServlet {
 		InviteReaction inviteReaction = new InviteReaction();
 		inviteReaction.setInviteId(inviteId);
 		inviteReaction.setUserId(userId);
-		inviteReaction.setLike(value);
-		
+		inviteReaction.setSendRequest(value);
+
+		// Notification set values
+		NotificationService notificationService = new NotificationService();
+		RequestAndResponse requestAndResponse = new RequestAndResponse();
+		requestAndResponse.setRequestSenderId(userId);
+		requestAndResponse.setRequestReceiverId(receiverId);
+		requestAndResponse.setRequestType("invite_request");
+		requestAndResponse.setInviteId(inviteId);
+
 		try {
 			if (inviteReactionService.userInviteSendRequest(inviteReaction)) {
+				notificationService.sendInviteRequestNotification(requestAndResponse);
 				out.print("success");
 			}
-			
-		}catch(ServiceException e) {
+
+		} catch (ServiceException e) {
 			out.print(e.getMessage());
 		}
 

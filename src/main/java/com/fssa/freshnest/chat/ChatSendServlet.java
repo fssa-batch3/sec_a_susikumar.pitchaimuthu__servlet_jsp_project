@@ -31,6 +31,9 @@ public class ChatSendServlet extends HttpServlet {
 			throws ServletException, IOException {
 
 		response.setContentType("application/json");
+		request.setCharacterEncoding("UTF-8");
+		response.setCharacterEncoding("UTF-8");
+
 		PrintWriter out = response.getWriter();
 
 		// Retrieve data from the request body
@@ -45,13 +48,13 @@ public class ChatSendServlet extends HttpServlet {
 
 		Integer userId = (Integer) session.getAttribute("UserId");
 
-		String chatMesse = jsonData.getString("chatMessage");
+		String chatMessage = jsonData.getString("chatMessage");
 		int chatId = jsonData.getInt("chatId");
 
 		ChatService chatService = new ChatService();
 		Chat chat = new Chat();
 		chat.setChatId(chatId);
-		chat.setChatMessage(chatMesse);
+		chat.setChatMessage(chatMessage);
 		chat.setSenderId(userId);
 		try {
 			if (chatService.createChat(chat)) {
@@ -63,5 +66,4 @@ public class ChatSendServlet extends HttpServlet {
 		}
 
 	}
-
 }

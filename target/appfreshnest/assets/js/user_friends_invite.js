@@ -2,7 +2,7 @@
 
  function getAllUserFriendsInvites() {
 	
-			const url = "http://localhost:8080/appfreshnest/ListUserInvitesServlet";
+			const url = "http://localhost:8080/appfreshnest/GetAllOtherUserInvites";
 			axios.get(url)
 			  .then(function (response) {
 			    console.log(response.data);
@@ -63,7 +63,10 @@ function showUserFrindsInvite(friendsInvites) {
       "user-card-container" + " " + friendInv["inviteType"]
     );
     friendInviteContainer.setAttribute("id", friendInv["inviteId"]);
-    friendInviteContainer.setAttribute("onclick", "showInvite(this.id)");
+    friendInviteContainer.addEventListener("click", function() {
+    let inviteId = this.id; 
+    getInviteDetails(inviteId);
+   });
 
     let friendInviteInsideContainer = document.createElement("div");
     friendInviteInsideContainer.setAttribute(
@@ -135,3 +138,20 @@ function showUserFrindsInvite(friendsInvites) {
       .append(friendInviteContainer);
   }
 }
+
+// Get invite details
+
+function getInviteDetails(inviteId){
+		const url = "http://localhost:8080/appfreshnest/GetUserFriendInviteDetailServlet?inviteId="+ inviteId;
+			axios.get(url)
+			  .then(function (response) {
+			    // handle success
+			    console.log(response.data);
+			    let friendInviteDetails = response.data;
+			    showInvite(friendInviteDetails);
+			  })
+			  .catch(function (error) {
+			    // handle error
+			    console.log(error);
+		  })
+	}

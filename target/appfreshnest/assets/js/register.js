@@ -68,7 +68,7 @@ signUpFrom.addEventListener("submit", (event) => {
       profileImage: imageUrl,
     };
     
-    const url = "http://localhost:8080/appfreshnest/register";
+    const url = "/appfreshnest/UserRegister";
 
             axios.post(url, userObj, {
                 headers: {

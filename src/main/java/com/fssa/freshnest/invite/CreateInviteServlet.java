@@ -106,6 +106,7 @@ public class CreateInviteServlet extends HttpServlet {
 			}
 		} catch (ServiceException e) {
 			e.printStackTrace();
+			out.print(e.getMessage());
 		}
 
 	}

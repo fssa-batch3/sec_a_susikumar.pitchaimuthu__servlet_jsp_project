@@ -1,12 +1,14 @@
-// invite image reader function
-console.log("yeah");
+// Get the current date
+let currentDate = new Date().toISOString().split("T")[0];
 
+// Set the minimum date for the input element
+document.getElementById("party_date").setAttribute("min", currentDate);
+
+// invite image reader function
 let imageSrc;
 
 function chooseInviteFile(){
-
   try {
-
     let inviteImage = document.createElement("input");
     inviteImage.type = "file";
 
@@ -21,7 +23,6 @@ function chooseInviteFile(){
           reader.addEventListener("load", function () {
             try {
               imageSrc = reader.result;
-              console.log(imageSrc);
             } catch (error) {
               console.log("error:", error);
             }
@@ -37,8 +38,6 @@ function chooseInviteFile(){
     console.log("error:", error);
   }
 };
-
-console.log(imageSrc);
 
 // Writing EventListner for store user invites data
 let inviteForm = document.querySelector("#invite-form");
@@ -60,18 +59,6 @@ inviteForm.addEventListener("submit", (sub) => {
       .getElementById("party_expand_passage")
       .value.trim();
 
-
-
-    // converting the reilway time local time
-
-   // let [hours, minutes] = inviteTime.split(":");
-    // let convertedHours = hours % 12;
-    //let period = hours >= 12 ? "PM" : "AM";
-    //let convertedTime = `${convertedHours}:${minutes} ${period}`;
-
-
-    // cna't select past time
-
     let inviteObj = {
       inviteType,
       inviteDate,
@@ -82,9 +69,8 @@ inviteForm.addEventListener("submit", (sub) => {
       inviteExplanation,
     };
 
-    console.log(inviteObj);
 
-    const url = "http://localhost:8080/appfreshnest/CreateInvite";
+    const url = "/appfreshnest/CreateInvite";
 
             axios.post(url, inviteObj, {
                 headers: {
@@ -93,7 +79,6 @@ inviteForm.addEventListener("submit", (sub) => {
             })
             .then(function (response) {
                 // handle success
-                console.log(response.data);
               const serverMsg = response.data;
               if(serverMsg == "success"){
 				  window.location.href= "./invite.html";
@@ -106,7 +91,7 @@ inviteForm.addEventListener("submit", (sub) => {
               // Create the <p> element with class and text content
                const paragraph = document.createElement('p');
                paragraph.className = 'error-para';
-               paragraph.textContent = serverMessage;
+               paragraph.textContent = serverMsg;
 
                let parent = document.querySelector(".error-message-div");
 

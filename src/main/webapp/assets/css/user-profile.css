@@ -1,0 +1,598 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+p {
+  margin: 0;
+  padding: 0;
+}
+.whole-section-container {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  gap: 1.2em;
+}
+
+.user-profile-edit-and-option-div-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+.user-profile-edit-and-option-inside-div {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.user-profile-and-edit-div-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background-color: #0b98ef;
+}
+
+.user-profile-and-edit-inside-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 95%;
+  padding: 20px;
+}
+
+.user-profile-image-name-div {
+  display: flex;
+  align-items: center;
+  width: 70%;
+}
+
+.user-profile-image-and-name-inside-div {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 50%;
+}
+
+.user-profile-image {
+  width: 9.5em;
+  height: 9em;
+  position: relative;
+}
+.user-name-div {
+  display: flex;
+  align-items: center;
+}
+
+.edit-profile-div {
+  display: flex;
+  align-items: center;
+  width: 25%;
+}
+
+/* edit profile image option */
+.profile-edit-option-div {
+    position: absolute;
+    top: 4%;
+    left: 14.6%;
+    background-color: #257bc7;
+    color: #fff;
+    border-radius: 5px;
+}
+
+.profile-edit-option-inside-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+}
+
+.bi-pencil-square {
+  position: relative;
+}
+
+.option-div {
+  position: absolute;
+  background-color: aliceblue;
+  color: #0b98ef;
+  top: 3%;
+  left: 120%;
+  width: 120px;
+  border-radius: 8px;
+}
+
+.option-inside-div {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 4px 0px;
+  gap: 0.2em;
+}
+
+.options:hover {
+  background-color: #0b98ef;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* profile page option showing div */
+
+.profile-page-option-showing-div {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background-color: #fff;
+}
+
+.profile-page-option-showing-inside-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 99%;
+  gap: 1em;
+}
+
+.friends-div {
+  display: flex;
+  align-items: center;
+  gap: 0.4em;
+  cursor: pointer;
+}
+
+.selected {
+ color: blue;
+}
+
+.selected:hover {
+  color: blue;
+ }
+
+.count-and-icon-div {
+  display: flex;
+  align-items: center;
+  gap: 0.2em;
+}
+.head-para {
+  padding: 0;
+  margin: 0;
+}
+
+/* user analytics details showing div container */
+.user-details-and-analytics-details-showing-div {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.user-details-and-analytics-inside-div {
+  display: flex;
+  gap: 2.3%;
+  width: 96%;
+}
+
+/* user profile extra details */
+.user-profile-extra-detials-div-container {
+  display: flex;
+  height: auto;
+  flex: 2;
+}
+
+.user-profile-extra-details-inside-div {
+  display: flex;
+  flex-direction: column;
+  width: 99%;
+  padding: 6px;
+  gap: 0.4em;
+  justify-content: flex-start;
+  height: auto;
+  box-shadow: 0 0 10px 0 rgba(183, 192, 206, 0.2);
+  -webkit-box-shadow: 0 0 10px 0 rgba(183, 192, 206, 0.2);
+}
+
+.head-details-div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2em;
+}
+
+.user-extra-details-head {
+  font-size: 18px;
+  margin: 0;
+  padding: 0;
+}
+
+/* user last activity and search input */
+
+.activity-details-and-search-input-div-container {
+  display: flex;
+  flex: 7;
+  align-items: center;
+}
+.activity-details-and-search-input-inside-div {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2em;
+  flex: 1;
+}
+
+/* search input container */
+
+.InputContainer {
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(255, 255, 255);
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  padding-left: 15px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.075);
+}
+
+.input {
+  width: 87%;
+  height: 100%;
+  border: none;
+  outline: none;
+  font-size: 0.9em;
+  caret-color: rgb(255, 81, 0);
+}
+
+.labelforsearch {
+  cursor: text;
+  padding: 0px 12px;
+}
+
+.searchIcon {
+  width: 13px;
+}
+
+.border {
+  height: 40%;
+  width: 1.3px;
+  background-color: rgb(223, 223, 223);
+}
+
+.micIcon {
+  width: 12px;
+}
+
+.micButton {
+  padding: 0px 15px 0px 12px;
+  border: none;
+  background-color: transparent;
+  height: 40px;
+  cursor: pointer;
+  transition-duration: 0.3s;
+}
+
+.searchIcon path {
+  fill: rgb(114, 114, 114);
+}
+
+.micIcon path {
+  fill: rgb(255, 81, 0);
+}
+
+.micButton:hover {
+  background-color: rgb(255, 230, 230);
+  transition-duration: 0.3s;
+}
+
+/* user last activity details showing div container */
+.user-last-activity-showing-div-container {
+  display: flex;
+  flex: 1;
+  align-items: center;
+}
+
+.user-last-activity-showing-inside-div {
+  display: flex;
+  width: 98%;
+  align-items: center;
+  gap: 8%;
+}
+
+/* activity showing div */
+.user-activity-showing-div-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  border-radius: 7px;
+  height: 60vh;
+}
+
+.user-activity-showing-inside-div {
+  display: flex;
+  align-items: center;
+  width: 97%;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* activity image, name and view more div */
+
+.activity-card-div-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 10px 0 rgba(183, 192, 206, 0.2);
+  -webkit-box-shadow: 0 0 10px 0 rgba(183, 192, 206, 0.2);
+  width: 100%;
+}
+
+.activity-card-inside-div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 11px 5px;
+  width: 100%;
+}
+
+.activity-image-and-name-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+}
+
+.activity-image-and-name-inside-div {
+  display: flex;
+  gap: 5%;
+  width: 99%;
+}
+
+.activity-image {
+  width: 2em;
+  height: 2em;
+  border-radius: 50%;
+}
+
+/* view more button div */
+
+.view-more-button-div {
+  display: flex;
+  width: 24%;
+  align-items: center;
+  justify-content: center;
+}
+.view-more-button-inside-div {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: center;
+}
+
+.view-details-button {
+  width: 100%;
+}
+
+/* activity details showing div */
+.user-activity-details-showing-div-container-div {
+  display: flex;
+  width: 50%;
+  align-items: center;
+  justify-content: center;
+}
+.user-activity-detail-showing-div-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  box-shadow: 0 0 10px 0 rgba(183, 192, 206, 0.2);
+  -webkit-box-shadow: 0 0 10px 0 rgba(183, 192, 206, 0.2);
+}
+
+.user-activity-details-showing-inside-div {
+  display: flex;
+  align-items: center;
+  width: 95%;
+  height: 61vh;
+}
+
+.activity-details-image-and-name-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.activity-details-image-and-name-inside-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
+  gap: 1em;
+  height: 57vh;
+}
+
+.activity-details-image {
+  width: 6em;
+  height: 6em;
+}
+.activity-name-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.follow-option-view-more-details-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 98%;
+  gap: 5%;
+}
+
+/* user friends suggestion and latest photos showing div container */
+.user-frineds-suggestion-and-latest-photos-showing-div-container {
+  display: flex;
+  justify-content: center;
+  flex: 2.4;
+}
+.user-friends-suggestion-and-latest-photos-inside-div {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  gap: 2em;
+}
+
+/* user latest photos showing div container */
+
+.user-latest-photos-div-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 99%;
+  box-shadow: 0 0 10px 0 rgba(183, 192, 206, 0.2);
+  -webkit-box-shadow: 0 0 10px 0 rgba(183, 192, 206, 0.2);
+}
+
+.user-latest-photos-div-inside-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 96%;
+}
+
+.latest-image-head-and-all-div-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: center;
+}
+
+.latest-image-inside-head-div {
+  display: flex;
+  align-items: center;
+  width: 96%;
+  justify-content: space-between;
+}
+
+/* images div */
+
+.latest-images-div-conatainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+.latest-images-inside-div {
+  display: flex;
+  flex-wrap: wrap;
+  width: 96%;
+}
+
+.latest-stills {
+  width: 70px;
+  height: 70px;
+  margin-top: 10px;
+}
+
+/* user friends suggestion showing div container */
+
+.user-friends-suggestion-showing-div-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 10px 0 rgba(183, 192, 206, 0.2);
+  -webkit-box-shadow: 0 0 10px 0 rgba(183, 192, 206, 0.2);
+}
+
+.user-friends-suggestion-showing-inside-div {
+  display: flex;
+  flex-direction: column;
+  width: 96%;
+  padding: 4px;
+  gap: 1em;
+}
+
+/* suggestion head */
+
+.user-friends-suggestion-head-div {
+  display: flex;
+  align-items: center;
+  width: 96%;
+}
+
+.user-friends-suggestion-inside-div {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+/* suggestion card div container */
+
+.user-suggestion-card-div-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 96%;
+}
+
+.user-suggestion-card-inside-div {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* head  */
+
+.user-card-div-conatainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.user-card-inside-div {
+  display: flex;
+  width: 98%;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.user-image-name-div-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+}
+
+.user-image-name-inside-div {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 5%;
+}
+
+.user-suggestion-image {
+  width: 2.5em;
+  height: 2.2em;
+  border-radius: 50%;
+}
+
+/* add icon div */
+
+.add-icon-div-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20%;
+}
+.add-icon-inside-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 96%;
+}
+
+/* Define a CSS class with the desired styles */
+.view-details-button {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.75rem;
+}
+

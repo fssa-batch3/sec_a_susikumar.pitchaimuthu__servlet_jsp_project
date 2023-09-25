@@ -1,3 +1,8 @@
+// Get the current date
+let currentDate = new Date().toISOString().split("T")[0];
+
+// Set the minimum date for the input element
+document.getElementById("inviteDate").setAttribute("min", currentDate);
 
 // assigning the chart data-percnetage..
 
@@ -61,28 +66,55 @@ let chartThree = new EasyPieChart(element_three, {
 
 // write a function for to read file path and convert into to google url
 
-let invitefile = document.getElementById("party_image");
-console.log(invitefile);
 let image;
-invitefile.addEventListener("change", function () {
-  let choosePhoto = this.files[0];
-  console.log("manisha");
-  if (choosePhoto) {
-    let reader = new FileReader();
+function chooseInviteFile(){
+  try {
+    let inviteImage = document.createElement("input");
+    inviteImage.type = "file";
 
-    reader.addEventListener("load", function () {
-      image = reader.result;
-      console.log(image);
+    inviteImage.click();
+
+    inviteImage.addEventListener("change", function () {
+      try {
+        let choosePhoto = this.files[0];
+        if (choosePhoto) {
+          let reader = new FileReader();
+
+          reader.addEventListener("load", function () {
+            try {
+              image = reader.result;
+            } catch (error) {
+              console.log("error:", error);
+            }
+          });
+
+          reader.readAsDataURL(choosePhoto);
+        }
+      } catch (error) {
+        console.log("error:", error);
+      }
     });
-
-    reader.readAsDataURL(choosePhoto);
+  } catch (error) {
+    console.log("error:", error);
   }
-});
-
+};
 console.log(image);
 
+// Get previous invite image
+async function getPreviousInviteImage() {
+  const url = "/appfreshnest/InviteDetailsServlet?inviteId=" + inviteId;
+  
+  try {
+    const response = await axios.get(url);
+    const inviteDetails = response.data;
+    return inviteDetails.inviteImage;
+  } catch (error) {
+    console.log(error);
+  }
+}
+
 // eventListener for showing invite
-editButton.addEventListener("click", (inv) => {
+editButton.addEventListener("click", async (inv) => {
   try {
     inv.preventDefault();
     let inviteType = document.getElementById("inviteName").value.trim();
@@ -93,6 +125,10 @@ editButton.addEventListener("click", (inv) => {
       .getElementById("inviteExplanation")
       .value.trim();
     let specialPerson = document.getElementById("specialPerson").value.trim();
+    
+    if (image == null) {
+      image = await getPreviousInviteImage();
+    }
 
     let inviteEditObj = {
       inviteType,
@@ -104,41 +140,46 @@ editButton.addEventListener("click", (inv) => {
       inviteImage: image
     };
     
-     const url = "http://localhost:8080/appfreshnest/InviteDetailsServlet?inviteId=" + inviteId;
+    const url = "/appfreshnest/InviteDetailsServlet?inviteId=" + inviteId;
 
-            axios.post(url, inviteEditObj, {
-                headers: {
-                    "Content-Type": "application/json"
-                }
-            })
-            .then(function (response) {
-                // handle success
-                console.log(response.data);
-                window.location.href="./invite.html";
-                
-				
-            })
-            .catch(function (error) {
-                // handle error
-                console.log(error);
-            });
-        
+    const response = await axios.post(url, inviteEditObj, {
+      headers: {
+        "Content-Type": "application/json"
+      }
+    });
 
-    for (let inDisable of inviteDisabled) {
-      inDisable.setAttribute("disabled", "");
-    }
+    // handle success
+    console.log(response.data);
+    let inviteUpdateMessage = response.data;
+    if(inviteUpdateMessage === "success"){
+    window.location.href = "./invite.html"; 
+     }else {
+		 const icon = document.createElement('i');
+                icon.className = 'bi bi-exclamation-circle-fill error-icon';
+                icon.setAttribute('aria-hidden', 'true');
 
-    if (editButton.style.display === "block") {
-      editButton.style.display = "none";
-    }
+              // Create the <p> element with class and text content
+               const paragraph = document.createElement('p');
+               paragraph.className = 'error-para';
+               paragraph.textContent = inviteUpdateMessage;
 
-    if (editInvite.style.display === "none") {
-      editInvite.style.display = "block";
-    }
+               let parent = document.querySelector(".error-message-div");
+
+              // Remove previous error message elements
+              while (parent.firstChild) {
+                parent.removeChild(parent.firstChild);
+              }
+
+              // Append the new error message elements
+              parent.appendChild(icon);
+              parent.appendChild(paragraph);
+		 
+	 }
   } catch (error) {
-    console.log("An error occurred while getting the update data :", error);
+    console.log("An error occurred while getting the update data:", error);
   }
 });
+
 
 // Delete invite option
 
@@ -154,11 +195,10 @@ deleteInviteButton.addEventListener("click", (deIn) => {
       return;
     } else {
   
-     const url = "http://localhost:8080/appfreshnest/InviteDeleteServlet?inviteId=" + inviteId;
+     const url = "/appfreshnest/InviteDeleteServlet?inviteId=" + inviteId;
 			axios.get(url)
 			  .then(function (response) {
 			    // handle success
-			    console.log(response.data);
 		        window.location.href="./invite.html";
 
 			  })

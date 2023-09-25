@@ -54,13 +54,15 @@ public class GetUserFriendInviteDetailServlet extends HttpServlet {
 
 		try {
 			InviteReaction inviteReactionDetail = inviteReactionService.getUserInviteReaction(inviteReaction);
-			Invite inviteDetail = inviteService.listInviteDetails(invite);
+			Invite inviteDetail = inviteService.readInviteDetails(inviteId);
+			User creatorDetails = inviteService.getInviteCreatorUserDetails(userId);
 
 			// Create a JSONObject to hold the response data
 			JSONObject jsonResponse = new JSONObject();
 
 			jsonResponse.put("inviteDetail", new JSONObject(inviteDetail));
 			jsonResponse.put("userInviteReactionDetail", new JSONObject(inviteReactionDetail));
+			jsonResponse.put("creatorDetails", new JSONObject(creatorDetails));
 
 			// Send the JSONObject as a response
 			out.print(jsonResponse.toString());

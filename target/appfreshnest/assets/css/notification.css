@@ -49,7 +49,24 @@
   gap: 3em;
 }
 
-.follow-button,
+.follow-button {
+  padding: 5px 7px;
+  color: #fff;
+  background-color: blueviolet;
+  border: none;
+  font-weight: 600;
+  border-radius: 5px;
+}
+
+.following-button {
+  padding: 5px 7px;
+  color: #fff;
+  background-color: rgb(87, 186, 239);
+  border: none;
+  font-weight: 600;
+  border-radius: 5px;
+}
+
 .other-button {
   border: none;
   padding: 5px 10px;
@@ -179,10 +196,11 @@
 
 .display-inside-div {
   display: flex;
-  flex-direction: column;
-  gap: 2.6em;
-  height: 750;
-  overflow-y: scroll;
+    flex-direction: column;
+    gap: 2.6em;
+    height: 800px;
+    overflow-y: scroll;
+    width: 74%;
 }
 
 .display-inside-div::-webkit-scrollbar {
@@ -493,4 +511,130 @@
 .no-message-para {
   text-align: center;
   font-size: 94%;
+}
+
+button {
+  padding: 3px 8px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 5px;
+  margin: 5px;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+/* Accept button */
+.accept-button {
+  background-color: transparent; /* Transparent background by default */
+  color: #4caf50; /* Green text color by default */
+  border-color: #4caf50; /* Green border by default */
+}
+
+.accept-button:hover {
+  background-color: #4caf50; /* Green background on hover */
+  border-color: #fff; /* White border on hover */
+  color: #fff; /* White text color on hover */
+}
+
+/* Decline button */
+.decline-button {
+  background-color: transparent; /* Transparent background by default */
+  color: #f44336; /* Red text color by default */
+  border-color: #f44336; /* Red border by default */
+}
+
+.decline-button:hover {
+  background-color: #f44336; /* Red background on hover */
+  border-color: #fff; /* White border on hover */
+  color: #fff; /* White text color on hover */
+}
+
+/* Declined button */
+.declined-button {
+  background-color: transparent; /* Transparent background by default */
+  color: #888888; /* Gray text color by default */
+  border-color: #888888; /* Gray border by default */
+}
+
+.declined-button:hover {
+  background-color: #888888; /* Gray background on hover */
+  border-color: #fff; /* White border on hover */
+  color: #fff; /* White text color on hover */
+}
+
+/* Accepted button */
+.accepted-button {
+  background-color: transparent; /* Transparent background by default */
+  color: #008cba; /* Blue text color by default */
+  border-color: #008cba; /* Blue border by default */
+}
+
+.accepted-button:hover {
+  background-color: #008cba; /* Blue background on hover */
+  border-color: #fff; /* White border on hover */
+  color: #fff; /* White text color on hover */
+}
+
+
+/* follow button css */
+.specific-details-about-notification-div {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.user-follow-request-details {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.user-invite-request-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  gap: 4%;
+}
+
+.invite-details-and-button-div {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 70%;
+}
+
+.invite-details-div {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+}
+
+.invite-accept-decline-button-div {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 6%;
+}
+
+
+.invite-image-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.invite-image {
+  width: 4em;
+  height: 3.5em;
+}
+
+.card {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+   /* Horizontal offset, Vertical offset, Blur radius, Spread radius, Color */
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Adjusted shadow on hover */
 }
