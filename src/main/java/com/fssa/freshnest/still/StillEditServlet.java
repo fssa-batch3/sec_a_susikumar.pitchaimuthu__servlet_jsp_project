@@ -60,7 +60,6 @@ public class StillEditServlet extends HttpServlet {
 		String stillUrl = jsonData.getString("stillUrl");
 		String stillName = jsonData.getString("stillName");
 		int parent_id = jsonData.getInt("parent_id");
-		System.out.println("parent id is : " + parent_id);
  
 		// Adding that image is updated 
 		LocalDate currentDate = LocalDate.now();

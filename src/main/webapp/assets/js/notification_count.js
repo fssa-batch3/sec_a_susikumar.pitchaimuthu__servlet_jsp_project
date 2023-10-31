@@ -1,6 +1,6 @@
 function checkTheNotificaitonCounts(){
 	
-	const url = "http://localhost:8080/appfreshnest/GetUserUnReadNotificationCount";
+	const url = "/appfreshnest/GetUserUnReadNotificationCount";
   axios
     .get(url)
     .then(function (response) {

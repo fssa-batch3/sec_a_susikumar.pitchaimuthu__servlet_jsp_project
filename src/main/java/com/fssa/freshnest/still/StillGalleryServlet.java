@@ -31,7 +31,7 @@ public class StillGalleryServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-
+		PrintWriter out = response.getWriter();
 		HttpSession session = request.getSession();
 
 		Integer userId = (Integer) session.getAttribute("UserId");
@@ -39,22 +39,15 @@ public class StillGalleryServlet extends HttpServlet {
 		StillService stillService = new StillService();
 		try {
 			List<Still> stillList = stillService.listStills(userId);
-
 			JSONArray StillJsonArray = new JSONArray(stillList);
-			System.out.println(stillList);
-
-			PrintWriter out = response.getWriter();
 			out.println(StillJsonArray.toString());
 			out.flush();
 			out.close();
-
 		} catch (ServiceException e) {
-			e.printStackTrace();
+			out.print(e.getMessage());
 
 		}
 
 	}
-
-	
 
 }

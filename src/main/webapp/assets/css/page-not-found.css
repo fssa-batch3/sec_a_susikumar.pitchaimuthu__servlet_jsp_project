@@ -1,0 +1,166 @@
+/* Base colors */
+:root {
+  --c-1: #203075;
+  --c-2: lighten(var(--c-1), 3%);
+}
+
+/* Body styles */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #034962;
+  font-family: "Varela Round", sans-serif;
+  text-shadow: 0 30px 10px rgba(0, 0, 0, 0.15);
+  z-index: 5;
+  margin: 0;
+  padding: 0;
+}
+
+.whole-section-container {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+.page-not-found-section {
+  width: 100%;
+}
+
+/* Main content */
+.main {
+  text-align: center;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 378px;
+  flex-direction: column;
+}
+
+p {
+  font-size: 18px;
+  margin-top: 0;
+}
+
+h1 {
+  font-size: 95px;
+  margin: 0;
+}
+
+.go-back-button {
+  background: linear-gradient(#ec5dc1, #d61a6f);
+  padding: 0 12px;
+  border: none;
+  border-radius: 20px;
+  box-shadow: 0 30px 15px rgba(0, 0, 0, 0.15);
+  outline: none;
+  color: #fff;
+  font: 400 16px/2.5 Nunito, "Varela Round", sans-serif;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.register-button {
+  --color: #560bad;
+  font-family: inherit;
+  display: inline-block;
+  width: 7em;
+  height: 2.2em;
+  line-height: 1.5em;
+  margin: 20px;
+  position: relative;
+  overflow: hidden;
+  border: 2px solid var(--color);
+  transition: color 0.5s;
+  z-index: 1;
+  font-size: 16px;
+  border-radius: 6px;
+  font-weight: 500;
+  color: var(--color);
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.register-button:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  background: var(--color);
+  height: 150px;
+  width: 200px;
+  border-radius: 50%;
+}
+
+.register-button:hover {
+  color: #fff;
+}
+
+.register-button:before {
+  top: 100%;
+  left: 100%;
+  transition: all 0.7s;
+}
+
+.register-button:hover:before {
+  top: -30px;
+  left: -30px;
+}
+
+.register-button:active:before {
+  background: #3a0ca3;
+  transition: background 0s;
+}
+
+/** login button **/
+
+.login-button {
+  --color: var(--color);
+  font-family: inherit;
+  display: inline-block;
+  width: 7em;
+  height: 2.2em;
+  line-height: 1.5em;
+  margin: 20px;
+  position: relative;
+  overflow: hidden;
+  border: 2px solid #560bad;
+  transition: color 0.5s;
+  z-index: 1;
+  font-size: 16px;
+  border-radius: 6px;
+  font-weight: 500;
+  color: #fff;
+  background-color: #560bad;
+  cursor: pointer;
+}
+
+.login-button:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  background: #fff;
+  height: 150px;
+  width: 200px;
+  border-radius: 50%;
+}
+
+.login-button:hover {
+  color: #560bad;
+}
+
+.login-button:before {
+  top: 100%;
+  left: 100%;
+  transition: all 0.7s;
+}
+
+.login-button:hover:before {
+  top: -30px;
+  left: -30px;
+}
+
+.login-button:active:before {
+  background: #3a0ca3;
+  transition: background 0s;
+}

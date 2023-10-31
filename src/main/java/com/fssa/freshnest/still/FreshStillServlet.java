@@ -67,34 +67,31 @@ public class FreshStillServlet extends HttpServlet {
 
 			}
 		} catch (ServiceException e) {
-			System.out.println("Still taken failed");
-			System.out.println(e.getMessage());
+			out.println(e.getMessage());
 
 		}
 
 	}
 
-	   protected void doGet(HttpServletRequest request, HttpServletResponse response)
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		
-			HttpSession session = request.getSession();
 
-			String loggedInEmail = (String) session.getAttribute("loggedInEmail");
+		HttpSession session = request.getSession();
 
-			User user1 = new User(loggedInEmail);
-			UserService userService = new UserService();
+		String loggedInEmail = (String) session.getAttribute("loggedInEmail");
 
-			try {
-				User userDetails = userService.readUserDetails(user1);
-				request.setAttribute("userDetails", userDetails);
+		User user1 = new User(loggedInEmail);
+		UserService userService = new UserService();
 
-				request.getRequestDispatcher("./pages/webcam.html").forward(request, response);
-				System.out.print(userDetails);
-			} catch (ServiceException e) {
-				e.printStackTrace();
-			}
-		
-		  
-	} 
+		try {
+			User userDetails = userService.readUserDetails(user1);
+			request.setAttribute("userDetails", userDetails);
+
+			request.getRequestDispatcher("./pages/webcam.html").forward(request, response);
+		} catch (ServiceException e) {
+			e.printStackTrace();
+		}
+
+	}
 
 }

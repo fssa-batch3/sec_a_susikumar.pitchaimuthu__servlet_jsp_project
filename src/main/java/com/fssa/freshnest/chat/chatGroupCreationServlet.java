@@ -20,8 +20,8 @@ import com.fssa.freshnest.services.exceptions.ServiceException;
 /**
  * Servlet implementation class chatGroupCreationServlet
  */
-@WebServlet("/chatGroupCreationServlet")
-public class chatGroupCreationServlet extends HttpServlet {
+@WebServlet("/ChatGroupCreationServlet")
+public class ChatGroupCreationServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
@@ -34,8 +34,7 @@ public class chatGroupCreationServlet extends HttpServlet {
 		Integer userId = (Integer) session.getAttribute("UserId");
 
 		response.setContentType("application/json");
-		PrintWriter out = response.getWriter();
-
+		PrintWriter out = response.getWriter(); 
 		// Retrieve data from the request body
 		StringBuilder requestBody = new StringBuilder();
 		String line;
@@ -58,7 +57,7 @@ public class chatGroupCreationServlet extends HttpServlet {
 			participantsId[i] = chatGroupParticipants.getInt(i);
 			count++;
 		}
-		participantsId[count] = userId;		
+		participantsId[count] = userId;
 
 		ChatService chatService = new ChatService();
 		Chat chat = new Chat();

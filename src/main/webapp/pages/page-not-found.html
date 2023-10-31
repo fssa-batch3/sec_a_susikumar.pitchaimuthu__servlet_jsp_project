@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>404 Page</title>
+<link rel="stylesheet" href="./assets/css/page-not-found.css" />
+<link rel="stylesheet" href="./assets/css/nav.css" />
+<link rel="stylesheet" href="./assets/css/footer.css" />
+</head>
+<body>
+	<section class="whole-section-container">
+		<nav>
+			<!-- monile-menu-icon -->
+			<div class="mobile-menu-div">
+				<img class="mobile-menu-icon"
+					src="../assets/images/nav-bar/Menu-dot.png" alt="menuList-icon"
+					onclick="togglemenu()" />
+			</div>
+
+			<!-- nav-logo -->
+			<div class="nav-logo-div">
+				<a href="./pages/home.html"> <img class="nav-logo-div-image"
+					src="./assets/images/common/Fresh-nest-logo-black.png"
+					alt="fresh-nest-logo" />
+				</a>
+			</div>
+
+			<!-- nav-links -->
+			<div class="nav-link-div">
+				<ul id="menuList">
+					<li><a href="#">About Us</a></li>
+					<li class="feature-li"><a href="#">Features</a>
+						<div class="dropdown">
+							<i class="bi bi-caret-down-fill down-arrow"></i>
+							<div class="dropdown-content">
+								<ol id="feature-dropdown-ol">
+									<a class="still-a" href="./still.html">
+										<li class="still-li">
+											<p class="li-para">Still</p>
+									</li>
+									</a>
+
+									<a class="nest-a" href="./nest.html">
+										<li class="Nest-li">
+											<p class="li-para">Nest</p>
+									</li>
+									</a>
+								</ol>
+							</div>
+						</div></li>
+					<li>Support</li>
+				</ul>
+			</div>
+
+			<!--Nav-signin and login button  -->
+			<div class="nav-button-div-container" id="sign-log">
+				<a href="./userRegister.html">
+					<button class="register-button">Sign Up</button>
+				</a> <a href="./login.html">
+					<button class="login-button">Log in</button>
+				</a>
+			</div>
+
+			<!-- mobile profile image -->
+
+			<div class="user-div">
+				<img class="user-icon" src="./assets/images/nav-bar/user.png"
+					alt="mobile-profile-icon" onclick="togglemenu()" />
+			</div>
+		</nav>
+
+		<section class="page-not-found-section">
+			<div class="main">
+				<h1>404</h1>
+				<p>It looks like you're lost...</p>
+				<p>That's a trouble?</p>
+				<button class="go-back-button" type="button">Go back</button>
+			</div>
+		</section>
+
+		<footer>
+			<div class="footer-container">
+				<div class="footer-logo-div">
+					<div class="logo-div-footer">
+						<div class="logo-image-div">
+							<img class="footer-logo-div-image-white"
+								src="../assets/images/footer/fresh-nest-logo-white.png"
+								alt="footer-website-logo" />
+						</div>
+						<div>
+							<p>The browser for entertainment</p>
+						</div>
+					</div>
+
+					<div class="footer-copyright-div">
+						<img class="footer-copyright-div-image"
+							src="../assets/images/footer/copyright-logo.png"
+							alt="copyright-image" />
+						<p>2022 Fresh Nest</p>
+					</div>
+					<div class="footer-term-policy-div">
+						<a class="footer-policy-a" href="#">Privacy</a> <a
+							class="footer-term-condition-a" href="#">Terms
+							and Conditions</a>
+					</div>
+				</div>
+
+				<div class="footer-home-div">
+					<p class="footer-home-head">Page</p>
+					<a class="footer-home-about" href="#">About us</a> <a
+						class="footer-home-download" href="#">Download</a> <a
+						class="footer-home-support" href="#">Support</a>
+				</div>
+				<div class="footer-features-div">
+					<p>Features</p>
+					<a class="footer-still-a" href="#">Still</a> <a
+						class="footer-nest-a" href="#">Nest</a> <a
+						class="footer-rolling-a" href="#">Rolling</a>
+				</div>
+				<div class="footer-download-div">
+					<p>Download</p>
+					<a class="footer-mac-a" href="#">Mac/Pc</a> <a
+						class="footer-iphone-a" href="#">Iphone</a> <a
+						class="footer-android-a" href="#">Android</a>
+				</div>
+
+				<div class="footer-social-media-div">
+					<p>Social Media contacts</p>
+					<div class="footer-social-media-div-twitter-div">
+						<img class="footer-social-media-div-twitter-div-image"
+							src="./assets/images/footer/Twitter-logo.png" alt="twitter-logo" />
+						<a href="#">@freshnest</a>
+					</div>
+					<div class="footer-social-media-div-facebook-div">
+						<img class="footer-social-media-div-facebook-div-image"
+							src="./assets/images/footer/facebook-logo.png"
+							alt="facebook-logo" /> <a href="#">freshnest</a>
+					</div>
+					<div class="footer-social-media-div-github-div">
+						<img class="footer-social-media-div-github-div-image"
+							src="./assets/images/footer/github-logo.png" alt="github-logo" />
+						<a href="#">freshnest.io</a>
+					</div>
+					<div class="footer-social-media-div-whatsapp-div">
+						<img class="footer-social-media-div-whatsapp-div-image"
+							src="./assets/images/footer/whatsapp-logo.png"
+							alt="whatsapp-logo" /> <a href="#">freshnest</a>
+					</div>
+					<div class="footer-social-media-div-instagram-div">
+						<img class="footer-social-media-div-instagram-div-image"
+							src="./assets/images/footer/Instagram-logo.png"
+							alt="instagram-logo" /> <a href="#">fresh_nest_&_co
+						</a>
+					</div>
+				</div>
+			</div>
+		</footer>
+	</section>
+</body>
+</html>

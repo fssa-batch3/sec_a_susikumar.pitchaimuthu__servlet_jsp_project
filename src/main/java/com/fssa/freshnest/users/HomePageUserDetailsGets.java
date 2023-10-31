@@ -26,27 +26,16 @@ public class HomePageUserDetailsGets extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
 	 *      response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-
-		response.setContentType("application/json");
 		PrintWriter out = response.getWriter();
-
-		// Retrieve data from the request body
-		StringBuilder requestBody = new StringBuilder();
-		String line;
-		while ((line = request.getReader().readLine()) != null) {
-			requestBody.append(line);
-		}
-
-		JSONObject jsonData = new JSONObject(requestBody.toString());
-		int userId = jsonData.getInt("userId");
+		int userId = Integer.parseInt(request.getParameter("userId"));
 
 		UserService userService = new UserService();
 
 		User user = new User();
 		user.setUserId(userId);
-
+ 
 		try {
 			User friendDetail = userService.readUserFrinedsDetails(user);
 			JSONObject accountsJSonArray = new JSONObject(friendDetail);
@@ -56,7 +45,6 @@ public class HomePageUserDetailsGets extends HttpServlet {
 
 		} catch (ServiceException e) {
 			e.printStackTrace();
-			System.out.println(e.getMessage());
 		}
 
 	}

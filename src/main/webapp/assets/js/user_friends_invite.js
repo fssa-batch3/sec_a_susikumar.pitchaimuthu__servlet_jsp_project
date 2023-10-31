@@ -2,7 +2,7 @@
 
  function getAllUserFriendsInvites() {
 	
-			const url = "http://localhost:8080/appfreshnest/GetAllOtherUserInvites";
+			const url = "/appfreshnest/GetAllOtherUserInvites";
 			axios.get(url)
 			  .then(function (response) {
 			    console.log(response.data);
@@ -142,7 +142,7 @@ function showUserFrindsInvite(friendsInvites) {
 // Get invite details
 
 function getInviteDetails(inviteId){
-		const url = "http://localhost:8080/appfreshnest/GetUserFriendInviteDetailServlet?inviteId="+ inviteId;
+		const url = "/appfreshnest/GetUserFriendInviteDetailServlet?inviteId="+ inviteId;
 			axios.get(url)
 			  .then(function (response) {
 			    // handle success

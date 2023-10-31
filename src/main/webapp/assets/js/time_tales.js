@@ -29,16 +29,12 @@ reelInput.addEventListener("change", function (event) {
             .then(function (response) {
                 // handle success
                 let serverMessage = response.data;
-                console.log(serverMessage);
-            })
+              })
             .catch(function (error) {
                 // handle error
                 console.log(error);
             });
                
-
-        // Use the reelVideoObj as needed
-        console.log(reelVideoObj);
       };
 
       video.src = src;
@@ -74,13 +70,11 @@ function getAllUserTimeTales(){
 			axios.get(url)
 			  .then(function (response) {
 			    // handle success
-			    console.log(response.data);
-			    
 			    let timeTales = response.data;
 			    
 			    if(timeTales[0] != null){
 					let reelMember = document.querySelector(".time-tale-user-profile-div");
-                    reelMember.setAttribute("id", timeTales[0]["userId"]);
+                    reelMember.setAttribute("id", timeTales[0]["user"]["userId"]);
                     reelMember.setAttribute("data-user", "profileUser"); 
                     reelMember.style.border = "2px rgb(108, 156, 180) solid";
                     reelMember.addEventListener("click", function() {
@@ -105,3 +99,71 @@ function redirectToTimeTalePage(type){
     window.location.href = "../pages/reel_showing.html?type=" +type;
 }
 
+
+// List user friends time tale feature
+function listUserFriendsTimeTales(){
+	const url = "/appfreshnest/GetUserFriendsTimeTalesServlet";
+			axios.get(url)
+			  .then(function (response) {
+			    // handle success			    
+			    let userFrinendsTimeTales = response.data;
+			    showUserfriendsReel(userFrinendsTimeTales);
+			  })
+			  .catch(function (error) {
+			    console.log(error);
+			  })
+}
+listUserFriendsTimeTales();
+
+function showUserfriendsReel(UserFriendTales){
+
+for(let taleData of UserFriendTales){
+try {
+   
+  // Create the outermost <div> element with class "tale-div-container"
+const taleDivContainer = document.createElement('div');
+taleDivContainer.classList.add('tale-div-container');
+taleDivContainer.setAttribute("id", taleData[0]["userId"]);
+taleDivContainer.setAttribute("onclick", "timeTaleUserIdGet(this.id)");
+
+// Create the inner <div> with class "tale-inside-div-container"
+const taleInsideDivContainer = document.createElement('div');
+taleInsideDivContainer.classList.add('tale-inside-div-container');
+
+// Create the <div> with class "reel-member-div"
+const reelMemberDiv = document.createElement('div');
+reelMemberDiv.classList.add('reel-member-div');
+
+// Create the <img> element with class "reel-member-div-image"
+const reelMemberImage = document.createElement('img');
+reelMemberImage.classList.add('reel-member-div-image');
+reelMemberImage.setAttribute('src', taleData[0]["profileImage"]); 
+
+// Create the <div> with class "reel-username-div"
+const reelUsernameDiv = document.createElement('div');
+reelUsernameDiv.classList.add('reel-username-div');
+
+// Create the <p> element with class "reel-username-para" and text content "I'm Susi"
+const reelUsernamePara = document.createElement('p');
+reelUsernamePara.classList.add('reel-username-para');
+reelUsernamePara.textContent = taleData[0]["username"];
+
+// Append elements to build the structure
+reelMemberDiv.appendChild(reelMemberImage);
+reelUsernameDiv.appendChild(reelUsernamePara);
+taleInsideDivContainer.appendChild(reelMemberDiv);
+taleInsideDivContainer.appendChild(reelUsernameDiv);
+taleDivContainer.appendChild(taleInsideDivContainer);
+
+  document.querySelector(".reel-container").append(taleDivContainer);
+} catch (error) {
+  console.log("An error occured while adding the user reel profile :", error);
+}
+}
+}
+
+function timeTaleUserIdGet(userId){
+	 let type = "friends";
+	window.location.href = "../pages/reel_showing.html?type=" + type + "&user=" + userId;
+
+}

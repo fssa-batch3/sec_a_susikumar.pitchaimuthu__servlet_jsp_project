@@ -109,9 +109,6 @@ function profileImageChange() {
   let fileInput = document.createElement("input");
   fileInput.type = "file";
 
-  let imageElement = document.createElement("img");
-  imageElement.setAttribute("class", "sending-image");
-
   fileInput.click(); 
 
   fileInput.addEventListener("change", function (e) {

@@ -2,7 +2,7 @@
 let profileUser; 
 
 function findUserProfileDetails(){
-		const url = "http://localhost:8080/appfreshnest/UserProfileDetails";
+		const url = "/appfreshnest/UserProfileDetails";
 			axios.get(url)
 			  .then(function (response) {
 			    // handle success

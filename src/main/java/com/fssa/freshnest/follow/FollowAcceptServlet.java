@@ -29,12 +29,9 @@ public class FollowAcceptServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		System.out.println("I'm follow accept servlet");
 		int receiverId = Integer.parseInt(request.getParameter("userId"));
-
-		HttpSession session = request.getSession();
+		HttpSession session = request.getSession(); 
 		Integer userId = (Integer) session.getAttribute("UserId");
-
 		PrintWriter out = response.getWriter();
 		RequestAndResponse requestAndResponse = new RequestAndResponse();
 		requestAndResponse.setRequestSenderId(userId);

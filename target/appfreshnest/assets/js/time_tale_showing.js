@@ -150,7 +150,7 @@ sendIconElement.addEventListener("click", ()=> {
 		currentTaleId,
 		currentUserId,
 	}
-	  const url = "http://localhost:8080/appfreshnest/UserRegister";
+	  const url = "/appfreshnest/UserRegister";
 
             axios.post(url, taleMessageObject, {
                 headers: {

@@ -49,15 +49,15 @@
 					<form action="" id="birthday-form">
 						<div class="birthday-all-input-div-container">
 							<div class="birthday-input-div">
-								<label for="date-of-birth">Date of birth *</label> <input
-									type="date" id="birthday" required />
+								<label for="date-of-birth">Date of birth <span class="mandatory">*</span></label> <input
+									type="date" id="birthday" title="Birthday date should be more than 18" required />
 							</div>
 
 							<!--  Gender input -->
 
 							<div class="input-label-div">
 								<div class="gender-label-div">
-									<label class="gender-h4">Gender:</label>
+									<label class="gender-h4">Gender <span class="mandatory">*</span></label>
 								</div>
 
 								<div class="gender-selection-div">
@@ -86,8 +86,6 @@
 							</div>
 
 							<div class="submit-and-previous-button-div">
-								<i class="bi bi-arrow-left-circle-fill previous-arrow"></i>
-
 								<button type="submit" class="next-button">Sign Up</button>
 							</div>
 						</div>

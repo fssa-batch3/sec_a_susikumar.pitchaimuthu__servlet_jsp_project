@@ -1,4 +1,3 @@
-console.log("Yeah");
 
   let userUrl = window.location.search;
   let userUrlParams = new URLSearchParams(userUrl);
@@ -9,7 +8,7 @@ console.log("Yeah");
 //  Gets the still from the servlet
 
 function getStillDetails() {
-	const url = "http://localhost:8080/appfreshnest/StillDetailsServlet?stillId=" + stillId;
+	const url = "/appfreshnest/StillDetailsServlet?stillId=" + stillId;
 			axios.get(url)
 			  .then(function (response) {
 			    // handle success

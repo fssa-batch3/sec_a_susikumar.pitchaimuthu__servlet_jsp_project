@@ -81,15 +81,15 @@ logOut.addEventListener("click", () => {
       if (message !== true) {
         return;
       } else {
-		  const url = "http://localhost:8080/freshnest/LogoutServlet";
+		  const url = "/freshnest/LogOut";
 			axios.get(url)
 			  .then(function (response) {
 			    // handle success
-			    console.log(response.data);
 			    const logOutResponse = response.data;
+			    console.log(logOutResponse);
 			    
-			    if(logOutResponse == "success"){					
-                    window.location.href = "/appfreshnest/index.htmll";
+			    if(logOutResponse === "success"){					
+                    window.location.href = "/appfreshnest/index.html";
 				}
 			    
 			  })
@@ -110,9 +110,14 @@ let profile = document.querySelector(".image");
 
 profile.addEventListener("click", () => {
   try {
-    window.location.href = "../pages/profile.html";
+    window.location.href = "../pages/user-profile.html";
   } catch (error) {
     console.log(("An error occurred while redirect the profile page :", error));
   }
 });
 
+
+// Another user profile details showing function
+function getAnotherUserProfileDetails(clickedUserId){
+	window.location.href ="../pages/profile.html?userId=" + clickedUserId;
+}

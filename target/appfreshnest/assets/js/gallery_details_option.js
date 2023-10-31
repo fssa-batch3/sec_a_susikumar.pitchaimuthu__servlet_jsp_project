@@ -32,7 +32,7 @@
 		   stillId : stillId
 	   }
 	   
-	   const url = "http://localhost:8080/appfreshnest/StillFavouriteServlet";
+	   const url = "/appfreshnest/StillFavouriteServlet";
 
         axios.post(url, favObject, {
             headers: {

@@ -30,7 +30,6 @@ public class LoginServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		System.out.println("I am login servlet"); 
 		response.setContentType("application/json");
 		PrintWriter out = response.getWriter();
 		

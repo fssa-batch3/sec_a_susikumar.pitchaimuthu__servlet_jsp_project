@@ -77,7 +77,6 @@ public class StillFavouriteServlet extends HttpServlet {
 		PrintWriter out = response.getWriter();
 
 		Integer loggedInUserId = (Integer) session.getAttribute("UserId");
-		System.out.println(loggedInUserId);
 		
 		User user = new User();
 		user.setUserId(loggedInUserId);

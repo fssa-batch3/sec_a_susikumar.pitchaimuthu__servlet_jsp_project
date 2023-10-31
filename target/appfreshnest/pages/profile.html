@@ -6,7 +6,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>profile</title>
 <link rel="stylesheet" href="../assets/css/profile.css" />
-<link rel="stylesheet" href="../assets/css/button.css" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link rel="stylesheet"
@@ -22,6 +21,7 @@
 </style>
 </head>
 <body>
+
 	<div class="whole-section-div-container">
 		<div class="background-image-and-card-div-container">
 			<div class="background-div">
@@ -30,21 +30,13 @@
 					<div class="user-profile-div">
 						<p>USER PROFILE</p>
 					</div>
-					<div class="top-user-div">
-						<img class="top-user-div-image"
-							src="../assets/images/Profile/chat.png" alt="user-profile" />
-						<p>Notification</p>
-					</div>
 				</div>
 
 				<!-- center content -->
 				<div class="profile-and-content-div">
 					<div class="our-static-bio-div">
 						<h1 id="profile-head"></h1>
-						<p>This is your profile image.you can see the your's activity
-							and you can modify yours profile bio and settings.</p>
-
-						<button class="hero-section-button">Edit Profile</button>
+						<p class="user-head-theme"></p>
 					</div>
 					<!-- user main profile -->
 				</div>
@@ -57,9 +49,9 @@
 					<div class="user-last-activity-showing-div-container">
 						<div class="user-last-acitivty-inside-div">
 							<div class="activity-head-div">
-								<button class="suggestion-head">Suggested friends</button>
+								<button class="suggestion-head">Friends</button>
 
-								<button class="activity-head">Your activities</button>
+								<button class="activity-head">Activities</button>
 
 								<h4></h4>
 							</div>
@@ -76,22 +68,7 @@
 							<!-- profile -->
 							<div class="profile-connect-message-div">
 								<div class="profile-image-div">
-									<img id="profile-image" alt="profile-image"
-										onclick="showProfileOption()" />
-
-									<div class="profile-option-div" style="display: none">
-										<div class="profile-option-inside-div">
-											<div class="change-profile-div">
-												<input type="file" id="file" /> <label for="file"
-													class="choose-photo">Change profile</label>
-											</div>
-
-											<div class="default-button-div">
-												<button onclick="defaultProfile()" class="default-button">
-													Default Profile</button>
-											</div>
-										</div>
-									</div>
+									<img id="profile-image" alt="profile-image" />
 								</div>
 							</div>
 
@@ -101,17 +78,23 @@
 								<div class="user-experience-inside-div-container">
 									<div class="user-experience-div">
 										<div class="user-experience-inside-div">
-											<div class="friends-div">
-												<h2 class="user-h2">22</h2>
-												<p class="user-para">Friends</p>
+											<div class="friends-div" id="count-div">
+												<div class="count-inside-div">
+													<h2 class="user-h2">22</h2>
+													<p class="user-para">Friends</p>
+												</div>
 											</div>
-											<div class="photos-div">
-												<h2 class="user-h2">143</h2>
-												<p class="user-para">Photos</p>
+											<div class="photos-div" id="count-div">
+												<div class="count-inside-div">
+													<h2 class="user-h2">143</h2>
+													<p class="user-para">Photos</p>
+												</div>
 											</div>
-											<div class="videos-div">
-												<h2 class="user-h2">33</h2>
-												<p class="user-para">Videos</p>
+											<div class="videos-div" id="count-div">
+												<div class="count-inside-div">
+													<h2 class="user-h2">33</h2>
+													<p class="user-para">Videos</p>
+												</div>
 											</div>
 										</div>
 									</div>
@@ -120,7 +103,7 @@
 
 									<div class="user-details-div-container">
 										<div class="details-head-div">
-											<h2>Details</h2>
+											<h2>Properties</h2>
 										</div>
 										<div class="user-details-inside-div">
 											<div class="each-details-div">
@@ -142,7 +125,7 @@
 											</div>
 											<div class="each-details-div">
 												<div class="details-option-head-div">
-													<h4>Age</h4>
+													<h4>Joined</h4>
 												</div>
 												<div class="details-div">
 													<p class="age-para"></p>
@@ -172,10 +155,9 @@
 			<div class="clicking-inside-div-container"></div>
 		</div>
 	</div>
-	<!-- profile page script files -->
 	<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 	<script src="../assets/js/get_user_count.js"></script>
-	<script src="../assets/js/profile.js"></script>
-	<script src="../assets/js/user_checking_users.js"></script>
+	<script src="../assets/js/get_another_user_details.js"></script>
+
 </body>
 </html>

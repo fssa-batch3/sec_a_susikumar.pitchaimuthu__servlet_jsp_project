@@ -38,11 +38,11 @@ public class GetAllInvites extends HttpServlet {
 		Integer userId = (Integer) session.getAttribute("UserId");
 		User user = new User(loggedInEmail);
 		UserService userService = new UserService();
+		PrintWriter out = response.getWriter();
 
 		try {
 			User userDetails = userService.readUserDetails(user);
 			request.setAttribute("userDetails", userDetails);
-			System.out.println(userDetails);
 
 			User user1 = new User();
 			user1.setUserId(userId);
@@ -52,13 +52,12 @@ public class GetAllInvites extends HttpServlet {
 
 			List<Invite> friendsInviteList = inviteService.listFriendsInvite(invite);
 			JSONArray accountsJSonArray = new JSONArray(friendsInviteList);
-			PrintWriter out = response.getWriter();
+
 			out.println(accountsJSonArray.toString());
 			out.flush();
-			System.out.println(friendsInviteList);
 
 		} catch (ServiceException e) {
-			System.out.println(e.getMessage());
+			out.println(e.getMessage());
 		}
 	}
 

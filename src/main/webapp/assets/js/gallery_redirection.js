@@ -17,7 +17,7 @@ filterButton.addEventListener("click", (event) => {
       to: to
     };
     
-    const url = "http://localhost:8080/appfreshnest/StillFilterServlet";
+    const url = "/appfreshnest/StillFilterServlet";
 
     axios.post(url, filterObject, {
       headers: {
@@ -109,7 +109,7 @@ favourite_image.addEventListener("click", (event) => {
     // removing the element
     removeCardElement();
   
-    const url = "http://localhost:8080/appfreshnest/StillFavouriteServlet";
+    const url = "/appfreshnest/StillFavouriteServlet";
 			axios.get(url)
 			  .then(function (response) {
 			    // handle success
@@ -217,7 +217,7 @@ recent.addEventListener("click", (event) => {
     // removing the element
     removeCardElement();
      
-      const url = "http://localhost:8080/appfreshnest/StillDeleteServlet";
+      const url = "/appfreshnest/StillDeleteServlet";
 			axios.get(url)
 			  .then(function (response) {
 			    // handle success

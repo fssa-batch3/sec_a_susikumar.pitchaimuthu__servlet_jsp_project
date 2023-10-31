@@ -32,35 +32,34 @@ public class InviteDetailsServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		System.out.println("invite get");
 
 		String id = request.getParameter("inviteId");
 
 		Integer inviteId = Integer.parseInt(id);
-		System.out.println(inviteId);
 
 		HttpSession session = request.getSession();
 
 		Integer loggedUserId = (Integer) session.getAttribute("UserId");
-		System.out.println(loggedUserId);
 
 		User user = new User();
 		user.setUserId(loggedUserId);
 
-		Invite invite = new Invite(user, inviteId);
+		Invite invite = new Invite();
+		invite.setUser(user);
+		invite.setInviteId(inviteId);
 
 		InviteService inviteService = new InviteService();
 
+		PrintWriter out = response.getWriter();
 		try {
 			Invite inviteDetails = inviteService.readInviteDetails(inviteId);
 			JSONObject accountsJSonArray = new JSONObject(inviteDetails);
-			PrintWriter out = response.getWriter();
 			out.println(accountsJSonArray.toString());
 			out.flush();
 			out.close();
 
 		} catch (ServiceException e) {
-			System.out.println(e.getMessage());
+			out.println(e.getMessage());
 		}
 
 	}

@@ -4,7 +4,7 @@
 let userId;
 
 function findUserProfileDetails(){
-		const url = "http://localhost:8080/appfreshnest/UserProfileDetails";
+		const url = "/appfreshnest/UserProfileDetails";
 			axios.get(url)
 			  .then(function (response) {
 			    // handle success
@@ -47,15 +47,20 @@ try {
 
 
 
-function getUserChatFriends(){
+function getUserChatGroups(){
 	
-	const url = "http://localhost:8080/appfreshnest/GetAllUserChatFriends";
+	const url = "/appfreshnest/GetUserChatGroupsServlet";
 			axios.get(url)
 			  .then(function (response) {
 			    // handle success
-			    console.log(response.data);
 			    const chatGroup = response.data;
+			    console.log(chatGroup);
+			    
+			    if(chatGroup.length == 0){
+					getConnectionMessage();
+				}else {
 			    showAllUserChatFriends(chatGroup);
+				}
 			  })
 			  .catch(function (error) {
 			    // handle error
@@ -64,8 +69,8 @@ function getUserChatFriends(){
 	
 }
   
-  getUserChatFriends();
- // const intervalId = setInterval(getUserChatFriends, 5000);
+  getUserChatGroups();
+  // const intervalId = setInterval(getUserChatGroups, 5000);
   
   
   // Removing previous chat cards by removing all child nodes
@@ -75,6 +80,43 @@ function getUserChatFriends(){
     chatContainer.removeChild(chatContainer.firstChild);
   }
 }
+
+// If there is no chat group means guide them
+
+function getConnectionMessage(){
+	
+	let paraDiv = document.createElement("div");
+	paraDiv.setAttribute("class", "get-connection-div");
+	
+    let paraInsideDiv = document.createElement("div");
+	paraInsideDiv.setAttribute("class", "get-connection-inside-div");
+	paraDiv.append(paraInsideDiv);
+		
+	let firstPara = document.createElement("p");
+	firstPara.setAttribute("class", "connection-message-para");
+	firstPara.innerHTML = "Ooops! you don't have the chat group to message.";
+	paraInsideDiv.append(firstPara);
+	
+	let secondPara = document.createElement("p");
+	secondPara.setAttribute("class", "connection-message-para");
+	secondPara.innerHTML = "No Problem. Go to home page and made connection";
+	paraInsideDiv.append(secondPara);
+	
+	let navigationAnchor = document.createElement("a");
+    navigationAnchor.setAttribute("class", "navigation-span");
+    navigationAnchor.setAttribute("id", "home");
+    navigationAnchor.setAttribute("href", "../pages/home.html"); 
+    navigationAnchor.innerHTML = " Go Home";
+    secondPara.append(navigationAnchor);
+
+	
+	document.querySelector(".chat-member-inside-container").append(paraDiv);
+	
+}
+
+
+
+
 
 // Declare the chat id and chat type
 let ChatId;
@@ -114,7 +156,13 @@ let chatType;
 
       let img = document.createElement("img");
       img.setAttribute("class", "member-image");
-      img.setAttribute("src", friendData["profileImage"]);
+	  img.setAttribute("src", friendData["groupImage"]);
+	  img.setAttribute("data-group-type", friendData["chatType"]);
+	  img.addEventListener("click", function () {
+      let chatId = friendData["chatId"]; 
+      let chatType = img.getAttribute("data-group-type");
+      GetChatGroupDetails(chatId, chatType);
+    });
       image.append(img);
 
       let nameOne = document.createElement("div");
@@ -122,12 +170,21 @@ let chatType;
       image_div.append(nameOne);
 
       let para = document.createElement("p");
-      para.innerHTML = friendData["username"];
+      para.innerHTML = friendData["chatName"];
       nameOne.append(para);
-
+      
+      let isReadAndChatMessageDivContainer = document.createElement("div");
+      isReadAndChatMessageDivContainer.setAttribute("class", "is-read-and-message-div-container");
+      nameOne.append(isReadAndChatMessageDivContainer);
+      
+ 	  let isReadI = document.createElement("i");
+      isReadI.setAttribute("class" , "bi bi-check2-all");
+      isReadAndChatMessageDivContainer.append(isReadI);
+      
       let paragraph = document.createElement("p");
-      paragraph.innerText = friendData["chatMessage"];
-      nameOne.append(paragraph);
+      paragraph.innerText = friendData["chatMessage"] || "start conversation";
+      paragraph.setAttribute("class", "chat-message-para");
+      isReadAndChatMessageDivContainer.append(paragraph);
 
       let timeCountDiv = document.createElement("div");
       timeCountDiv.setAttribute("class", "chat-count-div");
@@ -139,7 +196,7 @@ let chatType;
 
       // creating for loop to show the user unread chat count
 
-       let numberCount = 3;
+       let numberCount = 0;
       if (numberCount != 0) {
         let countDiv = document.createElement("div");
         countDiv.setAttribute("class", "count-div");
@@ -156,12 +213,14 @@ let chatType;
 
       // Format the timestamp with AM and PM
        let  formattedTime = timestamp.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: true });
-
-      // Display the formatted time
-       console.log(formattedTime);
+       
+       if(formattedTime === "Invalid Date"){
+		   const currentTime = new Date();
+          formattedTime = currentTime.toLocaleTimeString([], { hour: '2-digit', minute:'2-digit', hour12: true }).toUpperCase();
+	   }
 
       let timeAgo = document.createElement("div");
-      timeAgo.setAttribute("id", "time-ago");
+      timeAgo.setAttribute("id", "time-ago" );
       timeCountDiv.append(timeAgo);
 
       let time = document.createElement("p");
@@ -175,7 +234,7 @@ let chatType;
     
 function  getSpecificChatGroupDetails(chatId, chatType){
 	
-const url = "http://localhost:8080/appfreshnest/GetChatGroupDeatils?chatId=" + chatId + "&chatType=" + chatType;
+const url = "/appfreshnest/GetChatGroupMessages?chatId=" + chatId + "&chatType=" + chatType;
 			axios.get(url)
 			  .then(function (response) {
 			    // handle success
@@ -272,30 +331,8 @@ function chatCard(userSelectionIdFind) {
       contentPara.setAttribute("id", "chat-user-last-content");
       chatPersonContentDiv.append(contentPara);
 
-      // profile setting and call option elements
 
-      let profileOptionContainer = document.createElement("div");
-      profileOptionContainer.setAttribute("class", "profile-option-container");
-      userNameDivContainer.append(profileOptionContainer);
-
-      let profileOptionDiv = document.createElement("div");
-      profileOptionDiv.setAttribute("class", "profile-option-div");
-      profileOptionContainer.append(profileOptionDiv);
-
-      let biTelephone = document.createElement("i");
-      biTelephone.setAttribute("class", "bi bi-telephone");
-      profileOptionDiv.append(biTelephone);
-
-      test("i", "class", "bi bi-camera");
-
-      test("i", "class", "bi bi-gear");
-
-      function test(element, id_or_class, class_name_or_id_name) {
-        let biGear = document.createElement(element);
-        biGear.setAttribute(id_or_class, class_name_or_id_name);
-        profileOptionDiv.append(biGear);
-      }
-
+     
       document
         .querySelector(".chat-member-option-div")
         .append(userNameDivContainer);
@@ -365,6 +402,12 @@ function chatCard(userSelectionIdFind) {
 
       let chatInput = document.createElement("input");
       chatInput.setAttribute("id", "chat-input");
+      chatInput.addEventListener("keydown", function(event) {
+                if (event.keyCode === 13) {
+                    event.preventDefault();
+                    sendChat();
+                }
+            });
       chatInputDiv.append(chatInput);
 
       let chatFileOptionDiv = document.createElement("div");
@@ -373,7 +416,7 @@ function chatCard(userSelectionIdFind) {
 
       let fileI = document.createElement("i");
       fileI.setAttribute("class", "fa fa-file");
-      chatFileOptionDiv.append(fileI);
+     chatFileOptionDiv.append(fileI);
 
       let mikeI = document.createElement("i");
       mikeI.setAttribute("class", "fa fa-microphone");
@@ -412,7 +455,7 @@ function chatCard(userSelectionIdFind) {
     }
     
     
-   function chatMessageDivide(chatMessage){     
+ function chatMessageDivide(chatMessage){     
    for (let senders of chatMessage) {
     if (senders["senderId"] == userId ) {
       // usrer chat elemeent creation function
@@ -442,7 +485,7 @@ messageImageDiv.classList.add("profile-image-div");
 // Create the message image element
 const messageImage = document.createElement("img");
 messageImage.classList.add("msg-img");
-messageImage.setAttribute("src", senders["profileImage"]); // Set your image source here
+messageImage.setAttribute("src", senders["profileImage"]);
 messageImage.setAttribute("alt", "user-image");
 
 // Append the image to its container
@@ -678,6 +721,25 @@ function ShowEditOptionDiv(messageId) {
       break;
     }
   }
+}
+
+// Message isRead Function
+
+function chatMessageIsReadFunction(chatId){
+	
+	const url = "/appfreshnest/SetChatMessageIsRead?chatId=" + chatId;
+			axios.get(url)
+			  .then(function (response) {
+			    // handle success
+			    const chatGroupDetails = response.data;
+			    console.log(chatGroupDetails);
+			  })
+			  .catch(function (error) {
+			    // handle error
+			    console.log(error);
+			  })
+	
+	
 }
 
 

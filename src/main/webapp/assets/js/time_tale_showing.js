@@ -3,10 +3,12 @@
 let UrlReel = window.location.search;
 let ReelParams = new URLSearchParams(UrlReel);
 let type = ReelParams.get("type");
-console.log(type);
 
 if(type === "profileUser"){
 	showProfileUserTimeTale();
+}else {
+	let friendId = ReelParams.get("user");
+	getUserFriendTimeTale(friendId);
 }
 
 function showProfileUserTimeTale() {
@@ -15,7 +17,6 @@ function showProfileUserTimeTale() {
         .then(function (response) {
             // handle success
             const timeTale = response.data;
-            console.log(timeTale);
             showTimeTales(timeTale);
         })
         .catch(function (error) {
@@ -61,7 +62,7 @@ function showTimeTales(timeTale) {
 
         let video = document.createElement("video");
         video.setAttribute("class", "reel-video");
-        video.setAttribute("autoplay", "autoplay"); // Automatically play the video when data is loaded
+        video.setAttribute("autoplay", "autoplay"); 
 
         let source = document.createElement("source");
         source.setAttribute("src", tale.media_url);
@@ -114,7 +115,6 @@ function showTimeTales(timeTale) {
             };
         } catch (error) {
             console.error("An error occurred while creating the video player:", error);
-            // Handle the error as needed
         }
     }
 
@@ -150,7 +150,7 @@ sendIconElement.addEventListener("click", ()=> {
 		currentTaleId,
 		currentUserId,
 	}
-	  const url = "http://localhost:8080/appfreshnest/UserRegister";
+	  const url = "/appfreshnest/UserRegister";
 
             axios.post(url, taleMessageObject, {
                 headers: {
@@ -171,6 +171,21 @@ sendIconElement.addEventListener("click", ()=> {
 
 	
 })
+
+// Get the user friends time tales
+function getUserFriendTimeTale(friendId){
+	const url = "/appfreshnest/GetTimeTalesByUserId?userId=" + friendId;
+    axios.get(url)
+        .then(function (response) {
+            // handle success
+           const timeTale = response.data;
+           showTimeTales(timeTale);
+        })
+        .catch(function (error) {
+            // handle error
+            console.log(error);
+        })
+}
 
 
 

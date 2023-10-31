@@ -13,7 +13,7 @@ import javax.servlet.http.HttpSession;
 /**
  * Servlet implementation class LogoutServlet
  */
-@WebServlet("/LogoutServlet")
+@WebServlet("/LogOut")
 public class LogoutServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -22,16 +22,12 @@ public class LogoutServlet extends HttpServlet {
 		HttpSession session = request.getSession(false);
 		PrintWriter out = response.getWriter();
 		if (session != null) {
-			session.removeAttribute("loggedInEmail");
+			session.removeAttribute("UserId");
 			session.invalidate();
 			out.print("success");
-			
 		} else {
-			System.out.println("No Session Exists");
+			out.print("No Session Exists");
 		}
-
-		// Redirecting to login page since we have logged out
-		response.sendRedirect("./pages/login.html");
 	}
 
 }

@@ -50,7 +50,7 @@ console.log(inviteId);
 
 	function getInviteDetails() {
 		
-			const url = "http://localhost:8080/appfreshnest/InviteDetailsServlet?inviteId=" + inviteId;
+			const url = "/appfreshnest/InviteDetailsServlet?inviteId=" + inviteId;
 			axios.get(url)
 			  .then(function (response) {
 			    // handle success

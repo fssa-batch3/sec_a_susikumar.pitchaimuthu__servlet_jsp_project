@@ -49,17 +49,15 @@ public class RegisterServlet extends HttpServlet {
 		UserService userService = new UserService();
 		User user1 = new User(email, userName, password, firstName, lastName, profileImage);
 		try {
-
-			if (userService.registerUser(user1)) {
+			if (!userService.checkWhetherTheUsernameIsExistOrNot(userName) && (userService.registerUser(user1))) {
 				HttpSession session = request.getSession();
 				session.setAttribute("registeredEmail", email);
 				out.print("success");
+
 			}
 
 		} catch (ServiceException e) {
 			out.print(e.getMessage());
-			System.out.println(e.getMessage());
-
 		}
 	}
 

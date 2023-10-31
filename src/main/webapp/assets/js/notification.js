@@ -209,6 +209,28 @@ async function checkUserFollowingOrNot(userId) {
   }
 }
 
+
+
+// Check the user Response for this user request
+function followBack(id){	
+	const url = "/appfreshnest/FollowAcceptServlet?userId=" + id;
+  axios
+    .get(url)
+    .then(function (response) {
+      // handle success
+      let serverMessage = response.data;
+                if(serverMessage === "success"){		         
+                   getNotificaitonDetails(notiId,purposeValue);
+			   }
+      
+    })
+    .catch(function (error) {
+      // handle error
+      console.log(error);
+    });
+}
+
+
 // User invite request notification details
 function showUserInviteNotificaitonDetails(findFollowUser){
 	try {
@@ -355,26 +377,6 @@ followDetailsInsideDiv.appendChild(userInviteRequestDiv);
 }
 
 
-
-// Check the user Response for this user request
-
-async function followBack(id){	
-	const url = "/appfreshnest/FollowAcceptServlet?userId=" + id;
-  axios
-    .get(url)
-    .then(function (response) {
-      // handle success
-      let serverMessage = response.data;
-                if(serverMessage === "success"){		         
-                   getNotificaitonDetails(notiId,purposeValue);
-			   }
-      
-    })
-    .catch(function (error) {
-      // handle error
-      console.log(error);
-    });
-}
 
 
 // response send back function for the invite reaquest

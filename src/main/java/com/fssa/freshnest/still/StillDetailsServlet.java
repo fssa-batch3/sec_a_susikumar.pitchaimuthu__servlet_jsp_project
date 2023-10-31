@@ -29,7 +29,6 @@ public class StillDetailsServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String id = request.getParameter("stillId");
-		System.out.println("Parameter 'naan': " + id);
 		Integer stillId = Integer.parseInt(id);
 
 		Still still = new Still();

@@ -44,12 +44,9 @@ public class SendFollowRequest extends HttpServlet {
 
 		HttpSession session = request.getSession();
 		Integer followerId = (Integer) session.getAttribute("UserId");
-		System.out.println(followerId);
 
 		int followingId = jsonData.getInt("followingId"); 
-		System.out.println(followingId);
 		String followType = jsonData.getString("followType"); 
-		System.out.println(followType);
 
 		RequestAndResponse requestAndResponse = new RequestAndResponse();
 		requestAndResponse.setRequestSenderId(followerId);

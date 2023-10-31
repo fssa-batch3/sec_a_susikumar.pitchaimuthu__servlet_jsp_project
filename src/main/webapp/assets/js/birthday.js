@@ -70,10 +70,9 @@ birthdayForm.addEventListener("submit", (event) => {
       age: age
     };
 
-    console.log(birthDayObject);
     
     
-     const url = "http://localhost:8080/appfreshnest/updateUserBirthdayDetails";
+     const url = "/appfreshnest/updateUserBirthdayDetails";
 
             axios.post(url, birthDayObject, {
                 headers: {
@@ -85,7 +84,6 @@ birthdayForm.addEventListener("submit", (event) => {
                 let serverMessage = response.data;
                 console.log(serverMessage);
               if(serverMessage == "success"){
-                 alert("Birthday updated successfully");
                  window.location.href = "./login.html";
               }else {
 				  errorMessageElementCreation(serverMessage);

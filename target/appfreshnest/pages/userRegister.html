@@ -31,7 +31,7 @@
 							<div>
 								<label class="label" for="firstname"> <input type="text"
 									class="input" id="firstname" name="email" autocomplete="off"
-									pattern="[a-zA-Z]+" title="First name is required"
+									pattern="^(?!\s*$)[A-Za-z\s]+$" title="First should not be empty"
 									placeholder="&nbsp;" required autofocus /> <span
 									class="placeholder">First name <span class="mandatory">*</span>
 								</span>
@@ -40,16 +40,17 @@
 
 							<div>
 								<label class="label" for="lastname"> <input type="text"
-									id="lastname" class="input" name="password" pattern="[a-zA-Z]+"
-									autocomplete="off" placeholder="&nbsp;" required /> <span
-									class="placeholder">Last name <span class="mandatory">*</span>
+									id="lastname" class="input" name="password" pattern="^(?!\s*$)[A-Za-z\s]+$"
+									autocomplete="off"
+									placeholder="&nbsp;" required /> <span class="placeholder">Last
+										name <span class="mandatory">*</span>
 								</span></label>
 							</div>
 
 							<div>
 								<label class="label" for="username"> <input type="text"
 									id="username" class="input" name="password" autocomplete="off"
-									placeholder="&nbsp;" required /> <span class="placeholder">User
+									placeholder="&nbsp;"  required /> <span class="placeholder">User
 										name <span class="mandatory">*</span>
 								</span></label>
 							</div>
@@ -65,7 +66,7 @@
 								<label class="label password-label" for="password"> <input
 									type="password" id="password" class="input" name="password"
 									pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
-									autocomplete="off" placeholder="&nbsp;" required /> <span
+									autocomplete="off" placeholder="&nbsp;"  required /> <span
 									class="placeholder">Password <span class="mandatory">*</span>
 								</span></label>
 								<div class="eye-slash-div">

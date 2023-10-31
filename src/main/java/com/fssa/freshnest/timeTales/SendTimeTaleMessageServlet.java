@@ -47,21 +47,20 @@ public class SendTimeTaleMessageServlet extends HttpServlet {
 		String message = jsonData.getString("message");
 		int taleId = jsonData.getInt("currentTaleId");
 		int receiverId = jsonData.getInt("currentUserId");
-		
-		
+
 		NotificationService notificationService = new NotificationService();
-		
+
 		RequestAndResponse requestAndResponse = new RequestAndResponse();
 		requestAndResponse.setRequestType("tale_reaction");
 		requestAndResponse.setRequestSenderId(userId);
 		requestAndResponse.setRequestReceiverId(receiverId);
 		requestAndResponse.setRequestText(message);
-		
+
 		try {
-			if(notificationService.sendTimeTaleMessage(requestAndResponse)) {
+			if (notificationService.sendTimeTaleMessage(requestAndResponse)) {
 				out.print("success");
 			}
-		}catch(ServiceException e) {
+		} catch (ServiceException e) {
 			out.print(e.getMessage());
 		}
 

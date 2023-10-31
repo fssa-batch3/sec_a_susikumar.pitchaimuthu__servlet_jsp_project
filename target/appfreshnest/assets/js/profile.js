@@ -21,96 +21,60 @@ findUserProfileDetails();
 let userFirstName; 
 
 function displayProfileDetails(findUser){
-
 try {
+ userFirstName = findUser["firstName"];
   // Store references to HTML elements in variables
-const userNameElement = document.querySelector(".userName");
-const profileHeadElement = document.getElementById("profile-head");
-const userThemeElement = document.querySelector(".user-theme");
-const ageParaElement = document.querySelector(".age-para");
-const profileImageElement = document.querySelector("#profile-image");
-const cityParaElement = document.querySelector(".city-para");
+let userNameElement = document.querySelector(".userName");
+let profileImageElement = document.querySelector(".user-profile-image");
+let firstName = document.querySelector(".firstname");
+let lastName = document.querySelector(".lastname");
+let joined  = document.querySelector(".joined");
+let live = document.querySelector(".lives");
+let userTheme = document.querySelector(".user-theme");
 
 // Assign values to the elements
-const userFirstName = findUser["firstName"];
-const username = findUser["username"];
-const userTheme = findUser["userTheme"];
-const age = findUser["age"] || "";
-const profileImage = findUser["profileImage"];
-const nationality = findUser["nationality"] || ""; 
+let username = findUser["username"];
+let profileImage = findUser["profileImage"];
 
 // Update the elements with the assigned values
-userNameElement.innerText = username;
-profileHeadElement.innerText = "Hello " + username; 
-userThemeElement.innerText = userTheme;
-ageParaElement.innerText = age;
+userNameElement.innerText ="Hello " +  username;
 profileImageElement.src = profileImage;
-cityParaElement.innerText = nationality;
+firstName.innerText = userFirstName;
+lastName.innerText  = findUser["lastName"];
+userTheme.innerText = findUser["userTheme"];
+live.innerText = findUser["nationality"] || "";
+joined.innerText  = convertTime(findUser["registerAt"]);
 
 } catch (error) {
   console.log("An error occurred while show the profile details :", error);
 }
 }
 
-// create element for show the use last activity
 
-function getAllUsers(){
-	
-	const url = "/appfreshnest/GetAllUserList";
-			axios.get(url)
-			  .then(function (response) {
-			    // handle success
-			    console.log(response.data);
-			    const usersArray = response.data;
-			    ShowListOfUsers(usersArray);
-			  })
-			  .catch(function (error) {
-			    // handle error
-			    console.log(error);
-			  })
+// Convert timestamp to data, month and days
+
+function convertTime(timestamp){
+// Create a Date object from the input string
+const date = new Date(timestamp);
+
+// Define month names
+const monthNames = [
+  "January", "February", "March", "April",
+  "May", "June", "July", "August",
+  "September", "October", "November", "December"
+];
+
+// Extract the year, month, and day from the Date object
+const year = date.getFullYear();
+const month = monthNames[date.getMonth()];
+const day = date.getDate();
+
+// Create the formatted date string
+const formattedDate = `${month} ${day}, ${year}`;
+
+return formattedDate;
+
 }
-
-
-getAllUsers();
-
-function ShowListOfUsers(SuggestedUsers){
-
-try {
-
-  for (let userSuggestions of SuggestedUsers) {
-    let card = document.createElement("div");
-    card.setAttribute("class", "card-div-container");
-    card.innerHTML = `<div class="card-inside-div">
-<div class="user-activity-image-div">
-  <img
-    class="activity-image"
-    src="${userSuggestions["profileImage"]}"
-    alt="activity-image"
-  />
-</div>
-
-<div class="user-activity-name-div">
-   <div class="user-name-div">
-       <h3 class="user-name">${userSuggestions["username"]}</h3>
-   </div>
-
-    <div class="user-theme-div">
-       <p class="user-theme">${userSuggestions["userTheme"]}</p>
-    </div>
-</div>
-
-<div>
-  <button class="connect-button" onclick="showDetails(this.id)" id=${userSuggestions["userId"]}>View</button>
-</div>
-</div>`;
-
-    document.querySelector(".card-inside-control-div").append(card);
-  }
-} catch (error) {
-  console.log("An error occurred while creating a suggest data :", error);
-}
-}
-
 
 // profile page redirection eventListener
 
@@ -121,14 +85,8 @@ profileEdit.addEventListener("click", () => {
     "../pages/profile-edit.html";
 });
 
-
 // Profile image edit option div
-
-let file = document.getElementById("file");
-
-let image = document.getElementById("profile-image");
-
-let ProfileOption = document.querySelector(".profile-option-div");
+let ProfileOption = document.querySelector(".option-div");
 
 // onclick function for option display block
 
@@ -147,27 +105,31 @@ function showProfileOption() {
 
 // User profile image change function
 
-file.addEventListener("change", function () {
-  let choosePhoto = this.files[0];
+function profileImageChange() {
+  let fileInput = document.createElement("input");
+  fileInput.type = "file";
 
-  if (choosePhoto) {
+  fileInput.click(); 
+
+  fileInput.addEventListener("change", function (e) {
+    let file = e.target.files[0];
+
     let reader = new FileReader();
-
-    reader.addEventListener("load", function () {
-      image.setAttribute("src", reader.result);
-
+    reader.onload = function (e) {
+      let fileContent = e.target.result;
       
-      let userProfileObj = {
-        profileImage: reader.result,
+       let userProfileObj = {
+        profileImage: fileContent,
       };
       
       profileImageChangeServer(userProfileObj);
-       
-    });
 
-    reader.readAsDataURL(choosePhoto);
-  }
-});
+    };
+    reader.readAsDataURL(file);
+  });
+}
+
+
 
 // Transform to default profile image
 
@@ -254,3 +216,6 @@ const url = "/appfreshnest/UserProfileImageChangeServlet";
                 console.log(error);
             });
 }
+
+
+

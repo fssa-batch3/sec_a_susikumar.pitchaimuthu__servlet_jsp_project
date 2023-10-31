@@ -43,7 +43,6 @@ public class InvitePageServlet extends HttpServlet {
 		try {
 			User userDetails = userService.readUserDetails(user);
 			request.setAttribute("userDetails", userDetails);
-			System.out.println(userDetails);
 
 			// Create an Invite object using the user1 object
 			InviteService inviteService = new InviteService();
@@ -54,7 +53,7 @@ public class InvitePageServlet extends HttpServlet {
 			out.flush();
 			out.close();
 		} catch (ServiceException e) {
-			System.out.println(e.getMessage());
+			out.println(e.getMessage());
 		}
 	}
 

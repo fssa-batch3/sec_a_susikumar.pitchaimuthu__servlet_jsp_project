@@ -1,7 +1,7 @@
 // Creating a function to get the user list form the database
 
 function getAllUsers() {
-  const url = "http://localhost:8080/appfreshnest/GetAllUserList";
+  const url = "/appfreshnest/GetAllUserList";
   axios
     .get(url)
     .then(function (response) {
@@ -47,7 +47,9 @@ function ShowListOfUsers(usersArray) {
     let tinyImage = document.createElement("img");
     tinyImage.setAttribute("alt", "user-profile");
     tinyImage.setAttribute("class", "tiny-image");
+    tinyImage.setAttribute("id", elseFillData["userId"]);
     tinyImage.setAttribute("src", elseFillData["profileImage"]);
+    tinyImage.setAttribute("onclick", "getAnotherUserProfileDetails(this.id)");
     tinyProfileDiv.append(tinyImage);
 
     let tinyContentContainer = document.createElement("div");
@@ -86,25 +88,18 @@ function ShowListOfUsers(usersArray) {
 async function showUser(userId) {
   try {
     // getting element of creating element to remove
+    let removingElement = document.querySelector(".details-inside-div-container");
 
-    let removingElement = document.querySelector(
-      ".details-inside-div-container"
-    );
-
-    let userObject = {
-      userId: userId,
-    };
     if (removingElement !== null) {
       document.querySelector(".details-inside-div-container").remove();
     }
 
-    const url = "http://localhost:8080/appfreshnest/HomePageUserDetail";
-
-    const response = await axios.post(url, userObject, {
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
+    const url = "/appfreshnest/HomePageUserDetail?userId=" + userId;
+    
+    // Use `await` directly on the axios call
+    const response = await axios.get(url);
+    let userData = response.data;
+    console.log(userData);
 
     // handle success
     console.log(response.data);
@@ -115,7 +110,6 @@ async function showUser(userId) {
     console.error("Error:", error);
   }
 }
-
 async function userCardDetailsShow(findClickingUser) {
   try {
     let detailsInsideDivContainer = document.createElement("div");
@@ -203,7 +197,7 @@ async function userCardDetailsShow(findClickingUser) {
 async function checkUserFollowingOrNot(userId) {
   try {
     const url =
-      "http://localhost:8080/appfreshnest/CheckUserFriendsServlet?userId=" +
+      "/appfreshnest/CheckUserFriendsServlet?userId=" +
       userId;
     const response = await axios.get(url);
     const serverMessage = response.data;

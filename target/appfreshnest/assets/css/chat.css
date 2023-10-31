@@ -192,7 +192,7 @@
 	width: 100%;
 	justify-content: center;
 	align-items: center;
-	height: 76px
+	height: 76px;
 }
 
 .members-and-input-div {
@@ -293,18 +293,15 @@
 }
 
 .user-card-container {
-	display: flex;
-	justify-content: center;
-	align-items: center;
 	width: 99%;
 	border-radius: 10px;
 	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 	transition: box-shadow 0.3s ease;
-	cursor:pointer;
+	cursor: pointer;
 }
 
-.user-card-container&:hover {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+.user-card-container:hover {
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .user-card-inside-container {
@@ -312,20 +309,48 @@
 	align-items: center;
 	justify-content: space-between;
 	gap: 2em;
-	width: 97%;
+	width: 100%;
 	height: 5em;
+	padding: 2px 4px;
 }
 
 .image-name {
 	display: flex;
 	align-items: center;
 	gap: 1.3em;
+	width: 83%;
 }
 
 .member-image {
-	width: 50px;
-	height: 49px;
+	width: 3.2em;
+	height: 3em;
 	border-radius: 50%;
+}
+
+.image {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.name {
+	width: 76%;
+	display: flex;
+	flex-direction: column;
+	gap: 0.3em;
+}
+
+.is-read-and-message-div-container {
+	display: flex;
+	align-items: center;
+	gap: 2%;
+}
+
+.chat-message-para {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	max-width: 96%;
 }
 
 .chat-count-div {
@@ -411,8 +436,8 @@
 .user-name-lastseen-div {
 	display: flex;
 	align-items: center;
-	width: 294px;
-	gap: 8%;
+	width: 100%;
+	gap: 2%;
 }
 
 .chat-person-profile-div {
@@ -1024,6 +1049,8 @@ html {
 	height: 3em;
 	border-radius: 50%;
 	border: 1px solid #ccc;
+	cursor: pointer;
+	z-index: 300;
 }
 
 .time-tale-user-profile-image {
@@ -1043,6 +1070,7 @@ html {
 .bi-bookmark-plus {
 	font-size: 1em;
 	color: #808080;
+	cursor: pointer;
 }
 
 /** Search bar css**/
@@ -1067,7 +1095,7 @@ html {
 }
 
 .input {
-	width: 170px;
+	width: 263px;
 	height: 100%;
 	border: none;
 	outline: none;
@@ -1128,11 +1156,11 @@ html {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	gap: .2em;
+	gap: 0.2em;
 	font-family: inherit;
 	font-weight: 600;
 	font-size: 14px;
-	padding: .5em 1.5em;
+	padding: 0.5em 1.5em;
 	color: white;
 	background: linear-gradient(to right, #8be3fc, #576bff);
 	border: none;
@@ -1140,10 +1168,695 @@ html {
 	letter-spacing: 0.08em;
 	border-radius: 20em;
 	cursor: pointer;
-	transition: .5s;
+	transition: 0.5s;
 }
 
 .cssbuttons-io-button:hover {
 	filter: brightness(1.2);
-	color: rgb(0, 0, 0, .5);
+	color: rgb(0, 0, 0, 0.5);
+}
+
+/* Chat group add feature */
+.add-group-section-div {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	top: 0;
+	width: 450px;
+	background-color: #ffffff;
+	border-bottom-left-radius: 20px;
+	border-top-left-radius: 20px;
+	box-shadow: 5px 0 15px rgba(0, 0, 255, 0.5);
+	transition: opacity 0.5s, visibility 0.5s;
+}
+
+.add-group-div-container {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	padding: 10px;
+	gap: 1em;
+	height: 100%;
+}
+
+.add-option-showing-div-container {
+	display: flex;
+	align-items: center;
+	width: 99%;
+}
+
+.group-option-inside-div {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 1em;
+	width: 99%;
+}
+
+.create-head-and-button-div-container {
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+}
+
+.create-head-div {
+	display: flex;
+	align-items: center;
+	width: 40%;
+	justify-content: flex-start;
+}
+
+.creation-para {
+	position: relative; /* Relative positioning for the parent paragraph */
+}
+
+.creation-para>span {
+	color: #888; /* Change the color to a desired gray or other color */
+	font-style: italic; /* Apply italic style */
+	margin-left: 5px; /* Add a small margin for separation */
+}
+
+.create-and-cancel-button-div {
+	display: flex;
+	align-items: center;
+	gap: 1em;
+	width: 50%;
+	justify-content: flex-end;
+}
+/* Create Group Button */
+.create-group-button {
+	background: linear-gradient(to right, #8be3fc, #576bff);
+	color: #fff; /* Default text color */
+	padding: 7px 20px; /* Adjust padding as needed */
+	border: none; /* Remove the border */
+	cursor: pointer;
+	transition: background-color 0.3s, color 0.3s;
+	border-radius: 20em;
+}
+
+.create-group-button:hover {
+	filter: brightness(1.2);
+	color: rgb(0, 0, 0, 0.5);
+}
+
+/* Cancel Group Button */
+.cancel-group-button {
+	background-color: #e74c3c; /* Default background color */
+	color: #fff; /* Default text color */
+	padding: 6px 18px; /* Adjust padding as needed */
+	border: none; /* Remove the border */
+	cursor: pointer;
+	transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+	border-radius: 20em;
+}
+
+.cancel-group-button:hover {
+	background-color: #c0392b;
+}
+
+/* Input css */
+.create-group-input-div-container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 99%;
+}
+
+.create-group-input-inside-div {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.input-name-div-container {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+}
+
+.input-name-div {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+/* Input container */
+.input-container {
+	position: relative;
+	margin: 20px;
+}
+
+/* Input field */
+.input-field {
+	display: block;
+	width: 100%;
+	font-size: 16px;
+	border: none;
+	border-bottom: 2px solid #ccc;
+	outline: none;
+	background-color: transparent;
+}
+
+/* Input label */
+.input-label {
+	position: absolute;
+	top: 0;
+	left: 0;
+	font-size: 16px;
+	color: rgba(204, 204, 204, 0);
+	pointer-events: none;
+	transition: all 0.3s ease;
+}
+
+/* Input highlight */
+.input-highlight {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	height: 2px;
+	width: 0;
+	background-color: #007bff;
+	transition: all 0.3s ease;
+}
+
+/* Input field:focus styles */
+.input-field:focus+.input-label {
+	top: -20px;
+	font-size: 12px;
+	color: #007bff;
+}
+
+.input-field:focus+.input-label+.input-highlight {
+	width: 100%;
+}
+
+.group-search-input-container {
+	height: 40px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: rgb(255, 255, 255);
+	border-radius: 10px;
+	overflow: hidden;
+	cursor: pointer;
+	padding-left: 15px;
+	box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.075);
+}
+
+/* add image button */
+.add-group-image-input {
+	border: none;
+	display: flex;
+	padding: 0.75rem 1.5rem;
+	background-color: #488aec;
+	color: #ffffff;
+	font-size: 0.75rem;
+	line-height: 1rem;
+	font-weight: 700;
+	text-align: center;
+	text-transform: uppercase;
+	vertical-align: middle;
+	align-items: center;
+	border-radius: 0.5rem;
+	user-select: none;
+	gap: 0.75rem;
+	box-shadow: 0 4px 6px -1px #488aec31, 0 2px 4px -1px #488aec17;
+	transition: all 0.6s ease;
+}
+
+.add-group-image-input:hover {
+	box-shadow: 0 10px 15px -3px #488aec4f, 0 4px 6px -2px #488aec17;
+}
+
+.add-group-image-input:focus, button:active {
+	opacity: 0.85;
+	box-shadow: none;
+}
+
+.add-group-image-input svg {
+	width: 1.25rem;
+	height: 1.25rem;
+}
+
+/* user showing div container */
+.user-showing-div-container {
+	display: flex;
+	align-content: center;
+	justify-content: center;
+	width: 100%;
+	height: 100%;
+	overflow-y: scroll;
+}
+
+.user-showing-div-container::-webkit-scrollbar {
+	display: none;
+}
+
+.user-showing-inside-div-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 0.5em;
+	width: 99%;
+}
+
+.group-user-card-div-container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 99%;
+	box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 4px;
+	border-radius: 8px;
+	cursor: pointer;
+}
+
+.group-user-card-inside-div {
+	display: flex;
+	align-items: center;
+	width: 96%;
+	padding: 7px;
+}
+
+.group-user-profile-image-div {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 20%;
+}
+
+.group-user-image {
+	border-radius: 50%;
+	height: 3em;
+	width: 3.5em;
+}
+
+.group-user-name-and-theme-div {
+	display: flex;
+	flex-direction: column;
+	gap: 10%;
+}
+
+.group-username-para {
+	font-size: 17px;
+}
+
+.group-user-theme-para {
+	font-size: 15px;
+}
+
+/* search input selected user div container */
+.search-input-div-and-selected-user-showing-div {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	width: 100%;
+	gap: 1em;
+}
+
+.selected-user-div {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 99%;
+}
+
+.user-search-input-div {
+	width: 93%;
+}
+
+.selected-user-inside-div {
+	display: flex;
+	align-items: center;
+	gap: 5%;
+	width: 99%;
+	flex-wrap: wrap;
+	height: auto;
+}
+
+.selected-user-name-and-cancel-div {
+	display: flex;
+	align-items: center;
+	width: 180px;
+	border-radius: 15px;
+	box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.075);
+	border: 0.7px solid #ccc;
+}
+
+.selected-user-name-and-cancel-inside-div {
+	display: flex;
+	align-items: center;
+	width: 99%;
+	padding: 2px 5px;
+	gap: 5%;
+}
+
+.selected-user-image {
+	width: 2em;
+	height: 1.6em;
+	border-radius: 50%;
+}
+
+.selected-user-name-para {
+	font-size: 14px;
+	color: #808080;
+	width: 65%;
+	overflow: hidden;
+}
+
+.bi-x-lg {
+	font-size: 13px;
+}
+
+/* chat-group-details-showing-container */
+.group-details-div-container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 98%;
+}
+
+.group-details-inside-div-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 2em;
+	width: 99%;
+	padding: 10px;
+}
+
+/* group image, name and theme div */
+.group-image-theme-and-name-div-container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+}
+
+.group-image-theme-and-name-inside-div {
+	display: flex;
+	align-items: center;
+	width: 99%;
+	justify-content: center;
+	flex-direction: column;
+	gap: 0.7em;
+}
+
+/* group-image div */
+.group-image-showing-div-container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 99%;
+}
+
+.group-image-inside-div-container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 99%;
+	position: relative;
+}
+
+.group-image {
+	width: 10em;
+	height: 9.7em;
+	border-radius: 50%;
+}
+
+/* group image edit option */
+.edit-group-profile-option-div {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: absolute;
+	bottom: 3%;
+	right: 38%;
+	background-color: #fff;
+	width: 1.4em;
+	border-radius: 5px;
+}
+
+.bi-pencil-square {
+	color: #080784;
+}
+
+/* group name and theme showing div */
+.group-name-and-theme-showing-div-container {
+	display: flex;
+	align-items: center;
+	width: 99%;
+	justify-content: center;
+}
+
+.group-name-theme-showing-inside-div {
+	display: flex;
+	flex-direction: column;
+	gap: 5%;
+	align-items: center;
+	width: 99%;
+}
+
+.group-detail-div {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 99%;
+}
+
+/* user detatails showing input div */
+.form {
+	--width-of-input: 200px;
+	--border-height: 1px;
+	--border-before-color: rgba(221, 221, 221, 0.39);
+	--border-after-color: #5891ff;
+	--input-hovered-color: #4985e01f;
+	position: relative;
+	width: var(--width-of-input);
+}
+/* styling of Input */
+.input {
+	font-size: 0.9rem;
+	background-color: transparent;
+	width: 100%;
+	box-sizing: border-box;
+	padding-inline: 0.5em;
+	padding-block: 0.7em;
+	border: none;
+	border-bottom: var(--border-height) solid var(--border-before-color);
+}
+/* styling of animated border */
+.input-border {
+	position: absolute;
+	background: var(--border-after-color);
+	width: 0%;
+	height: 2px;
+	bottom: 0;
+	left: 0;
+	transition: 0.3s;
+}
+/* Hover on Input */
+input:hover {
+	background: var(--input-hovered-color);
+}
+
+input:focus {
+	outline: none;
+}
+/* here is code of animated border */
+input:focus ~ .input-border {
+	width: 100%;
+}
+
+/* search-input-container */
+.group-search-input {
+	width: 312px;
+	height: 100%;
+	border: none;
+	outline: none;
+	font-size: 0.9em;
+	caret-color: rgb(255, 81, 0);
+}
+
+/* group user list and option showin div container */
+.group-user-list-and-add-user-details-showing-div-container {
+	display: flex;
+	align-items: center;
+	width: 99%;
+	justify-content: center;
+}
+
+.group-user-list-and-add-user-details-showing-inside-div {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+	gap: 0.5em;
+}
+
+.group-details-option-showing-div {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+}
+
+.group-details-option-showing-inside-div {
+	display: flex;
+	align-items: center;
+	width: 99%;
+	gap: 5%;
+}
+
+.group-user-list-div, .group-add-user-div {
+	display: flex;
+	align-items: center;
+	gap: 5px;
+	cursor: pointer;
+}
+
+/* group user cards showing container */
+.group-users-showing-div-container {
+	display: flex;
+	align-items: center;
+	width: 100%;
+	justify-content: center;
+}
+
+.group-users-showing-inside-div {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	width: 99%;
+	gap: 1%;
+	height: 40vh;
+	overflow-y: hidden;
+}
+
+.group-users-showing-inside-div::-webkit-scrollbar {
+	display: none;
+}
+
+.group-user-card-container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.075);
+	border-radius: 3%;
+	cursor: pointer;
+}
+
+.group-user-inside-div {
+	display: flex;
+	align-items: center;
+	width: 97%;
+	padding: 8px 5px;
+	justify-content: space-between;
+}
+
+.group-user-image-and-name-div {
+	display: flex;
+	align-items: center;
+	gap: 3%;
+	width: 90%;
+}
+
+.group-user-image-div {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 18%;
+}
+
+.group-user-name-theme-div-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	width: 74%;
+}
+
+.group-user-theme, .group-user-name {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	width: 96%;
+}
+
+.bi-check2-circle {
+	color: #6161f8;
+}
+
+/* group user opiton  */
+.group-user-opiton-icon-div {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+}
+
+.bi-three-dots-vertical {
+	cursor: pointer;
+}
+
+.group-user-option-div {
+	position: absolute;
+	width: 92px;
+	background-color: #ecf1f7;
+	border-radius: 10px;
+	display: block;
+	bottom: 39%;
+	right: 84%;
+}
+
+.group-user-option-inside-div {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 99%;
+	padding: 7px;
+	gap: 7px;
+}
+
+.admin-para, .remove-para {
+	font-size: 11px;
+	width: 99%;
+	background-color: #d3e2f6;
+	border-radius: 5px;
+	padding: 2px;
+	text-align: center;
+	cursor: pointer;
+	font-weight: 500;
+}
+
+.selected {
+	color: #6161f8;
+	border-bottom: 1.2px solid;
+}
+
+/* Style for the outer div */
+.get-connection-div {
+	background-color: #f0f0f0; /* Background color */
+	padding: 20px; /* Adjust padding as needed */
+}
+
+/* Style for the inner div */
+.get-connection-inside-div {
+	border: 1px solid #ccc; /* Border style */
+	padding: 10px; /* Adjust padding as needed */
+}
+
+/* Style for the paragraphs */
+.connection-message-para {
+	font-size: 16px; /* Font size */
+	margin: 10px 0; /* Adjust margin as needed */
+}
+
+/* Style for the navigation span */
+.navigation-span {
+	text-decoration: underline; /* Underline the text */
+	cursor: pointer; /* Change cursor to pointer */
+	text-align: center; /* Center-align the text */
+	display: inline-block;
+	/* Make it an inline block so the text is centered */
 }

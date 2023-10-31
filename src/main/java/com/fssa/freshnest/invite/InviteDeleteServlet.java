@@ -30,23 +30,18 @@ public class InviteDeleteServlet extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		String id = request.getParameter("inviteId");
 		Integer inviteId = Integer.parseInt(id);
-		
-		System.out.println("Invite id is " +inviteId);
 
 		Invite invite = new Invite(inviteId);
 		InviteService inviteService = new InviteService();
 
 		try {
-
 			if (inviteService.deleteInvite(invite)) {
 				out.println("success");
-				
 			} else {
 				out.println("Invite deletion failed");
 			}
 		} catch (ServiceException e) {
-			System.out.println(e.getMessage());
-			e.printStackTrace();
+			out.println(e.getMessage());
 
 		}
 	}

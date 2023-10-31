@@ -16,7 +16,7 @@ logIn.addEventListener("submit", (event) => {
 
     console.log(logInObject);
 
-    const url = "http://localhost:8080/appfreshnest/LoginServlet";
+    const url = "/appfreshnest/LoginServlet";
 
     axios
       .post(url, logInObject, {

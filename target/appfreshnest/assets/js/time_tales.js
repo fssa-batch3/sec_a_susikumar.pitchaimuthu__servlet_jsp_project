@@ -77,10 +77,11 @@ function getAllUserTimeTales(){
 			    console.log(response.data);
 			    
 			    let timeTales = response.data;
+			    console.log(timeTales);
 			    
 			    if(timeTales[0] != null){
 					let reelMember = document.querySelector(".time-tale-user-profile-div");
-                    reelMember.setAttribute("id", timeTales[0]["userId"]);
+                    reelMember.setAttribute("id", timeTales[0]["user"]["userId"]);
                     reelMember.setAttribute("data-user", "profileUser"); 
                     reelMember.style.border = "2px rgb(108, 156, 180) solid";
                     reelMember.addEventListener("click", function() {
@@ -102,6 +103,14 @@ getAllUserTimeTales();
 // Redirection to the time tale shwing page
 
 function redirectToTimeTalePage(type){
+	console.log("called");
     window.location.href = "../pages/reel_showing.html?type=" +type;
 }
+
+
+// List user friends time tale feature
+function listUserFriendsTimeTales(){
+	
+}
+listUserFriendsTimeTales();
 

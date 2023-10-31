@@ -29,7 +29,6 @@ public class CheckUserFriendsServlet extends HttpServlet {
 			throws ServletException, IOException {
 
 		String id = request.getParameter("userId");
-		System.out.println(id);
 		
 		int userId = Integer.parseInt(id);
 		PrintWriter out = response.getWriter();

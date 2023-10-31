@@ -18,7 +18,7 @@ function getFollow(userId){
       followType: "follow_request",
     };
     
-    const url = "http://localhost:8080/appfreshnest/SendFollowRequest";
+    const url = "/appfreshnest/SendFollowRequest";
 
             axios.post(url, followRequestObject, {
                 headers: {

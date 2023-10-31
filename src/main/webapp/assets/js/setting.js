@@ -27,7 +27,7 @@ deleteAccount.addEventListener("click", (event) => {
       return;
     } else {
 		
-     const url = "http://localhost:8080/appfreshnest/UserAccountDeleteServlet";
+     const url = "/appfreshnest/UserAccountDeleteServlet";
         console.log(url);
         axios
           .get(url)

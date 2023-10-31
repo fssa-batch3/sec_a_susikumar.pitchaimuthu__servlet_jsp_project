@@ -52,8 +52,6 @@ public class StillFilterServlet extends HttpServlet {
 		JSONObject jsonData = new JSONObject(requestBody.toString());
 		String fromDateString = jsonData.getString("from");
 		String toDateString = jsonData.getString("to");
-		System.out.println(fromDateString);
-		System.out.println(toDateString);
 
 		// Parse date strings to LocalDate
 		LocalDate from = LocalDate.parse(fromDateString);
@@ -72,11 +70,8 @@ public class StillFilterServlet extends HttpServlet {
 			out.close();
 
 		} catch (ServiceException e) {
-			e.printStackTrace();
-			System.out.println(e.getMessage());
+			out.println(e.getMessage());
 		}
 	}
-	
-	
 
 }

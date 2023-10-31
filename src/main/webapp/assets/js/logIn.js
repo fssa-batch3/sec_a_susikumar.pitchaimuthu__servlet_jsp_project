@@ -14,9 +14,8 @@ logIn.addEventListener("submit", (event) => {
       password,
     };
 
-    console.log(logInObject);
 
-    const url = "http://localhost:8080/appfreshnest/LoginServlet";
+    const url = "/appfreshnest/LoginServlet";
 
     axios
       .post(url, logInObject, {
@@ -30,7 +29,7 @@ logIn.addEventListener("submit", (event) => {
         console.log(serverMessage);
 
         if (serverMessage == "success") {
-          alert("You are successfully get into freshnest");
+          showToast("You are successfully get into freshnest", "success");
           window.location.href = "./home.html";
         } else {
           errorMessageElementCreation(serverMessage);
@@ -45,9 +44,7 @@ logIn.addEventListener("submit", (event) => {
   }
 });
 
-// password showing funciton
-
-// password showing funciton
+// password showing function
 
 let passwordInput = document.querySelector("#password");
 let eyeIcon = document.querySelector(".bi-eye-slash");
@@ -58,9 +55,7 @@ let confirmPasswordInput = document.querySelector("#confirm-password");
 let isPasswordVisible = false;
 
 eyeDiv.addEventListener("click", (e) => {
-  console.log(e.target);
   let eyeButton = e.target;
-  console.log("yes");
   if (!isPasswordVisible) {
     eyeButton.classList.remove("bi-eye-slash");
     eyeButton.classList.add("bi-eye");
